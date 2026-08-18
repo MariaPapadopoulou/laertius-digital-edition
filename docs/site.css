@@ -399,3 +399,15 @@ footer.site-footer {
     width: calc(100% - 48px) !important;
   }
 }
+.data-section > .section-heading,
+.evaluation > .evaluation-intro {
+  max-width: none !important;
+  text-align: left !important;
+}
+
+.data-section > .section-heading h2,
+.evaluation > .evaluation-intro h2 {
+  max-width: 900px;
+  margin-left: 0;
+  margin-right: 0;
+}
