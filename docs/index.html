@@ -3,50 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A digital scholarly edition of Diogenes Laertius for reading, research, and reuse.">
-  <title>Laertius — Digital Scholarly Edition</title>
+  <meta name="description" content="A bilingual digital scholarly edition of Diogenes Laertius with curated annotations, linked data, research interfaces, and explicit evaluation materials.">
+  <title>Laertius Digital Scholarly Edition</title>
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <main>
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Laertius home"><span class="wordmark-main">Laertius</span><span class="wordmark-sub">Digital Scholarly Edition</span></a>
-      <nav aria-label="Primary navigation"><a href="#edition">The edition</a><a href="#method">Method</a><a href="#access">Access</a></nav>
+      <a class="wordmark" href="#top" aria-label="Laertius home"><span>Laertius</span><small>Digital Scholarly Edition</small></a>
+      <nav aria-label="Primary navigation">
+        <a href="#edition">Edition</a><a href="#data">Data</a><a href="#interfaces">Interfaces</a><a href="#evaluation">Evaluation</a>
+      </nav>
+      <a class="header-link" href="https://github.com/MariaPapadopoulou/laertius-digital-edition">Repository ↗</a>
     </header>
 
     <section class="hero" id="top">
       <div class="hero-copy">
         <p class="eyebrow">Diogenes Laertius · Lives of Eminent Philosophers</p>
-        <h1>A digital edition built for reading, research, and reuse.</h1>
-        <p class="lede">Laertius brings text, translation, structured evidence, linked open data, and computational exploration into one scholarly environment.</p>
-        <div class="actions">
-          <a class="button button-primary" href="https://laertius.humanisticadigitalia.eu/">Open the digital edition <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="https://github.com/MariaPapadopoulou/laertius-digital-edition">View source on GitHub <span aria-hidden="true">↗</span></a>
+        <h1>A structured edition of ancient philosophical testimony</h1>
+        <p class="hero-lede">A bilingual digital scholarly edition for reading the <em>Lives</em>, tracing attributed reports, examining competing accounts, and querying the work as structured knowledge.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://laertius.humanisticadigitalia.eu/">Enter the edition</a>
+          <a class="button button-secondary" href="https://github.com/MariaPapadopoulou/laertius-digital-edition">Examine the sources</a>
         </div>
       </div>
-      <aside class="quotation" aria-label="Ancient Greek quotation"><span class="ornament" aria-hidden="true">Λ</span><blockquote lang="grc">Βίων καὶ γνωμῶν τῶν ἐν φιλοσοφίᾳ εὐδοκιμησάντων</blockquote><p>Lives and opinions of those who distinguished themselves in philosophy</p></aside>
+      <aside class="hero-note" aria-label="Editorial profile">
+        <span class="greek-mark" aria-hidden="true">Λ</span>
+        <p class="note-label">Editorial profile</p>
+        <p>Greek text and English translation derived from the public-domain Hicks edition (1925), delivered through stable passage references and an openly documented computational methodology.</p>
+        <a href="https://laertius.humanisticadigitalia.eu/approach">Read the methodological account ↗</a>
+      </aside>
     </section>
 
-    <section class="edition" id="edition">
-      <div class="section-heading"><p class="eyebrow">The edition</p><h2>One text, many paths through it</h2></div>
-      <div class="feature-grid">
-        <article class="feature"><span class="feature-number">01</span><h3>Text &amp; translation</h3><p>Browse the Greek text alongside the English translation, with passages, people, places, and philosophical traditions connected across the edition.</p></article>
-        <article class="feature"><span class="feature-number">02</span><h3>Linked scholarly data</h3><p>Explore curated assertions, semantic relationships, and a knowledge graph designed for transparent, reusable digital scholarship.</p></article>
-        <article class="feature"><span class="feature-number">03</span><h3>Research interfaces</h3><p>Move from close reading to structured search, graph exploration, SPARQL queries, and evidence-grounded question answering.</p></article>
+    <section class="facts" aria-label="Edition statistics">
+      <div class="fact"><strong>1,211</strong><span>citable passages</span></div>
+      <div class="fact"><strong>9,310</strong><span>curated annotations</span></div>
+      <div class="fact"><strong>1,565</strong><span>source-attributed claims</span></div>
+      <div class="fact"><strong>207,634</strong><span>RDF triples</span></div>
+    </section>
+
+    <section class="section editorial-grid" id="edition">
+      <div><p class="section-number">I · The edition</p><h2>Text, structure, and scholarly accountability</h2></div>
+      <div class="prose">
+        <p>Diogenes Laertius does not transmit a neutral inventory of facts. The <em>Lives</em> preserves named authorities, anonymous reports, rival versions, anecdotes, sayings, letters, wills, catalogues, and doxographical summaries. The edition keeps these textual voices visible instead of collapsing them into undifferentiated statements.</p>
+        <p>Each passage remains available for conventional close reading while its persons, works, schools, concepts, textual forms, and source relations become computationally accessible. Structured data thereby extends the critical edition without replacing the text on which its interpretations depend.</p>
       </div>
     </section>
 
-    <section class="method" id="method">
-      <div><p class="eyebrow">Scholarly method</p><h2>Evidence remains visible.</h2></div>
-      <div class="method-copy"><p>The edition keeps claims connected to passages and provenance. Its data model supports both human interpretation and machine-readable research without concealing the evidence behind the interface.</p><ul><li>TEI-informed textual data</li><li>RDF and linked-data modelling</li><li>Knowledge graph and SPARQL access</li><li>Documented retrieval and evaluation workflows</li></ul></div>
+    <section class="section data-section" id="data">
+      <div class="section-heading">
+        <p class="section-number">II · Annotation and linked data</p>
+        <h2>A dataset designed around testimony rather than isolated facts</h2>
+        <p>Curated annotations connect the wording of the <em>Lives</em> to a source-critical assertion model. Every claim can retain its speaker, textual location, topic, degree of certainty, and—where the text requires it—another assertion nested within it.</p>
+      </div>
+      <div class="model-flow" aria-label="Data model sequence">
+        <div><span>01</span><strong>Passage</strong><small>Greek and English text</small></div><i aria-hidden="true">→</i>
+        <div><span>02</span><strong>Annotation</strong><small>Entities and textual forms</small></div><i aria-hidden="true">→</i>
+        <div><span>03</span><strong>Assertion</strong><small>Source and epistemic status</small></div><i aria-hidden="true">→</i>
+        <div><span>04</span><strong>RDF graph</strong><small>Stable, queryable relations</small></div>
+      </div>
+      <p class="data-note">Counts refer to release v25. The 207,634 triples describe the complete RDF store and should not be read as the number of annotations.</p>
     </section>
 
-    <section class="access" id="access">
-      <div><p class="eyebrow">Open access</p><h2>Read the edition. Inspect the method.</h2><p>The interactive edition is hosted by Humanistica Digitalia. Source code and technical documentation are available in the public repository.</p></div>
-      <div class="access-links"><a href="https://laertius.humanisticadigitalia.eu/">Visit the live edition <span>↗</span></a><a href="https://github.com/MariaPapadopoulou/laertius-digital-edition#readme">Read the documentation <span>↗</span></a></div>
+    <section class="section" id="interfaces">
+      <div class="section-heading compact"><p class="section-number">III · Research interfaces</p><h2>Several modes of entry into the same scholarly corpus</h2></div>
+      <div class="interface-grid">
+        <article class="interface-card"><span>01</span><h3>Read the edition</h3><p>Move between the Greek text and English translation, philosophical lives, textual forms, entities, and structured testimony.</p><a href="https://laertius.humanisticadigitalia.eu/">Open the interactive edition ↗</a></article>
+        <article class="interface-card"><span>02</span><h3>Ask Laertius</h3><p>Submit questions to a hybrid retrieval system that returns evidence from the corpus and identifies the passages supporting its answer.</p><a href="https://laertius.humanisticadigitalia.eu/ask">Open Ask Laertius ↗</a></article>
+        <article class="interface-card"><span>03</span><h3>Query the graph</h3><p>Inspect the Linked Open Data model and formulate SPARQL queries across passages, entities, assertions, and source relations.</p><a href="https://laertius.humanisticadigitalia.eu/legomena/sparql">Open the SPARQL console ↗</a></article>
+      </div>
     </section>
 
-    <footer><div><strong>Laertius</strong><span>Digital Scholarly Edition</span></div><p>Software: Apache-2.0 · Data and documentation: CC BY-NC-SA 4.0</p></footer>
+    <section class="section evaluation" id="evaluation">
+      <div class="evaluation-intro">
+        <p class="section-number light">IV · Evaluation</p>
+        <h2>Retrieval and answer generation are evaluated against an explicit gold standard</h2>
+        <p>The evaluation corpus contains 200 questions: 175 answerable topics and 25 abstention cases covering out-of-corpus questions, false premises, and underspecified homonyms. This design tests both the recovery of relevant evidence and the system's ability to withhold an unsupported answer.</p>
+      </div>
+      <div class="evaluation-grid">
+        <div class="gold-card"><strong>200</strong><span>gold-standard questions</span><dl><div><dt>175</dt><dd>answerable</dd></div><div><dt>25</dt><dd>abstention</dd></div></dl></div>
+        <div class="benchmark-card">
+          <p class="mini-label">Related evaluation infrastructure</p><h3>NER/NEL Benchmark</h3>
+          <p>A companion resource of Humanistica Digitalia for the comparative evaluation of named-entity recognition and entity-linking workflows. It is presented as a related benchmark, distinct from the Laertius question-answering gold set.</p>
+          <a href="https://humanisticadigitalia.eu/Software/NERNELBenchmark/index.html">Open the NER/NEL Benchmark ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section open-section">
+      <p class="section-number">V · Open scholarship</p>
+      <div><h2>Edition, data, code, and evaluation materials remain open to inspection</h2><p>The public repository documents the source corpus, annotation and knowledge-graph datasets, evaluation materials, software, and reproducible workflows. The interactive edition is maintained by Humanistica Digitalia and developed within the research environment of the TALOS AI4SSH Centre of Excellence.</p></div>
+      <a class="text-link" href="https://github.com/MariaPapadopoulou/laertius-digital-edition">View the public repository ↗</a>
+    </section>
+
+    <footer>
+      <div class="footer-mark"><strong>Laertius</strong><span>Digital Scholarly Edition</span></div>
+      <p>Text · Testimony · Structured Knowledge</p>
+      <div class="footer-links"><a href="https://humanisticadigitalia.eu/">Humanistica Digitalia</a><a href="https://laertius.humanisticadigitalia.eu/privacy">Privacy</a><a href="https://github.com/MariaPapadopoulou/laertius-digital-edition">GitHub</a></div>
+    </footer>
   </main>
 </body>
 </html>
