@@ -1,0 +1,334 @@
+{
+  "1.prol": {
+    "philosopher": "Prologue",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.1": {
+    "philosopher": "Thales",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.2": {
+    "philosopher": "Solon",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.3": {
+    "philosopher": "Chilon",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.4": {
+    "philosopher": "Pittacus",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.5": {
+    "philosopher": "Bias",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.6": {
+    "philosopher": "Cleobulus",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.7": {
+    "philosopher": "Periander",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.8": {
+    "philosopher": "Anacharsis",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.9": {
+    "philosopher": "Myson",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.10": {
+    "philosopher": "Epimenides",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "1.11": {
+    "philosopher": "Pherecydes",
+    "school": "Seven Sages / Ionian tradition"
+  },
+  "2.1": {
+    "philosopher": "Anaximander",
+    "school": "Ionian & Socratic"
+  },
+  "2.2": {
+    "philosopher": "Anaximenes",
+    "school": "Ionian & Socratic"
+  },
+  "2.3": {
+    "philosopher": "Anaxagoras",
+    "school": "Ionian & Socratic"
+  },
+  "2.4": {
+    "philosopher": "Archelaus",
+    "school": "Ionian & Socratic"
+  },
+  "2.5": {
+    "philosopher": "Socrates",
+    "school": "Ionian & Socratic"
+  },
+  "2.6": {
+    "philosopher": "Xenophon",
+    "school": "Ionian & Socratic"
+  },
+  "2.7": {
+    "philosopher": "Aeschines",
+    "school": "Ionian & Socratic"
+  },
+  "2.8": {
+    "philosopher": "Aristippus",
+    "school": "Ionian & Socratic"
+  },
+  "2.9": {
+    "philosopher": "Phaedo",
+    "school": "Ionian & Socratic"
+  },
+  "2.10": {
+    "philosopher": "Euclides",
+    "school": "Ionian & Socratic"
+  },
+  "2.11": {
+    "philosopher": "Stilpo",
+    "school": "Ionian & Socratic"
+  },
+  "2.12": {
+    "philosopher": "Crito",
+    "school": "Ionian & Socratic"
+  },
+  "2.13": {
+    "philosopher": "Simon",
+    "school": "Ionian & Socratic"
+  },
+  "2.14": {
+    "philosopher": "Glaucon",
+    "school": "Ionian & Socratic"
+  },
+  "2.15": {
+    "philosopher": "Simmias",
+    "school": "Ionian & Socratic"
+  },
+  "2.16": {
+    "philosopher": "Cebes",
+    "school": "Ionian & Socratic"
+  },
+  "2.17": {
+    "philosopher": "Menedemus of Eretria",
+    "school": "Ionian & Socratic"
+  },
+  "3.1": {
+    "philosopher": "Plato",
+    "school": "Academy (Plato)"
+  },
+  "4.1": {
+    "philosopher": "Speusippus",
+    "school": "Academy"
+  },
+  "4.2": {
+    "philosopher": "Xenocrates",
+    "school": "Academy"
+  },
+  "4.3": {
+    "philosopher": "Polemo",
+    "school": "Academy"
+  },
+  "4.4": {
+    "philosopher": "Crates of Athens",
+    "school": "Academy"
+  },
+  "4.5": {
+    "philosopher": "Crantor",
+    "school": "Academy"
+  },
+  "4.6": {
+    "philosopher": "Arcesilaus",
+    "school": "Academy"
+  },
+  "4.7": {
+    "philosopher": "Bion",
+    "school": "Academy"
+  },
+  "4.8": {
+    "philosopher": "Lacydes",
+    "school": "Academy"
+  },
+  "4.9": {
+    "philosopher": "Carneades",
+    "school": "Academy"
+  },
+  "4.10": {
+    "philosopher": "Clitomachus",
+    "school": "Academy"
+  },
+  "5.1": {
+    "philosopher": "Aristotle",
+    "school": "Peripatos"
+  },
+  "5.2": {
+    "philosopher": "Theophrastus",
+    "school": "Peripatos"
+  },
+  "5.3": {
+    "philosopher": "Strato",
+    "school": "Peripatos"
+  },
+  "5.4": {
+    "philosopher": "Lyco",
+    "school": "Peripatos"
+  },
+  "5.5": {
+    "philosopher": "Demetrius of Phalerum",
+    "school": "Peripatos"
+  },
+  "5.6": {
+    "philosopher": "Heraclides Ponticus",
+    "school": "Peripatos"
+  },
+  "6.1": {
+    "philosopher": "Antisthenes",
+    "school": "Cynics"
+  },
+  "6.2": {
+    "philosopher": "Diogenes of Sinope",
+    "school": "Cynics"
+  },
+  "6.3": {
+    "philosopher": "Monimus",
+    "school": "Cynics"
+  },
+  "6.4": {
+    "philosopher": "Onesicritus",
+    "school": "Cynics"
+  },
+  "6.5": {
+    "philosopher": "Crates of Thebes",
+    "school": "Cynics"
+  },
+  "6.6": {
+    "philosopher": "Metrocles",
+    "school": "Cynics"
+  },
+  "6.7": {
+    "philosopher": "Hipparchia",
+    "school": "Cynics"
+  },
+  "6.8": {
+    "philosopher": "Menippus",
+    "school": "Cynics"
+  },
+  "6.9": {
+    "philosopher": "Menedemus the Cynic",
+    "school": "Cynics"
+  },
+  "7.1": {
+    "philosopher": "Zeno of Citium",
+    "school": "Stoa"
+  },
+  "7.2": {
+    "philosopher": "Ariston of Chios",
+    "school": "Stoa"
+  },
+  "7.3": {
+    "philosopher": "Herillus",
+    "school": "Stoa"
+  },
+  "7.4": {
+    "philosopher": "Dionysius the Renegade",
+    "school": "Stoa"
+  },
+  "7.5": {
+    "philosopher": "Cleanthes",
+    "school": "Stoa"
+  },
+  "7.6": {
+    "philosopher": "Sphaerus",
+    "school": "Stoa"
+  },
+  "7.7": {
+    "philosopher": "Chrysippus",
+    "school": "Stoa"
+  },
+  "8.1": {
+    "philosopher": "Pythagoras",
+    "school": "Italian / Pythagorean"
+  },
+  "8.2": {
+    "philosopher": "Empedocles",
+    "school": "Italian / Pythagorean"
+  },
+  "8.3": {
+    "philosopher": "Epicharmus",
+    "school": "Italian / Pythagorean"
+  },
+  "8.4": {
+    "philosopher": "Archytas",
+    "school": "Italian / Pythagorean"
+  },
+  "8.5": {
+    "philosopher": "Alcmaeon",
+    "school": "Italian / Pythagorean"
+  },
+  "8.6": {
+    "philosopher": "Hippasus",
+    "school": "Italian / Pythagorean"
+  },
+  "8.7": {
+    "philosopher": "Philolaus",
+    "school": "Italian / Pythagorean"
+  },
+  "8.8": {
+    "philosopher": "Eudoxus",
+    "school": "Italian / Pythagorean"
+  },
+  "9.1": {
+    "philosopher": "Heraclitus",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.2": {
+    "philosopher": "Xenophanes",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.3": {
+    "philosopher": "Parmenides",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.4": {
+    "philosopher": "Melissus",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.5": {
+    "philosopher": "Zeno of Elea",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.6": {
+    "philosopher": "Leucippus",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.7": {
+    "philosopher": "Democritus",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.8": {
+    "philosopher": "Protagoras",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.9": {
+    "philosopher": "Diogenes of Apollonia",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.10": {
+    "philosopher": "Anaxarchus",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.11": {
+    "philosopher": "Pyrrho",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "9.12": {
+    "philosopher": "Timon",
+    "school": "Eleatics, Atomists, Sceptics"
+  },
+  "10.1": {
+    "philosopher": "Epicurus",
+    "school": "Garden (Epicurus)"
+  }
+}

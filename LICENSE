@@ -1,0 +1,31 @@
+Laertius: A Digital Scholarly Edition of Diogenes Laertius' Lives of Eminent Philosophers
+
+Copyright (c) 2026 Maria Papadopoulou — Humanistica Digitalia / Philographia
+
+This project is dual-licensed:
+
+1. SOURCE CODE — Apache License 2.0
+   All software source code in this repository (TypeScript/JavaScript, Python,
+   shell scripts, build configuration) is licensed under the Apache License,
+   Version 2.0 (the "License"); you may not use these files except in
+   compliance with the License. You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+   WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+   License for the specific language governing permissions and limitations
+   under the License.
+
+2. CURATED SCHOLARLY DATA AND DOCUMENTATION — CC BY-NC-SA 4.0
+   The curated scholarly data (annotations, knowledge-graph assertions,
+   gazetteers, curated datasets under data directories, RDF/LOD exports) and
+   the project documentation are licensed under the Creative Commons
+   Attribution-NonCommercial-ShareAlike 4.0 International License
+   (CC BY-NC-SA 4.0). See LICENSE-DATA for details.
+
+PUBLIC DOMAIN MATERIAL
+   The ancient Greek text and R.D. Hicks' English translation of Diogenes
+   Laertius' Lives of Eminent Philosophers are in the public domain and are
+   not subject to either license above.

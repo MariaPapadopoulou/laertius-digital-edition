@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-08-16T12:37:58.719Z",
+  "files": [
+    {
+      "name": "base.ttl",
+      "sha256": "072d7876bbb5e90e115ac6c33bc8be113a4b5e2db124186885e764438280a658",
+      "bytes": 4385145,
+      "quads": 58695
+    },
+    {
+      "name": "tbox.ttl",
+      "sha256": "1efae5656497e60f9358d35c12259f797ca2c94370195e7e57a31102e4bc869b",
+      "bytes": 71550,
+      "quads": 1020
+    },
+    {
+      "name": "passages.ttl",
+      "sha256": "60cdc3e119fece5c5c1b11a5ecceec55726be6d804cffe29e6360fe73eb7858f",
+      "bytes": 8947649,
+      "quads": 147975
+    }
+  ],
+  "counts": {
+    "sections": 1211,
+    "annotatedSections": 1049,
+    "annotations": 9310
+  }
+}

@@ -1,0 +1,40 @@
+import { Router, type IRouter } from "express";
+import healthRouter from "./health";
+import corpusRouter from "./corpus";
+import statsRouter from "./stats";
+import versesRouter from "./verses";
+import sayingsRouter from "./sayings";
+import doxaiRouter from "./doxai";
+import anecdotesRouter from "./anecdotes";
+import epistlesRouter from "./epistles";
+import testamentsRouter from "./testaments";
+import annotationsRouter from "./annotations";
+import ragRouter from "./rag";
+import graphRouter from "./graph";
+import timelineRouter from "./timeline";
+import sparqlRouter from "./sparql";
+import competencyRouter from "./competency";
+import otbRouter from "./otb";
+import evalRouter from "./eval";
+
+const router: IRouter = Router();
+
+router.use(healthRouter);
+router.use(corpusRouter);
+router.use(statsRouter);
+router.use(versesRouter);
+router.use(sayingsRouter);
+router.use(doxaiRouter);
+router.use(anecdotesRouter);
+router.use(epistlesRouter);
+router.use(testamentsRouter);
+router.use(annotationsRouter);
+router.use(ragRouter);
+router.use(graphRouter);
+router.use(timelineRouter);
+router.use(sparqlRouter);
+router.use(competencyRouter);
+router.use(otbRouter);
+router.use(evalRouter);
+
+export default router;

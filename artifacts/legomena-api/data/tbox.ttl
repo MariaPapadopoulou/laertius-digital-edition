@@ -1,0 +1,1173 @@
+@prefix lo: <https://humanisticadigitalia.eu/Laertius/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix otv: <http://www.ontologia.fr/OTB/otv#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix lawd: <http://lawd.info/ontology/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix schema: <http://schema.org/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://humanisticadigitalia.eu/Laertius/ontology> a owl:Ontology ;
+    rdfs:label "Laertius Ontology"@en ;
+    rdfs:seeAlso <http://www.ontologia.fr/OTB/The_OntoTerminology_Vocabulary.htm> ;
+    dcterms:references <http://www.ontologia.fr/OTB/otv.rdf> ;
+    dcterms:description "An ontology for the philosophers, schools, successions (diadochai), works, doctrines and biographical claims described in Diogenes Laertius' Lives of Eminent Philosophers. Every fact is source-internal: cited to a passage of D.L. himself. Claims carry a certainty level reflecting D.L.'s own epistemic stance (asserted / reported / disputed / conjectured), the authority he names, and links between conflicting alternative reports. Only asserted claims are also emitted as direct triples; hedged and disputed claims exist only as lo:Claim reifications. Sayings (apophthegms) attributed to the philosophers are reified as lo:Saying under the same certainty model. The poems, epigrams, oracles and epitaphs quoted in the Lives are modeled as lo:Verse, each carrying its Greek text, the aligned Hicks English when available, and an exact citation of the section where it is quoted. The letters D.L. quotes verbatim are modeled as lo:Epistle document nodes with sender, addressee and a curated authenticity verdict (authentic / disputed / spurious) - a modern philological axis deliberately distinct from D.L.'s own certainty. The narrated biographical incidents are modeled as lo:Anecdote document nodes under the same certainty model, each carrying its verbatim Hicks English, a thematic topic, the named participant where the passage gives one, and a link to the curated saying whose narrative setting it gives. The six wills D.L. quotes verbatim (Plato, Aristotle, Theophrastus, Strato, Lyco, Epicurus) are modeled as lo:Testament document nodes, each carrying the testator, the verbatim opening in both languages, the curated cast as literals (beneficiaries, executors, witnesses - never guessed into node links), and curated key provisions. The doctrinal tenets D.L. reports - the doxography proper of the Lives - are modeled as lo:Doxa document nodes under the same certainty model, each carrying the verbatim Hicks English of the doctrinal passage (and Greek where curated), a controlled doctrinal domain, the holding philosopher, and, where the tenet instantiates a doctrine node the graph already knows, an lo:expressesDoctrine link to that node. The subjects of the Lives are classed by book: the eleven sages (sophoi) of Book 1 are lo:Sage, the subjects of Books 2-10 are lo:Philosopher, Thales alone carries both classes, and all share the superclass lo:ChapterSubject. Each chapter (each Life) is additionally reified as a lo:Chapter node linked to its main subject via lo:hasMainSubject."@en ;
+    dcterms:source "urn:cts:greekLit:tlg0004.tlg001" .
+
+# ---------------------------------------------------------------- Classes
+
+lo:ChapterSubject a owl:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Chapter subject"@en ;
+    rdfs:comment "A person to whom Diogenes Laertius devotes a chapter (a Life) of the Lives of Eminent Philosophers. Every chapter subject is a lo:Philosopher, a lo:Sage, or (Thales) both."@en .
+
+lo:Philosopher a owl:Class ;
+    rdfs:subClassOf lo:ChapterSubject ;
+    rdfs:label "Philosopher"@en ;
+    rdfs:comment "A philosopher with a Life in Diogenes Laertius: the subjects of Books 2-10, plus Thales, whom D.L. both counts among the Seven Sages and treats as the first philosopher of the Ionian succession (1.13; cf. Aristotle, Met. 983b20) and whose doctrines the text reports (1.24, 1.27)."@en .
+
+lo:Sage a owl:Class ;
+    rdfs:subClassOf lo:ChapterSubject ;
+    rdfs:label "Sage"@en ;
+    rdfs:comment "One of the sages (sophoi) whose Lives make up Book 1 - the tradition of the Seven Sages and its rivals. D.L. himself separates them from philosophy proper: closing Book 1 he writes 'these were the men called wise', and Book 2 opens the philosophical successions. Thales alone is also typed lo:Philosopher; the classification is curated, never inferred."@en .
+
+lo:Chapter a owl:Class ;
+    rdfs:label "Chapter"@en ;
+    rdfs:comment "A chapter (a Life) of the Lives of Eminent Philosophers, linked to the person it is about via lo:hasMainSubject and carrying its book and chapter number."@en .
+
+lo:School a owl:Class ;
+    rdfs:label "School"@en ;
+    rdfs:comment "A philosophical school or movement."@en .
+
+lo:Place a owl:Class ;
+    rdfs:label "Place"@en ;
+    rdfs:comment "A city, island, region, deme or landmark named by Diogenes Laertius - as the place of a life event (birth, death, residence, travel) or merely mentioned in the text. Every place carries exactly one of the subclasses below except the compound labels where D.L. himself reports rival locations (e.g. 'Elea, but some say Abdera and others Miletus')."@en .
+
+lo:City a owl:Class ;
+    rdfs:subClassOf lo:Place ;
+    rdfs:label "City"@en ;
+    rdfs:comment "A polis, town or village."@en .
+
+lo:Island a owl:Class ;
+    rdfs:subClassOf lo:Place ;
+    rdfs:label "Island"@en ;
+    rdfs:comment "An island, kept as the dominant type even where the island doubles as a polis (Samos, Delos) or a large region (Sicily, Crete)."@en .
+
+lo:Region a owl:Class ;
+    rdfs:subClassOf lo:Place ;
+    rdfs:label "Region"@en ;
+    rdfs:comment "A region, district or country (Attica, Ionia, Egypt, Scythia)."@en .
+
+lo:Deme a owl:Class ;
+    rdfs:subClassOf lo:Place ;
+    rdfs:label "Deme"@en ;
+    rdfs:comment "An Attic deme, typed as such only where Diogenes Laertius' usage is demotic or residential (Alopece, Gargettus, Phalerum); deme-origin names he uses as towns or battle sites (Marathon, Eleusis, Piraeus) are typed lo:City."@en .
+
+lo:Landmark a owl:Class ;
+    rdfs:subClassOf lo:Place ;
+    rdfs:label "Landmark"@en ;
+    rdfs:comment "A named non-polis site: sanctuary (Delphi, Olympia, Nemea), gymnasium (Academy, Lyceum, Cynosarges) or urban district (Ceramicus, Munichia)."@en .
+
+lo:NaturalFeature a owl:Class ;
+    rdfs:subClassOf lo:Place ;
+    rdfs:label "Natural feature"@en ;
+    rdfs:comment "A river, mountain, strait or other natural feature (Nile, Etna, Ida, Hellespont, Bosporus - the Cimmerian strait)."@en .
+
+lo:Work a owl:Class ;
+    rdfs:label "Work"@en ;
+    rdfs:comment "A work or treatise attributed to a philosopher in Diogenes Laertius. Attributions may be disputed; see the lo:Claim carrying the attribution."@en .
+
+lo:Doctrine a owl:Class ;
+    rdfs:label "Doctrine"@en ;
+    rdfs:comment "A doctrine or teaching reported by Diogenes Laertius, e.g. the Stoic 'life in agreement with nature'."@en .
+
+lo:GreekTerm a owl:Class ;
+    rdfs:label "Greek term"@en ;
+    rdfs:comment "A Greek technical term (e.g. telos) used in the text to express a doctrine. Terms shared across schools anchor comparisons of divergent definitions."@en .
+
+lo:Source a owl:Class ;
+    rdfs:label "Source"@en ;
+    rdfs:comment "An authority Diogenes Laertius names for a claim (e.g. Apollodorus' Chronology, Sosicrates, Favorinus)."@en .
+
+lo:SourceCitation a owl:Class ;
+    rdfs:label "Source citation"@en ;
+    rdfs:comment "One entry of the curated sources index: an authority (and often a work) cited by Diogenes Laertius at a given reference. Each citation keeps the workbook's stable identifier, the reference exactly as written, CTS URNs for every reference that resolves to a corpus passage, the cited work's title forms (Greek, English, French), and the curator's identification certainty when the row was graded."@en .
+
+lo:Claim a owl:Class ;
+    rdfs:subClassOf rdf:Statement ;
+    rdfs:label "Claim"@en ;
+    rdfs:comment "A single cited claim from the text: a reified statement carrying its D.L. citation, a certainty level, the authority D.L. names (if any), and links to conflicting alternative claims."@en .
+
+lo:ChainLink a owl:Class ;
+    rdfs:label "Chain link"@en ;
+    rdfs:comment "One step in a claim's assertion transmission chain: the intermediary authority through whose work the claim was transmitted to Diogenes Laertius. A chain link records the intermediary's source node and, when D.L. names it, the specific work. Chain links have stable URIs (claim-id/chain/N) so they can be referenced unambiguously across serializations."@en .
+
+lo:Saying a owl:Class ;
+    rdfs:subClassOf rdf:Statement ;
+    rdfs:label "Saying"@en ;
+    rdfs:comment "A saying or apophthegm the text attributes to a philosopher: a reified lo:said statement carrying the Hicks English (and Greek when curated), a thematic topic, an editorial gloss, a certainty level, the authority D.L. names (if any), and its D.L. citation. As with claims, only sayings asserted in D.L.'s own voice also appear as direct lo:said triples."@en .
+
+lo:Verse a owl:Class ;
+    rdfs:label "Verse"@en ;
+    rdfs:comment "A poem, epigram, oracle or epitaph quoted in the Lives (many are Diogenes Laertius' own, from his Pammetros): the Greek text, the aligned Hicks English when available, a link to the philosopher in whose Life it is quoted, and the editorial source label when one is recorded (e.g. 'Anth. Pal. vii. 615.')."@en .
+
+lo:Epistle a owl:Class ;
+    rdfs:label "Epistle"@en ;
+    rdfs:comment "A letter Diogenes Laertius quotes verbatim in the Lives: the (fictional) correspondence of the Seven Sages, the royal exchanges, and Epicurus' doctrinal epistles. Each carries its sender and addressee, a Hicks English excerpt (opening or key passage), the Greek incipit or salutation, and the curator's authenticity verdict - an axis distinct from the claims' certainty model, since D.L. quotes Hellenistic epistolary fictions and genuine Epicurus with the same straight face. Only letters D.L. quotes as an actual text qualify, never mere reports that a letter existed."@en .
+
+lo:Anecdote a owl:Class ;
+    rdfs:label "Anecdote"@en ;
+    rdfs:comment "A narrated biographical incident Diogenes Laertius tells about a philosopher: document nodes like the epistles, not reified statements - an anecdote is a story the text tells, not a proposition the philosopher asserted. Each carries the verbatim Hicks English (and Greek where curated), a thematic topic, a certainty level tracking D.L.'s stance toward the story, the authority he names (if any), and optionally the named participant and a link to the curated saying whose narrative setting it gives. Incidents whose entire substance is a saying stay in the sayings layer and are not re-curated here."@en .
+
+lo:Doxa a owl:Class ;
+    rdfs:label "Doxa"@en ;
+    rdfs:comment "A doctrinal tenet Diogenes Laertius reports a philosopher held - the doxography proper of the Lives, as distinct from the biographical facts of the claims layer and the bare dicta of the sayings layer. Document nodes like the anecdotes, not reified statements: each carries the verbatim Hicks English of the doctrinal passage (and Greek where curated), a controlled doctrinal domain (first-principles, cosmology, physics, soul, gods, epistemology, logic, ethics, pleasure, politics, fate, death), an editorial gloss, a certainty level tracking D.L.'s stance, the authority he names (if any), and - where the tenet instantiates a doctrine node the graph already knows from the claims layer - an lo:expressesDoctrine link. The layer mints no new nodes: authorities are restricted to existing sources, and rival attributions stay literals unless the name matches a corpus philosopher."@en .
+
+lo:Testament a owl:Class ;
+    rdfs:label "Testament"@en ;
+    rdfs:comment "A will Diogenes Laertius quotes verbatim in the Lives - he preserves exactly six: Plato's, and the great Peripatetic and Epicurean series (Aristotle, Theophrastus, Strato, Lyco, Epicurus), for all of which he is the sole surviving source. Document nodes like the epistles and anecdotes. Each carries the testator, the verbatim Hicks English opening with the Greek incipit, the curated cast (beneficiaries, executors, witnesses) as literals - the wills teem with bare homonyms, so names are never guessed into node links - and curated key provisions. Only lo:involves links graph nodes, restricted to corpus philosophers whose identification in the will is scholarly consensus; as it happens each such link is the testator's successor, so the wills trace the school successions."@en .
+
+lo:Epigram a owl:Class ;
+    rdfs:subClassOf lo:Verse ;
+    rdfs:label "Epigram"@en ;
+    rdfs:comment "A verse classifiable as an epigram: either its editorial source label cites the Greek Anthology (Anth. Pal. / Anth. Plan.), or it is one of Diogenes Laertius' own Pammetros epigrams as recorded in the curated authorship map. Other verses (oracles, elegies, Silloi, tragic fragments) remain plain lo:Verse rather than being conjecturally typed."@en .
+
+lo:Passage a owl:Class ;
+    rdfs:label "Passage"@en ;
+    rdfs:comment "A single numbered section (passage) of the Lives: the Greek text with the aligned Hicks English, linked to the Life it belongs to. Passages anchor the per-passage linked-data exports; the claims, sayings and verses cited to a passage carry its CTS URN in dcterms:source."@en .
+
+lo:CertaintyLevel a owl:Class ;
+    rdfs:label "Certainty level"@en ;
+    rdfs:comment "The epistemic stance of Diogenes Laertius toward a claim."@en .
+
+lo:AuthenticityLevel a owl:Class ;
+    rdfs:label "Authenticity level"@en ;
+    rdfs:comment "The curator's verdict, following modern scholarship, on whether a quoted letter is genuinely by its named sender. Deliberately distinct from lo:CertaintyLevel: certainty tracks Diogenes Laertius' own epistemic stance, authenticity tracks the modern philological judgment he could not make."@en .
+
+lo:Role a owl:Class ;
+    rdfs:label "Person role"@en ;
+    rdfs:comment "A curated occupational role of a person named in the Lives: what Diogenes Laertius' text (or an uncontroversial standard identification) says the person was. Roles are individuals linked via lo:hasRole, deliberately NOT rdfs subclasses of the person classes: the node classes (lo:Philosopher, lo:Source, foaf:Person) encode how the graph knows the person, roles encode what the person did, and one person may carry several. The union is closed and small; persons whose role is unknown, disputed between homonyms, or outside the union simply carry no lo:hasRole."@en .
+
+lo:WorkForm a owl:Class ;
+    rdfs:label "Work form"@en ;
+    rdfs:comment "The literary form of a work named in the Lives: prose, verse, or mixed (Menippus' spoudogeloion, prosimetrum). A closed union of three individuals linked via lo:hasForm; works whose form is unknowable from the title and Diogenes Laertius' remarks carry no lo:hasForm at all - absence is a curated statement of ignorance, never a default."@en .
+
+lo:WorkTopic a owl:Class ;
+    rdfs:label "Work topic"@en ;
+    rdfs:comment "The dominant subject matter of a work, from a closed union of twenty-four topics anchored in the ancient division of philosophy Diogenes Laertius himself reports (physics, ethics, dialectic) and extended with the genres the catalogues actually contain (letters, tragedy, history, mathematics, …). One topic per work - the dominant one; works with an opaque title carry no lo:hasWorkTopic."@en .
+
+lo:SurvivalStatus a owl:Class ;
+    rdfs:label "Survival status"@en ;
+    rdfs:comment "The modern transmission verdict on a work: lost (only the title survives), surviving in excerpts or quoted fragments, or extant as an independently transmitted text. Deliberately distinct from lo:transmissionStatus, which records what Diogenes Laertius himself says about a work's authenticity or survival - the two axes can disagree (works he doubts are extant; works he cites as living texts are lost to us)."@en .
+
+lo:ManuscriptVariant a owl:Class ;
+    rdfs:label "Manuscript variant"@en ;
+    rdfs:comment "A variant reading of a passage in the manuscript tradition. Modeled for completeness; no variant data is curated, as the corpus carries no apparatus criticus."@en .
+
+lo:Witness a owl:Class ;
+    rdfs:label "Witness"@en ;
+    rdfs:comment "A manuscript or secondary citation attesting a reading or fragment. Modeled for completeness; no witness data is curated."@en .
+
+# ------------------------------- OTV core (OntoTerminology Vocabulary)
+# The graph reuses Christophe Roche's OntoTerminology Vocabulary
+# (http://www.ontologia.fr/OTB/otv#) for its terminological dimension:
+# doctrines are otv:Concept, Greek key terms are otv:Term, and named
+# individuals are otv:Object, denoted by otv:ProperName nodes. There is
+# deliberately no owl:imports (otv.rdf is http-only); instead the OTV core
+# skeleton actually used by the graph is mirrored below, faithful to the
+# source vocabulary (rdfs:isDefinedBy on every mirrored resource), so this
+# ontology is self-contained. The full vocabulary defines further core
+# classes (otv:Category, otv:Attribute, otv:Relation, otv:AxisOfAnalysis,
+# otv:Difference) and differential-semantics properties that this graph
+# does not use and therefore does not mirror.
+
+otv:OTVCore a owl:Class ;
+    rdfs:label "OTVCore"@en ;
+    rdfs:comment "The super class of OTV Classes."@en ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:Concept a owl:Class ;
+    rdfs:subClassOf otv:OTVCore ;
+    rdfs:label "Concept"@en ;
+    rdfs:comment "The class of OTV Concepts."@en ;
+    owl:disjointWith otv:Object, otv:Term, otv:ProperName ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:Object a owl:Class ;
+    rdfs:subClassOf otv:OTVCore ;
+    rdfs:label "Object"@en ;
+    rdfs:comment "The class of OTV Objects."@en ;
+    owl:disjointWith otv:Term, otv:ProperName ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:Term a owl:Class ;
+    rdfs:subClassOf otv:OTVCore ;
+    rdfs:label "Term"@en ;
+    rdfs:comment "The class of OTV Terms: 'a term is a verbal designation of a concept' (ISO 1087)."@en ;
+    owl:disjointWith otv:ProperName ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:ProperName a owl:Class ;
+    rdfs:subClassOf otv:OTVCore ;
+    rdfs:label "ProperName"@en ;
+    rdfs:comment "The class of OTV ProperNames, the names denoting objects."@en ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:instanceOf a owl:ObjectProperty ;
+    rdfs:label "instanceOf"@en ;
+    rdfs:comment "Instance relationship between an object and a concept."@en ;
+    rdfs:domain otv:Object ;
+    rdfs:range otv:Concept ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:isA a owl:ObjectProperty ;
+    rdfs:label "isA"@en ;
+    rdfs:comment "Generic relationship between 2 concepts."@en ;
+    rdfs:domain otv:Concept ;
+    rdfs:range otv:Concept ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:denotedByTerm a owl:ObjectProperty ;
+    rdfs:label "denotedByTerm"@en ;
+    rdfs:comment "Links a concept to a term which denotes it."@en ;
+    rdfs:domain otv:Concept ;
+    rdfs:range otv:Term ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:denotedConcept a owl:ObjectProperty ;
+    rdfs:label "denotedConcept"@en ;
+    rdfs:comment "The concept denoted by the term."@en ;
+    rdfs:domain otv:Term ;
+    rdfs:range otv:Concept ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:denotedByProperName a owl:ObjectProperty ;
+    rdfs:label "denotedByProperName"@en ;
+    rdfs:comment "Links an individual (object) to a proper name which denotes it."@en ;
+    rdfs:domain otv:Object ;
+    rdfs:range otv:ProperName ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:denotedObject a owl:ObjectProperty ;
+    rdfs:label "denotedObject"@en ;
+    rdfs:comment "The object denoted by the proper name."@en ;
+    rdfs:domain otv:ProperName ;
+    rdfs:range otv:Object ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:conceptName a owl:DatatypeProperty ;
+    rdfs:label "conceptName"@en ;
+    rdfs:comment "Name of the concept."@en ;
+    rdfs:domain otv:Concept ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:termName a owl:DatatypeProperty ;
+    rdfs:label "termName"@en ;
+    rdfs:comment "String representing the term."@en ;
+    rdfs:domain otv:Term ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:properName a owl:DatatypeProperty ;
+    rdfs:label "properName"@en ;
+    rdfs:comment "String representing the proper name."@en ;
+    rdfs:domain otv:ProperName ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+otv:language a owl:DatatypeProperty ;
+    rdfs:label "language"@en ;
+    rdfs:comment "The language of the term or proper name. In the source vocabulary the domain is the union of otv:Term and otv:ProperName; no rdfs:domain is asserted here to avoid mirroring the union blank node."@en ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.ontologia.fr/OTB/otv.rdf> .
+
+# ------------------------------- OTV alignment: lo: classes into the core
+
+lo:ChapterSubject rdfs:subClassOf otv:Object .
+lo:Philosopher rdfs:subClassOf otv:Object .
+lo:Sage rdfs:subClassOf otv:Object .
+lo:Chapter rdfs:subClassOf otv:Object .
+lo:School rdfs:subClassOf otv:Object .
+lo:Place rdfs:subClassOf otv:Object .
+lo:Source rdfs:subClassOf otv:Object .
+lo:Work rdfs:subClassOf otv:Object ;
+    rdfs:comment "OTV alignment note: work titles mint otv:ProperName nodes (one per language, plain xsd:string literals) for the annotation double dimension only; work tagging itself stays label-driven."@en .
+lo:Doctrine rdfs:subClassOf otv:Concept .
+lo:GreekTerm rdfs:subClassOf otv:Term .
+lo:usesTerm rdfs:subPropertyOf otv:denotedByTerm .
+
+# The closed controlled vocabularies of the ontology are likewise concepts
+# in the ontoterminological reading: each partitions one axis of the domain
+# (epistemic stance, philological verdict, occupation, literary form,
+# subject matter, transmission fate). Their classes are aligned to
+# otv:Concept and every individual below is also typed otv:Concept with an
+# otv:conceptName - explicitly, since the SPARQL endpoint applies no OWL
+# reasoning and subclass axioms alone would not materialize the typing.
+lo:CertaintyLevel rdfs:subClassOf otv:Concept .
+lo:AuthenticityLevel rdfs:subClassOf otv:Concept .
+lo:Role rdfs:subClassOf otv:Concept .
+lo:WorkForm rdfs:subClassOf otv:Concept .
+lo:WorkTopic rdfs:subClassOf otv:Concept .
+lo:SurvivalStatus rdfs:subClassOf otv:Concept .
+
+# ---------------------------------------------- Certainty level individuals
+
+lo:Asserted a lo:CertaintyLevel, otv:Concept ;
+    rdfs:label "asserted"@en ;
+    otv:conceptName "asserted" ;
+    rdfs:comment "Stated by Diogenes Laertius in his own voice, without hedging."@en .
+
+lo:Reported a lo:CertaintyLevel, otv:Concept ;
+    rdfs:label "reported"@en ;
+    otv:conceptName "reported" ;
+    rdfs:comment "Hedged: 'some say', 'according to X', 'it is said'."@en .
+
+lo:Disputed a lo:CertaintyLevel, otv:Concept ;
+    rdfs:label "disputed"@en ;
+    otv:conceptName "disputed" ;
+    rdfs:comment "Diogenes Laertius records explicit disagreement about the claim."@en .
+
+lo:Conjectured a lo:CertaintyLevel, otv:Concept ;
+    rdfs:label "conjectured"@en ;
+    otv:conceptName "conjectured" ;
+    rdfs:comment "An inference, not directly stated in the text."@en .
+
+# ---------------------------------------------- Authenticity level individuals
+
+lo:Authentic a lo:AuthenticityLevel, otv:Concept ;
+    rdfs:label "authentic"@en ;
+    otv:conceptName "authentic" ;
+    rdfs:comment "Generally accepted as genuinely by its named sender (Epicurus' epistles)."@en .
+
+lo:DisputedAuthenticity a lo:AuthenticityLevel, otv:Concept ;
+    rdfs:label "disputed"@en ;
+    otv:conceptName "disputed" ;
+    rdfs:comment "Genuinely contested or unverifiable. Named DisputedAuthenticity to avoid colliding with the certainty individual lo:Disputed - the two axes are distinct."@en .
+
+lo:Spurious a lo:AuthenticityLevel, otv:Concept ;
+    rdfs:label "spurious"@en ;
+    otv:conceptName "spurious" ;
+    rdfs:comment "Generally rejected: Hellenistic epistolary fiction (the entire Seven Sages correspondence, the Anaximenes and Darius/Heraclitus letters)."@en .
+
+# --------------------------------------------------- Person role individuals
+
+lo:PhilosopherRole a lo:Role, otv:Concept ;
+    rdfs:label "philosopher"@en ;
+    otv:conceptName "philosopher" .
+
+lo:PoetRole a lo:Role, otv:Concept ;
+    rdfs:label "poet"@en ;
+    otv:conceptName "poet" .
+
+lo:ComicPoetRole a lo:Role, otv:Concept ;
+    rdfs:label "comic poet"@en ;
+    otv:conceptName "comic poet" .
+
+lo:TragicPoetRole a lo:Role, otv:Concept ;
+    rdfs:label "tragic poet"@en ;
+    otv:conceptName "tragic poet" .
+
+lo:HistorianRole a lo:Role, otv:Concept ;
+    rdfs:label "historian"@en ;
+    otv:conceptName "historian" .
+
+lo:BiographerRole a lo:Role, otv:Concept ;
+    rdfs:label "biographer"@en ;
+    otv:conceptName "biographer" .
+
+lo:ChronographerRole a lo:Role, otv:Concept ;
+    rdfs:label "chronographer"@en ;
+    otv:conceptName "chronographer" .
+
+lo:SuccessionsWriterRole a lo:Role, otv:Concept ;
+    rdfs:label "writer of Successions"@en ;
+    otv:conceptName "writer of Successions" .
+
+lo:DoxographerRole a lo:Role, otv:Concept ;
+    rdfs:label "doxographer"@en ;
+    otv:conceptName "doxographer" .
+
+lo:GrammarianRole a lo:Role, otv:Concept ;
+    rdfs:label "grammarian"@en ;
+    otv:conceptName "grammarian" .
+
+lo:RhetoricianRole a lo:Role, otv:Concept ;
+    rdfs:label "rhetorician"@en ;
+    otv:conceptName "rhetorician" .
+
+lo:PhysicianRole a lo:Role, otv:Concept ;
+    rdfs:label "physician"@en ;
+    otv:conceptName "physician" .
+
+lo:StatesmanRole a lo:Role, otv:Concept ;
+    rdfs:label "statesman"@en ;
+    otv:conceptName "statesman" .
+
+lo:PriestRole a lo:Role, otv:Concept ;
+    rdfs:label "priest or priestess"@en ;
+    otv:conceptName "priest or priestess" .
+
+# ----------------------------------------------------- Work form individuals
+
+lo:ProseForm a lo:WorkForm, otv:Concept ;
+    rdfs:label "prose"@en ;
+    otv:conceptName "prose" .
+
+lo:VerseForm a lo:WorkForm, otv:Concept ;
+    rdfs:label "verse"@en ;
+    otv:conceptName "verse" .
+
+lo:MixedForm a lo:WorkForm, otv:Concept ;
+    rdfs:label "prosimetrum (mixed prose and verse)"@en ;
+    otv:conceptName "prosimetrum (mixed prose and verse)" .
+
+# ---------------------------------------------------- Work topic individuals
+
+lo:PhysicsTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "physics (natural philosophy, incl. psychology, zoology, botany, theology)"@en ;
+    otv:conceptName "physics (natural philosophy, incl. psychology, zoology, botany, theology)" .
+
+lo:EthicsTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "ethics (incl. Socratic dialogues and practical philosophy)"@en ;
+    otv:conceptName "ethics (incl. Socratic dialogues and practical philosophy)" .
+
+lo:DialecticTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "dialectic (logic, epistemology, metaphysics, philosophy of language)"@en ;
+    otv:conceptName "dialectic (logic, epistemology, metaphysics, philosophy of language)" .
+
+lo:PoliticsTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "politics (political philosophy and legislation)"@en ;
+    otv:conceptName "politics (political philosophy and legislation)" .
+
+lo:RhetoricTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "rhetoric"@en ;
+    otv:conceptName "rhetoric" .
+
+lo:GrammarTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "grammar (philology: glosses, diction, metres, proverbs)"@en ;
+    otv:conceptName "grammar (philology: glosses, diction, metres, proverbs)" .
+
+lo:PoeticsTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "poetics (literary criticism, Homeric problems, on poets)"@en ;
+    otv:conceptName "poetics (literary criticism, Homeric problems, on poets)" .
+
+lo:MathematicsTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "mathematics (incl. geometry, optics, mechanics)"@en ;
+    otv:conceptName "mathematics (incl. geometry, optics, mechanics)" .
+
+lo:AstronomyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "astronomy (incl. calendars)"@en ;
+    otv:conceptName "astronomy (incl. calendars)" .
+
+lo:GeographyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "geography"@en ;
+    otv:conceptName "geography" .
+
+lo:MedicineTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "medicine (incl. dietetics and pathology)"@en ;
+    otv:conceptName "medicine (incl. dietetics and pathology)" .
+
+lo:MusicTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "music"@en ;
+    otv:conceptName "music" .
+
+lo:TechnicalTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "technical arts (husbandry, tactics, machines, painting)"@en ;
+    otv:conceptName "technical arts (husbandry, tactics, machines, painting)" .
+
+lo:HistoryTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "history (incl. constitutions described, discoveries)"@en ;
+    otv:conceptName "history (incl. constitutions described, discoveries)" .
+
+lo:BiographyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "biography (lives, memoirs, encomia of persons)"@en ;
+    otv:conceptName "biography (lives, memoirs, encomia of persons)" .
+
+lo:ChronologyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "chronology (chronicles, victor lists, records)"@en ;
+    otv:conceptName "chronology (chronicles, victor lists, records)" .
+
+lo:DoxographyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "doxography (opinions, epitomes and expositions of other philosophers)"@en ;
+    otv:conceptName "doxography (opinions, epitomes and expositions of other philosophers)" .
+
+lo:EpicTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "epic poetry (hexameter narrative and didactic epos)"@en ;
+    otv:conceptName "epic poetry (hexameter narrative and didactic epos)" .
+
+lo:LyricTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "lyric poetry (elegiac, gnomic, hymns and other shorter verse)"@en ;
+    otv:conceptName "lyric poetry (elegiac, gnomic, hymns and other shorter verse)" .
+
+lo:TragedyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "tragedy"@en ;
+    otv:conceptName "tragedy" .
+
+lo:ComedyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "comedy"@en ;
+    otv:conceptName "comedy" .
+
+lo:SatireTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "satire (incl. silloi and Menippean satire)"@en ;
+    otv:conceptName "satire (incl. silloi and Menippean satire)" .
+
+lo:LettersTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "letters (epistolary works)"@en ;
+    otv:conceptName "letters (epistolary works)" .
+
+lo:MiscellanyTopic a lo:WorkTopic, otv:Concept ;
+    rdfs:label "miscellany (notes, anecdotes, fables, mixed collections)"@en ;
+    otv:conceptName "miscellany (notes, anecdotes, fables, mixed collections)" .
+
+# ------------------------------------------------ Survival status individuals
+
+lo:LostStatus a lo:SurvivalStatus, otv:Concept ;
+    rdfs:label "lost (only the title survives)"@en ;
+    otv:conceptName "lost (only the title survives)" .
+
+lo:ExcerptsStatus a lo:SurvivalStatus, otv:Concept ;
+    rdfs:label "surviving in excerpts and quoted fragments"@en ;
+    otv:conceptName "surviving in excerpts and quoted fragments" .
+
+lo:ExtantStatus a lo:SurvivalStatus, otv:Concept ;
+    rdfs:label "extant (preserved entire or substantially so)"@en ;
+    otv:conceptName "extant (preserved entire or substantially so)" .
+
+# ------------------------------------------------ Succession relations
+
+lo:teacherOf a owl:ObjectProperty ;
+    rdfs:label "teacher of"@en ;
+    rdfs:comment "Direct teacher-pupil relation reported by Diogenes Laertius. The domain and range are foaf:Person, not lo:ChapterSubject: besides the chapter-subject successions of the knowledge graph, D.L. records succession chains whose members have no Life of their own (the Sceptic chain from Pyrrho's pupils down to Saturninus at 9.68-116, the later Academy scholarchs at 4.60), and those foaf:Person and lo:Source nodes carry cited teacher links too (succession-links.ts)."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range foaf:Person .
+
+lo:studentOf a owl:ObjectProperty ;
+    rdfs:label "student of"@en ;
+    owl:inverseOf lo:teacherOf .
+
+lo:influenced a owl:ObjectProperty ;
+    rdfs:label "influenced"@en ;
+    rdfs:comment "Doctrinal transmission or succession without a directly attested teacher-pupil relation."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:ChapterSubject .
+
+lo:influencedBy a owl:ObjectProperty ;
+    rdfs:label "influenced by"@en ;
+    owl:inverseOf lo:influenced .
+
+lo:spouseOf a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label "spouse of"@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:ChapterSubject .
+
+lo:memberOf a owl:ObjectProperty ;
+    rdfs:label "member of"@en ;
+    rdfs:comment "School membership. The domain is foaf:Person, not lo:ChapterSubject: besides the chapter subjects, Diogenes Laertius names eminent disciples of a school who have no Life of their own (the Garden roster at 10.22-26, the Sceptic school of 9.68-116, the later Academy scholarchs of 4.60), and those foaf:Person and lo:Source nodes carry cited memberships too. lo:teacherOf and lo:studentOf are likewise widened to foaf:Person for the succession-links layer; the influence properties keep the narrow lo:ChapterSubject domain, since only knowledge-graph edges use them."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range lo:School .
+
+lo:hasMainSubject a owl:ObjectProperty ;
+    rdfs:label "has main subject"@en ;
+    rdfs:comment "The person whose Life this chapter of the Lives is."@en ;
+    rdfs:domain lo:Chapter ;
+    rdfs:range lo:ChapterSubject .
+
+# ------------------------------------------------ Biographical relations
+
+lo:bornIn a owl:ObjectProperty ;
+    rdfs:label "born in"@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:Place .
+
+lo:diedIn a owl:ObjectProperty ;
+    rdfs:label "died in"@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:Place .
+
+lo:livedIn a owl:ObjectProperty ;
+    rdfs:label "lived in"@en ;
+    rdfs:comment "Residence or citizenship reported by Diogenes Laertius."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:Place .
+
+lo:traveledTo a owl:ObjectProperty ;
+    rdfs:label "traveled to"@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:Place .
+
+lo:locatedIn a owl:ObjectProperty ;
+    rdfs:label "located in"@en ;
+    rdfs:comment "Curated containment between places (Athens in Attica, Miletus in Ionia), asserted one level only and only where textbook-unambiguous. Deliberately not declared owl:TransitiveProperty - the endpoint does no OWL reasoning; chain with the SPARQL property path lo:locatedIn+."@en ;
+    rdfs:domain lo:Place ;
+    rdfs:range lo:Place .
+
+lo:wrote a owl:ObjectProperty ;
+    rdfs:label "wrote"@en ;
+    rdfs:comment "Attribution of a work, as reported by Diogenes Laertius. Disputed attributions are carried by lo:Claim reifications only."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:Work .
+
+lo:heldDoctrine a owl:ObjectProperty ;
+    rdfs:label "held doctrine"@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:Doctrine .
+
+lo:usesTerm a owl:ObjectProperty ;
+    rdfs:label "uses term"@en ;
+    rdfs:domain lo:Doctrine ;
+    rdfs:range lo:GreekTerm .
+
+lo:praised a owl:ObjectProperty ;
+    rdfs:label "praised"@en ;
+    rdfs:comment "One philosopher's recorded commendation of another."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range foaf:Person .
+
+lo:criticized a owl:ObjectProperty ;
+    rdfs:label "criticized"@en ;
+    rdfs:comment "One philosopher's recorded criticism or abuse of another."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range foaf:Person .
+
+# ------------------------------------------------ Claim (uncertainty) model
+
+lo:certainty a owl:ObjectProperty ;
+    rdfs:label "certainty"@en ;
+    rdfs:comment "The epistemic stance of Diogenes Laertius toward this claim, saying, anecdote or doxa."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Claim lo:Saying lo:Anecdote lo:Doxa ) ] ;
+    rdfs:range lo:CertaintyLevel .
+
+lo:accordingTo a owl:ObjectProperty ;
+    rdfs:label "according to"@en ;
+    rdfs:comment "The authority Diogenes Laertius names for this claim, saying, letter, anecdote or doxa."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Claim lo:Saying lo:Epistle lo:Anecdote lo:Doxa ) ] ;
+    rdfs:range lo:Source .
+
+lo:conflictsWith a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label "conflicts with"@en ;
+    rdfs:comment "Links alternative claims Diogenes Laertius records for the same question (conflicting dates, disputed attributions, rival teacher reports)."@en ;
+    rdfs:domain lo:Claim ;
+    rdfs:range lo:Claim .
+
+lo:assertedInWork a owl:ObjectProperty ;
+    rdfs:label "asserted in work"@en ;
+    rdfs:comment "The specific work in which the named accordingTo authority made the assertion, when Diogenes Laertius names it. Requires lo:accordingTo to be set; the object must be a lo:Work node already present in the graph."@en ;
+    rdfs:domain lo:Claim ;
+    rdfs:range lo:Work .
+
+lo:transmissionChain a owl:ObjectProperty ;
+    rdfs:label "transmission chain"@en ;
+    rdfs:comment "One step in the assertion's transmission chain: the intermediary source through whose work the claim passed before reaching Diogenes Laertius. The chain is ordered nearest-intermediary first (accordingTo cites chain[0]; chain[0] cites chain[1] ...)."@en ;
+    rdfs:domain lo:Claim ;
+    rdfs:range lo:ChainLink .
+
+lo:chainAuthority a owl:ObjectProperty ;
+    rdfs:label "chain authority"@en ;
+    rdfs:comment "The lo:Source node of the intermediary authority in this transmission chain link."@en ;
+    rdfs:domain lo:ChainLink ;
+    rdfs:range lo:Source .
+
+lo:chainWork a owl:ObjectProperty ;
+    rdfs:label "chain work"@en ;
+    rdfs:comment "The specific lo:Work through which the chain authority transmitted the assertion, when Diogenes Laertius names it."@en ;
+    rdfs:domain lo:ChainLink ;
+    rdfs:range lo:Work .
+
+# ------------------------------------------------ Saying (apophthegm) model
+
+lo:said a owl:DatatypeProperty ;
+    rdfs:label "said"@en ;
+    rdfs:comment "The Hicks English text of a saying the text attributes to the philosopher. Only sayings asserted in D.L.'s own voice appear as direct triples; hedged and disputed sayings exist only as lo:Saying reifications."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:greekText a owl:DatatypeProperty ;
+    rdfs:label "Greek text"@en ;
+    rdfs:comment "The Greek wording of a saying, claim, anecdote or doxa (when curated), the Greek text of a quoted verse, the Greek incipit or salutation of a quoted letter, the Greek incipit of a quoted will, or the full Greek text of a passage."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Claim lo:Saying lo:Verse lo:Epistle lo:Anecdote lo:Doxa lo:Testament lo:Passage ) ] .
+
+lo:gloss a owl:DatatypeProperty ;
+    rdfs:label "gloss"@en ;
+    rdfs:comment "A one-line editorial summary of the saying, letter, anecdote, will or doxa (curator's words, not the text's)."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Saying lo:Epistle lo:Anecdote lo:Testament lo:Doxa ) ] .
+
+lo:sayingTopic a owl:DatatypeProperty ;
+    rdfs:label "saying topic"@en ;
+    rdfs:comment "A controlled thematic facet for the saying (e.g. wit, wealth, death, virtue)."@en ;
+    rdfs:domain lo:Saying .
+
+lo:alsoAttributedTo a owl:ObjectProperty ;
+    rdfs:label "also attributed to"@en ;
+    rdfs:comment "A rival figure Diogenes Laertius reports the saying, anecdote or doxa is also fathered upon: a corpus philosopher when the name matches a Life, otherwise a person mentioned without a Life of his own (for doxai, names without a node of their own stay lo:rivalAttributionName literals - the doxography layer mints nothing)."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Saying lo:Anecdote lo:Doxa ) ] ;
+    rdfs:range foaf:Person .
+
+lo:addressedTo a owl:ObjectProperty ;
+    rdfs:label "addressed to"@en ;
+    rdfs:comment "The named interlocutor the saying is spoken - or the letter written - to, when the cited passage itself names them and the addressee is a philosopher with a Life of his own. Addressees without a node of their own are given as lo:addresseeName literals; anonymous askers are never guessed."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Saying lo:Epistle ) ] ;
+    rdfs:range lo:ChapterSubject .
+
+lo:addresseeName a owl:DatatypeProperty ;
+    rdfs:label "addressee name"@en ;
+    rdfs:comment "The name of the saying's or letter's addressee exactly as the cited passage gives it - a person ('Alexander') or a named collective ('the Athenians', 'the Wise Men') - used when the addressee has no node of his own in the graph."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Saying lo:Epistle ) ] .
+
+# ------------------------------------------------ Epistle (quoted letter) model
+
+lo:sentBy a owl:ObjectProperty ;
+    rdfs:label "sent by"@en ;
+    rdfs:comment "The letter's named sender, when the sender is a philosopher with a Life of his own. Senders without a node of their own (King Antigonus, King Darius, Pisistratus, Thrasybulus) are given as lo:senderName literals - no new person nodes are minted, so the gazetteer and pinned annotations stay stable. NOTE: for spurious letters this is the FICTIONAL sender; the authenticity verdict carries the philological judgment."@en ;
+    rdfs:domain lo:Epistle ;
+    rdfs:range lo:ChapterSubject .
+
+lo:senderName a owl:DatatypeProperty ;
+    rdfs:label "sender name"@en ;
+    rdfs:comment "The name of the letter's sender exactly as the text gives it, used when the sender has no node of his own in the graph."@en ;
+    rdfs:domain lo:Epistle .
+
+lo:epistleTopic a owl:DatatypeProperty ;
+    rdfs:label "epistle topic"@en ;
+    rdfs:comment "Controlled thematic facet of the letter: invitation, politics, philosophy, writings, death, or family."@en ;
+    rdfs:domain lo:Epistle .
+
+lo:authenticity a owl:ObjectProperty ;
+    rdfs:label "authenticity"@en ;
+    rdfs:comment "The curator's verdict on the letter's authenticity, following modern scholarship."@en ;
+    rdfs:domain lo:Epistle ;
+    rdfs:range lo:AuthenticityLevel .
+
+lo:hasRole a owl:ObjectProperty ;
+    rdfs:label "has role"@en ;
+    rdfs:comment "Curated occupational role(s) of a person named in the Lives, dominant role first in the curation order. Every corpus philosopher carries lo:PhilosopherRole; additional hats (Solon the statesman, Xenophon the historian) come from the text itself. Person and source nodes carry roles only where the text or a standard identification warrants one - absence of lo:hasRole is a curated statement of ignorance, not an oversight."@en ;
+    rdfs:range lo:Role .
+
+lo:dramaticDate a owl:DatatypeProperty ;
+    rdfs:label "dramatic date"@en ;
+    rdfs:comment "The letter's own dramatic date, recorded ONLY when the text supplies one (e.g. Epicurus' 'last day of my life', Zeno's 'I am now in my eightieth year'). For spurious letters this is the fiction's internal date, not a historical one."@en ;
+    rdfs:domain lo:Epistle .
+
+# ------------------------------------------- Anecdote (narrated incident) model
+
+lo:about a owl:ObjectProperty ;
+    rdfs:label "about"@en ;
+    rdfs:comment "The philosopher the anecdote is told about - always a corpus philosopher with a Life of his own, since anecdotes are curated per Life."@en ;
+    rdfs:domain lo:Anecdote ;
+    rdfs:range lo:ChapterSubject .
+
+lo:anecdoteTopic a owl:DatatypeProperty ;
+    rdfs:label "anecdote topic"@en ;
+    rdfs:comment "Controlled thematic facet of the incident: exile, conversion, asceticism, training, teaching, defiance, encounter, wit, eccentricity, shamelessness, capture, death, legacy, or piety."@en ;
+    rdfs:domain lo:Anecdote .
+
+lo:involves a owl:ObjectProperty ;
+    rdfs:label "involves"@en ;
+    rdfs:comment "The named counterpart in the incident (interlocutor, opponent, buyer, king), or a philosopher certainly identified in a quoted will, when the cited passage itself names them and the name matches a philosopher with a Life of his own. Participants without a node of their own are given as lo:participantName literals (anecdotes) or beneficiary/executor/witness name literals (testaments); anonymous figures are never guessed."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Anecdote lo:Testament ) ] ;
+    rdfs:range lo:ChapterSubject .
+
+lo:participantName a owl:DatatypeProperty ;
+    rdfs:label "participant name"@en ;
+    rdfs:comment "The name of the incident's counterpart exactly as the cited passage gives it - a person ('Alexander', 'Xeniades') or a named collective - used when the participant has no node of his own in the graph. The anecdote layer mints no new person nodes, so the gazetteer and pinned annotations stay stable."@en ;
+    rdfs:domain lo:Anecdote .
+
+lo:framesSaying a owl:ObjectProperty ;
+    rdfs:label "frames saying"@en ;
+    rdfs:comment "Links the anecdote to the curated saying whose narrative setting it gives: the incident supplies the scene, the saying the punch line. Incidents whose entire substance is the saying itself stay in the sayings layer and are not duplicated as anecdotes."@en ;
+    rdfs:domain lo:Anecdote ;
+    rdfs:range lo:Saying .
+
+# --------------------------------------------- Doxa (doctrinal tenet) model
+
+lo:heldBy a owl:ObjectProperty ;
+    rdfs:label "held by"@en ;
+    rdfs:comment "The philosopher the text reports holding this tenet - always a corpus philosopher with a Life of his own, since doxai are curated per Life. School doctrines D.L. expounds inside the founder's Life (the Cyrenaics under Aristippus) are curated under the founder, with a note recording the school framing."@en ;
+    rdfs:domain lo:Doxa ;
+    rdfs:range lo:ChapterSubject .
+
+lo:doxaDomain a owl:DatatypeProperty ;
+    rdfs:label "doxa domain"@en ;
+    rdfs:comment "Controlled doctrinal domain of the tenet: first-principles, cosmology, physics, soul, gods, epistemology, logic, ethics, pleasure, politics, fate, or death."@en ;
+    rdfs:domain lo:Doxa .
+
+lo:expressesDoctrine a owl:ObjectProperty ;
+    rdfs:label "expresses doctrine"@en ;
+    rdfs:comment "Links the tenet to the doctrine node it instantiates, when the graph already knows that doctrine from the claims layer or the school doctrines - curated only where the match is beyond doubt. The doxography layer never mints doctrine nodes."@en ;
+    rdfs:domain lo:Doxa ;
+    rdfs:range lo:Doctrine .
+
+lo:rivalAttributionName a owl:DatatypeProperty ;
+    rdfs:label "rival attribution name"@en ;
+    rdfs:comment "The rival figure Diogenes Laertius reports the tenet is also ascribed to, exactly as the passage names him, used when the name has no node of its own in the graph - the doxography layer mints no person nodes, so the gazetteer and pinned annotations stay stable."@en ;
+    rdfs:domain lo:Doxa .
+
+# ------------------------------------------------ Testament (quoted will) model
+
+lo:testator a owl:ObjectProperty ;
+    rdfs:label "testator"@en ;
+    rdfs:comment "The philosopher whose will this is - always a corpus philosopher with a Life of his own, since D.L. quotes each will inside its testator's Life."@en ;
+    rdfs:domain lo:Testament ;
+    rdfs:range lo:ChapterSubject .
+
+lo:beneficiaryName a owl:DatatypeProperty ;
+    rdfs:label "beneficiary name"@en ;
+    rdfs:comment "A principal legatee exactly as the will names them. Always a literal: the wills teem with dangerous bare homonyms (the slave Demetrius in Lyco's will vs. Demetrius of Phalerum; 'Epicurus son of Metrodorus' freed in Epicurus' own will), so beneficiaries are never guessed into node links."@en ;
+    rdfs:domain lo:Testament .
+
+lo:executorName a owl:DatatypeProperty ;
+    rdfs:label "executor name"@en ;
+    rdfs:comment "A named executor (epitropos/epimeletes) of the will, exactly as the text names them, as a literal. Absence means the will appoints none: Lyco charges friends with the funeral but names no executors; Epicurus' heirs hold the estate as trustees themselves."@en ;
+    rdfs:domain lo:Testament .
+
+lo:witnessName a owl:DatatypeProperty ;
+    rdfs:label "witness name"@en ;
+    rdfs:comment "A named witness to the will, exactly as the text names them, as a literal. Only Theophrastus' and Lyco's wills record witnesses."@en ;
+    rdfs:domain lo:Testament .
+
+lo:provision a owl:DatatypeProperty ;
+    rdfs:label "provision"@en ;
+    rdfs:comment "A curated key provision of the will (the curator's summary, not the text's words): bequests, manumissions, funeral instructions, the fate of the school and the library."@en ;
+    rdfs:domain lo:Testament .
+
+# ------------------------------------------------ Verse (quoted poetry) model
+
+lo:quotedInLifeOf a owl:ObjectProperty ;
+    rdfs:label "quoted in Life of"@en ;
+    rdfs:comment "The philosopher in whose Life the verse is quoted (usually its subject). The poet, when the text names one, is given by lo:composedBy."@en ;
+    rdfs:domain lo:Verse ;
+    rdfs:range lo:ChapterSubject .
+
+lo:inLifeOf a owl:ObjectProperty ;
+    rdfs:label "in Life of"@en ;
+    rdfs:comment "The philosopher whose Life contains this passage. Prologue passages carry no link (the Prologue has no philosopher node)."@en ;
+    rdfs:domain lo:Passage ;
+    rdfs:range lo:ChapterSubject .
+
+lo:composedBy a owl:ObjectProperty ;
+    rdfs:label "composed by"@en ;
+    rdfs:comment "The poet the text credits with the verse: a corpus philosopher when the name matches a Life, otherwise a person without a Life of his own - including Diogenes Laertius himself for the epigrams he marks as his own (many from his Pammetros). Curated only where Diogenes Laertius or the Hicks text names the author; anonymous epitaphs, oracles and unnamed quotations carry no attribution."@en ;
+    rdfs:domain lo:Verse ;
+    rdfs:range foaf:Person .
+
+lo:englishText a owl:DatatypeProperty ;
+    rdfs:label "English text"@en ;
+    rdfs:comment "The aligned Hicks English rendering of the verse or passage (when the alignment is available), the Hicks English excerpt of a quoted letter or will, or the verbatim Hicks English of an anecdote or doxa."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Verse lo:Epistle lo:Anecdote lo:Doxa lo:Testament lo:Passage ) ] .
+
+lo:verseSource a owl:DatatypeProperty ;
+    rdfs:label "verse source"@en ;
+    rdfs:comment "The editorial source label attached to the verse in the Hicks edition (e.g. 'Anth. Pal. vii. 615.'), kept as text because it is the editor's cross-reference, not an authority named by Diogenes Laertius."@en ;
+    rdfs:domain lo:Verse .
+
+lo:continuesPrevious a owl:DatatypeProperty ;
+    rdfs:label "continues previous"@en ;
+    rdfs:comment "True when the quotation continues the immediately preceding verse block in the same section."@en ;
+    rdfs:domain lo:Verse ;
+    rdfs:range xsd:boolean .
+
+# ------------------------------------------ Sources-index citation model
+
+lo:citedAuthor a owl:ObjectProperty ;
+    rdfs:label "cited author"@en ;
+    rdfs:comment "The authority a source citation names: a corpus philosopher when the name matches a Life, otherwise a person or cited-source node. Anonymous and thematic index rows carry no author."@en ;
+    rdfs:domain lo:SourceCitation ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( foaf:Person lo:Source ) ] .
+
+lo:citedWorkTitle a owl:DatatypeProperty ;
+    rdfs:label "cited work title"@en ;
+    rdfs:comment "The title of the cited work as the sources index records it (Greek, English and/or French forms), kept as literals because most works Diogenes Laertius cites are lost and have no work node of their own."@en ;
+    rdfs:domain lo:SourceCitation .
+
+lo:identificationCertainty a owl:DatatypeProperty ;
+    rdfs:label "identification certainty"@en ;
+    rdfs:comment "The curator's confidence in identifying the cited authority: 'certain', 'probable' or 'uncertain'. Absent when the sources index left the row ungraded - absence is not a grade."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( lo:Source lo:SourceCitation ) ] .
+
+# ------------------------------------------------ Manuscript transmission
+
+lo:variantAt a owl:DatatypeProperty ;
+    rdfs:label "variant at"@en ;
+    rdfs:comment "The passage (book.section) where the manuscript tradition diverges."@en ;
+    rdfs:domain lo:ManuscriptVariant .
+
+lo:reading a owl:DatatypeProperty ;
+    rdfs:label "reading"@en ;
+    rdfs:comment "The text of one variant reading."@en ;
+    rdfs:domain lo:ManuscriptVariant .
+
+lo:attestedBy a owl:ObjectProperty ;
+    rdfs:label "attested by"@en ;
+    rdfs:domain lo:ManuscriptVariant ;
+    rdfs:range lo:Witness .
+
+# ------------------------------------------------ Datatype properties
+
+lo:describedInBook a owl:DatatypeProperty ;
+    rdfs:label "described in book"@en ;
+    rdfs:comment "Book of Diogenes Laertius' Lives containing this chapter subject's Life."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:inBook a owl:DatatypeProperty ;
+    rdfs:label "in book"@en ;
+    rdfs:comment "Book of the Lives this chapter belongs to."@en ;
+    rdfs:domain lo:Chapter ;
+    rdfs:range xsd:integer .
+
+lo:chapterNumber a owl:DatatypeProperty ;
+    rdfs:label "chapter number"@en ;
+    rdfs:comment "Position of this chapter within its book."@en ;
+    rdfs:domain lo:Chapter ;
+    rdfs:range xsd:integer .
+
+lo:reportedBirthDate a owl:DatatypeProperty ;
+    rdfs:label "reported birth date"@en ;
+    rdfs:comment "A birth date as Diogenes Laertius reports it (usually by Olympiad), kept verbatim because reports conflict."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:reportedDeathDate a owl:DatatypeProperty ;
+    rdfs:label "reported death date"@en ;
+    rdfs:comment "A death date or age at death as Diogenes Laertius reports it, kept verbatim because reports conflict."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:mannerOfDeath a owl:DatatypeProperty ;
+    rdfs:label "manner of death"@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:parentage a owl:DatatypeProperty ;
+    rdfs:label "parentage"@en ;
+    rdfs:comment "Parentage or family descent as reported; kept verbatim because reports conflict."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:writingsReport a owl:DatatypeProperty ;
+    rdfs:label "writings report"@en ;
+    rdfs:comment "A verbatim report about a philosopher's literary output as a whole (e.g. 'left nothing in writing', 'about three hundred rolls'), kept as text because it names no specific work."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:successionReport a owl:DatatypeProperty ;
+    rdfs:label "succession report"@en ;
+    rdfs:comment "A verbatim report about a philosopher's succession as a whole (e.g. Menodotus' report that Timon left no successor, against the pupil list of Hippobotus and Sotion), kept as text because the individual teacher-pupil links live on lo:teacherOf via the succession-links layer."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:educationReport a owl:DatatypeProperty ;
+    rdfs:label "education report"@en ;
+    rdfs:comment "A verbatim report about a philosopher's education that names no specific teacher (e.g. 'self-taught')."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:oldAgeReport a owl:DatatypeProperty ;
+    rdfs:label "old age report"@en ;
+    rdfs:comment "A verbatim report about a philosopher's condition in old age (e.g. Theophrastus carried about in a litter, 5.41), kept as text; distinct from the death predicates because it reports how the philosopher lived, not how he died."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:demeReport a owl:DatatypeProperty ;
+    rdfs:label "deme report"@en ;
+    rdfs:comment "A report about the Attic deme a philosopher belonged to (e.g. Plato registered in Collytus, 3.3 per Antileon), kept as text: demes are civic subdivisions, not gazetteer places."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:alternateTitle a owl:DatatypeProperty ;
+    rdfs:label "alternate title"@en ;
+    rdfs:comment "A second title Diogenes Laertius records for a work (e.g. 'Gorgias, or On Rhetoric')."@en ;
+    rdfs:domain lo:Work .
+
+lo:greekTitle a owl:DatatypeProperty ;
+    rdfs:label "Greek title"@en ;
+    rdfs:comment "The original Greek title of a work, as attested in the corpus (e.g. Πολιτεία for the Republic). Curated only where the Greek title actually occurs in Diogenes Laertius' text."@en ;
+    rdfs:domain lo:Work .
+
+lo:transmissionStatus a owl:DatatypeProperty ;
+    rdfs:label "transmission status"@en ;
+    rdfs:comment "How the work has come down, as reflected in Diogenes Laertius' remarks: 'spurious' (acknowledged not genuine), 'disputed-authorship' (authorship contested), 'extant' (D.L. states it survives), or 'lost' (D.L. reports the work itself was destroyed, e.g. Empedocles' burnt poems at 8.57)."@en ;
+    rdfs:domain lo:Work .
+
+lo:hasForm a owl:ObjectProperty ;
+    rdfs:label "has form"@en ;
+    rdfs:comment "The curated literary form of the work (prose, verse, or mixed), judged from the title, Diogenes Laertius' remarks, and standard scholarship. Absence is a curated statement of ignorance."@en ;
+    rdfs:domain lo:Work ;
+    rdfs:range lo:WorkForm .
+
+lo:hasWorkTopic a owl:ObjectProperty ;
+    rdfs:label "has work topic"@en ;
+    rdfs:comment "The curated dominant topic of the work, one per work from a closed union of twenty-four. Absence means the title is too opaque to classify."@en ;
+    rdfs:domain lo:Work ;
+    rdfs:range lo:WorkTopic .
+
+lo:philosophical a owl:DatatypeProperty ;
+    rdfs:label "philosophical"@en ;
+    rdfs:comment "Whether the work is a work OF philosophy. Derived from the topic (physics, ethics, dialectic, … are philosophical; tragedy, history, epigram, … are not) with rare per-work curated overrides (Aristotle's Poetics is philosophical poetics; Empedocles' physical poem is philosophical verse). Absent when the topic itself is uncurated and no override exists."@en ;
+    rdfs:domain lo:Work ;
+    rdfs:range xsd:boolean .
+
+lo:survival a owl:ObjectProperty ;
+    rdfs:label "survival"@en ;
+    rdfs:comment "The modern survival verdict on the work: lost, excerpts, or extant. The overwhelming default for works named by Diogenes Laertius is lost; excerpts requires verbatim quotation attributed to THIS work; extant records independent transmission of the text regardless of modern authenticity debates (extant = transmitted, not authentic). Conflated title nodes whose homonymous works diverge in transmission carry NO lo:survival - one node cannot honestly bear two verdicts."@en ;
+    rdfs:domain lo:Work ;
+    rdfs:range lo:SurvivalStatus .
+
+lo:compositionCentury a owl:DatatypeProperty ;
+    rdfs:label "composition century"@en ;
+    rdfs:comment "The century in which the work was composed, as a signed integer: -4 is the fourth century BCE, 3 the third century CE. Derived from the attributing authors' production centuries when EVERY author attributed to the title (at any certainty) resolves to the same single century; per-work curated overrides handle the exceptions. Conflated homonym nodes with disagreeing or unresolvable authors carry no century."@en ;
+    rdfs:domain lo:Work ;
+    rdfs:range xsd:integer .
+
+lo:compositionDecade a owl:DatatypeProperty ;
+    rdfs:label "composition decade"@en ;
+    rdfs:comment "The decade of composition as a signed starting year (-590 = the 590s BCE), curated only for the handful of works datable this finely (Solon's legislation). Always accompanied by the matching lo:compositionCentury."@en ;
+    rdfs:domain lo:Work ;
+    rdfs:range xsd:integer .
+
+lo:foundedSchool a owl:ObjectProperty ;
+    rdfs:label "founded school"@en ;
+    rdfs:comment "The school or line the philosopher is credited with founding, as a link to the school entity."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range lo:School .
+
+lo:principalDoctrine a owl:ObjectProperty ;
+    rdfs:label "principal doctrine"@en ;
+    rdfs:comment "The end (telos) or central tenet a school professes, as summarized by Diogenes Laertius."@en ;
+    rdfs:domain lo:School ;
+    rdfs:range lo:Doctrine .
+
+lo:earliestYear a owl:DatatypeProperty ;
+    rdfs:label "earliest year"@en ;
+    rdfs:comment "Earliest year derivable from the philosopher's dated claims, as an integer (negative = BCE), for chronological comparison."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range xsd:integer .
+
+lo:latestYear a owl:DatatypeProperty ;
+    rdfs:label "latest year"@en ;
+    rdfs:comment "Latest year derivable from the philosopher's dated claims, as an integer (negative = BCE), for chronological comparison."@en ;
+    rdfs:domain lo:ChapterSubject ;
+    rdfs:range xsd:integer .
+
+lo:datePrecision a owl:DatatypeProperty ;
+    rdfs:label "date precision"@en ;
+    rdfs:comment "'approximate' when the dating is hedged (Olympiad / 'flourished about'), 'attested' when a specific year is given."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+lo:greekLemma a owl:DatatypeProperty ;
+    rdfs:label "Greek lemma"@en ;
+    rdfs:domain lo:GreekTerm .
+
+lo:founderOfLabel a owl:DatatypeProperty ;
+    rdfs:label "founder of"@en ;
+    rdfs:comment "The school or line the philosopher is credited with founding."@en ;
+    rdfs:domain lo:ChapterSubject .
+
+# ------------------------- External ontology alignments (conceptual side only)
+# Ontoterminology contract: external alignments attach ONLY to the
+# conceptual dimension - owl:Class declarations and the closed-vocabulary
+# individuals typed otv:Concept. The linguistic dimension (otv:Term,
+# otv:ProperName and every /name/ and /term/ node) is deliberately local
+# and carries no external mapping of any kind. skos:exactMatch is used
+# only where conceptual identity is certain, skos:closeMatch where near;
+# concepts without an honest match stay unmapped (same policy as the
+# instance-level rule: never guess a homonym). No owl:imports: only the
+# specific referenced terms appear, and every external URI was verified
+# at curation time so the runtime stays fully offline.
+
+<https://humanisticadigitalia.eu/Laertius/ontology> rdfs:comment "External alignment contract: class-level rdfs:subClassOf bridges (CIDOC CRM, LAWD, FaBiO, schema.org, WGS84 Geo), property-level rdfs:subPropertyOf bridges, and skos:exactMatch/closeMatch mappings to Wikidata attach only to the conceptual dimension of the ontoterminology - classes and otv:Concept individuals. The linguistic dimension (otv:Term and otv:ProperName nodes) is deliberately local and carries no external mapping. Mappings are curated, verified at curation time, and never guessed; concepts without an honest external match remain unmapped."@en .
+
+# Class bridges. Person bridges attach at lo:ChapterSubject (as the
+# existing foaf:Person bridge does); lo:Philosopher and lo:Sage inherit
+# by subsumption, so no instance gains a new rdf:type.
+lo:ChapterSubject rdfs:subClassOf crm:E21_Person . # every chapter subject is a real historical person
+lo:ChapterSubject rdfs:subClassOf lawd:Person . # LAWD person, the ancient-world LOD convention
+lo:ChapterSubject rdfs:subClassOf schema:Person . # schema.org person for broad interoperability
+lo:Place rdfs:subClassOf crm:E53_Place . # cities, islands, regions, demes, landmarks are CRM places
+lo:Place rdfs:subClassOf lawd:Place . # LAWD place, the Pleiades-compatible convention
+lo:Place rdfs:subClassOf schema:Place . # schema.org place for broad interoperability
+lo:Place rdfs:subClassOf geo:SpatialThing . # places carry curated WGS84 coordinates in the map layer
+lo:Work rdfs:subClassOf fabio:Work . # works are FRBR works (fabio:Work is subclass of frbr:Work); most are lost, which FRBR works (title-level abstractions) model correctly
+lo:Work rdfs:subClassOf lawd:ConceptualWork . # LAWD conceptual work: the abstract work as cited, independent of any surviving text carrier
+lo:Work rdfs:subClassOf schema:CreativeWork . # schema.org creative work for broad interoperability
+lo:School rdfs:subClassOf crm:E74_Group . # a school is a group of persons acting collectively
+lo:School rdfs:subClassOf lawd:Group . # LAWD group of agents
+lo:School rdfs:subClassOf schema:Organization . # schema.org organization for broad interoperability
+
+# Property bridges, only where lo: semantics are strictly narrower.
+# Deliberately not bridged: lo:teacherOf, lo:influenced (no external
+# property matches the diadochai without loosening), lo:livedIn,
+# lo:traveledTo (schema:homeLocation implies a primary home) and
+# lo:hasRole (schema:hasOccupation ranges over structured occupations).
+lo:wrote rdfs:subPropertyOf foaf:made . # authorship is a special case of making; foaf:made domain foaf:Agent fits via lo:ChapterSubject under foaf:Person
+lo:locatedIn rdfs:subPropertyOf crm:P89_falls_within . # one-level curated place containment is exactly CRM falls-within between E53 places
+lo:bornIn rdfs:subPropertyOf schema:birthPlace . # direct person-to-place birth relation, same shape as schema.org
+lo:diedIn rdfs:subPropertyOf schema:deathPlace . # direct person-to-place death relation, same shape as schema.org
+lo:memberOf rdfs:subPropertyOf schema:memberOf . # school membership is organization membership
+
+# The six closed vocabularies under skos:Concept, so the mappings on
+# their individuals are well-formed SKOS.
+lo:CertaintyLevel rdfs:subClassOf skos:Concept .
+lo:AuthenticityLevel rdfs:subClassOf skos:Concept .
+lo:Role rdfs:subClassOf skos:Concept .
+lo:WorkForm rdfs:subClassOf skos:Concept .
+lo:WorkTopic rdfs:subClassOf skos:Concept .
+lo:SurvivalStatus rdfs:subClassOf skos:Concept .
+
+# Wikidata concept mappings (verified labels in the trailing comments).
+# The six place-type mappings attach to the place classes themselves -
+# still the conceptual side of the ontoterminology.
+lo:PhilosopherRole skos:exactMatch <http://www.wikidata.org/entity/Q4964182> . # philosopher
+lo:PoetRole skos:exactMatch <http://www.wikidata.org/entity/Q49757> . # poet
+lo:HistorianRole skos:exactMatch <http://www.wikidata.org/entity/Q201788> . # historian
+lo:BiographerRole skos:exactMatch <http://www.wikidata.org/entity/Q864380> . # biographer
+lo:ChronographerRole skos:closeMatch <http://www.wikidata.org/entity/Q3330547> . # chronicler
+lo:DoxographerRole skos:exactMatch <http://www.wikidata.org/entity/Q16889429> . # doxographer
+lo:GrammarianRole skos:exactMatch <http://www.wikidata.org/entity/Q451286> . # grammarian
+lo:RhetoricianRole skos:exactMatch <http://www.wikidata.org/entity/Q361809> . # rhetorician
+lo:PhysicianRole skos:exactMatch <http://www.wikidata.org/entity/Q39631> . # physician
+lo:StatesmanRole skos:exactMatch <http://www.wikidata.org/entity/Q372436> . # statesperson
+lo:PriestRole skos:exactMatch <http://www.wikidata.org/entity/Q42603> . # priest
+lo:ProseForm skos:exactMatch <http://www.wikidata.org/entity/Q676> . # prose
+lo:VerseForm skos:closeMatch <http://www.wikidata.org/entity/Q482> . # poetry
+lo:MixedForm skos:exactMatch <http://www.wikidata.org/entity/Q1790870> . # prosimetrum
+lo:LostStatus skos:closeMatch <http://www.wikidata.org/entity/Q1585442> . # lost literary work
+lo:ExcerptsStatus skos:closeMatch <http://www.wikidata.org/entity/Q1440453> . # literary fragment
+lo:PhysicsTopic skos:exactMatch <http://www.wikidata.org/entity/Q269323> . # natural philosophy
+lo:EthicsTopic skos:closeMatch <http://www.wikidata.org/entity/Q9465> . # ethics
+lo:DialecticTopic skos:closeMatch <http://www.wikidata.org/entity/Q9453> . # dialectic
+lo:PoliticsTopic skos:closeMatch <http://www.wikidata.org/entity/Q179805> . # political philosophy
+lo:RhetoricTopic skos:exactMatch <http://www.wikidata.org/entity/Q81009> . # rhetoric
+lo:GrammarTopic skos:closeMatch <http://www.wikidata.org/entity/Q40634> . # philology
+lo:PoeticsTopic skos:closeMatch <http://www.wikidata.org/entity/Q58854> . # literary criticism
+lo:MathematicsTopic skos:exactMatch <http://www.wikidata.org/entity/Q395> . # mathematics
+lo:AstronomyTopic skos:exactMatch <http://www.wikidata.org/entity/Q333> . # astronomy
+lo:GeographyTopic skos:exactMatch <http://www.wikidata.org/entity/Q1071> . # geography
+lo:MedicineTopic skos:exactMatch <http://www.wikidata.org/entity/Q11190> . # medicine
+lo:MusicTopic skos:exactMatch <http://www.wikidata.org/entity/Q638> . # music
+lo:HistoryTopic skos:exactMatch <http://www.wikidata.org/entity/Q309> . # history
+lo:BiographyTopic skos:exactMatch <http://www.wikidata.org/entity/Q36279> . # biography
+lo:ChronologyTopic skos:exactMatch <http://www.wikidata.org/entity/Q130788> . # chronology
+lo:DoxographyTopic skos:exactMatch <http://www.wikidata.org/entity/Q1253496> . # doxography
+lo:EpicTopic skos:closeMatch <http://www.wikidata.org/entity/Q37484> . # epic poem
+lo:LyricTopic skos:exactMatch <http://www.wikidata.org/entity/Q182357> . # lyric poetry
+lo:TragedyTopic skos:exactMatch <http://www.wikidata.org/entity/Q80930> . # tragedy
+lo:ComedyTopic skos:exactMatch <http://www.wikidata.org/entity/Q40831> . # comedy
+lo:SatireTopic skos:exactMatch <http://www.wikidata.org/entity/Q128758> . # satire
+lo:LettersTopic skos:closeMatch <http://www.wikidata.org/entity/Q97225782> . # epistolography
+lo:MiscellanyTopic skos:closeMatch <http://www.wikidata.org/entity/Q1295240> . # miscellany
+lo:City skos:closeMatch <http://www.wikidata.org/entity/Q486972> . # human settlement
+lo:Island skos:exactMatch <http://www.wikidata.org/entity/Q23442> . # island
+lo:Region skos:closeMatch <http://www.wikidata.org/entity/Q82794> . # region
+lo:Deme skos:exactMatch <http://www.wikidata.org/entity/Q672490> . # deme
+lo:Landmark skos:closeMatch <http://www.wikidata.org/entity/Q2319498> . # architectural landmark
+lo:NaturalFeature skos:closeMatch <http://www.wikidata.org/entity/Q618123> . # geographical feature
+
+# Honest omissions - concepts left unmapped, with the reason on record:
+#   lo:ComicPoetRole: Wikidata has no item for the ancient comic poet as an occupation; mapping to poet or playwright would lose exactly the distinction the role encodes
+#   lo:TragicPoetRole: Wikidata has no item for the ancient tragic poet as an occupation; same policy as the comic poet
+#   lo:SuccessionsWriterRole: the diadochai author is a genre-specific role of Hellenistic historiography of philosophy with no Wikidata occupation item
+#   lo:ExtantStatus: Wikidata models lost and fragmentary works as classes but has no concept for the unmarked extant case
+#   lo:TechnicalTopic: a heterogeneous handbook bucket (tactics, agriculture, cookery, mechanics); any single Wikidata topic would misdescribe most of its works
+#   lo:Asserted: the certainty levels encode Diogenes Laertius' own epistemic stances; Wikidata's epistemology items describe modern concepts, not this editorial axis
+#   lo:Reported: same policy as lo:Asserted
+#   lo:Disputed: same policy as lo:Asserted
+#   lo:Conjectured: same policy as lo:Asserted
+#   lo:Authentic: the authenticity verdicts are curator judgments on individual letters; Wikidata has no matching concept triple (literary forgery describes works, not verdicts)
+#   lo:DisputedAuthenticity: same policy as lo:Authentic
+#   lo:Spurious: same policy as lo:Authentic

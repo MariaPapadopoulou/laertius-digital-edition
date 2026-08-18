@@ -1,0 +1,8015 @@
+{
+ "id": "pool-msh2q50y-9069bb",
+ "label": "Expert judging pool (depth 5, double judgment)",
+ "note": "Two independent judgments per item (annotator-1, annotator-2); annotator-3 resolves disagreements via resolution batches.",
+ "snapshotId": "snap-msflk3v5-7936e0",
+ "topicSetId": "topics-msfn6nxo-f66abd",
+ "runIds": [
+  "run-msh2ct6e-18623b"
+ ],
+ "depth": 5,
+ "judgmentsPerItem": 2,
+ "createdAt": "2026-08-06T05:26:59.350Z",
+ "items": [
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-010:10.1.13",
+   "topicId": "doctrine-010",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-011:1.8.102",
+   "topicId": "quotation-011",
+   "passageId": "1.8.102",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-016:9.7.36",
+   "topicId": "source-016",
+   "passageId": "9.7.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-012:8.1.49",
+   "topicId": "comparative-012",
+   "passageId": "8.1.49",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-006:6.1.18",
+   "topicId": "biography-006",
+   "passageId": "6.1.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-003:3.1.7",
+   "topicId": "biography-003",
+   "passageId": "3.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-023:6.2.75",
+   "topicId": "teacher-student-023",
+   "passageId": "6.2.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-020:10.1.15",
+   "topicId": "source-020",
+   "passageId": "10.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-022:2.5.44",
+   "topicId": "source-022",
+   "passageId": "2.5.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-001:1.5.83",
+   "topicId": "quotation-001",
+   "passageId": "1.5.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-017:8.8.89",
+   "topicId": "biography-017",
+   "passageId": "8.8.89",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-004:9.11.97",
+   "topicId": "statistics-004",
+   "passageId": "9.11.97",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-027:7.7.184",
+   "topicId": "source-027",
+   "passageId": "7.7.184",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-003:3.1.45",
+   "topicId": "teacher-student-003",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-004:4.6.43",
+   "topicId": "teacher-student-004",
+   "passageId": "4.6.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-011:1.1.39",
+   "topicId": "doctrine-011",
+   "passageId": "1.1.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-002:2.3.6",
+   "topicId": "doctrine-002",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-018:5.2.48",
+   "topicId": "teacher-student-018",
+   "passageId": "5.2.48",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-014:4.7.58",
+   "topicId": "biography-014",
+   "passageId": "4.7.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-014:4.7.47",
+   "topicId": "biography-014",
+   "passageId": "4.7.47",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-008:8.2.70",
+   "topicId": "quotation-008",
+   "passageId": "8.2.70",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-008:9.11.61",
+   "topicId": "teacher-student-008",
+   "passageId": "9.11.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-019:5.1.16",
+   "topicId": "doctrine-019",
+   "passageId": "5.1.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-001:1.5.84",
+   "topicId": "quotation-001",
+   "passageId": "1.5.84",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-005:5.1.5",
+   "topicId": "comparative-005",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-01:3.1.100",
+   "topicId": "source-attribution-abstain-01",
+   "passageId": "3.1.100",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-007:7.7.180",
+   "topicId": "comparative-007",
+   "passageId": "7.7.180",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-02:2.10.112",
+   "topicId": "doctrine-opinion-abstain-02",
+   "passageId": "2.10.112",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-01:9.7.36",
+   "topicId": "chronology-abstain-01",
+   "passageId": "9.7.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-015:6.2.26",
+   "topicId": "quotation-015",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-03:6.2.26",
+   "topicId": "chronology-abstain-03",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-014:10.1.118",
+   "topicId": "quotation-014",
+   "passageId": "10.1.118",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-005:5.1.34",
+   "topicId": "doctrine-005",
+   "passageId": "5.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-021:8.1.14",
+   "topicId": "source-021",
+   "passageId": "8.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-008:8.8.88",
+   "topicId": "doctrine-008",
+   "passageId": "8.8.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-004:4.6.28",
+   "topicId": "source-004",
+   "passageId": "4.6.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-013:5.5.75",
+   "topicId": "teacher-student-013",
+   "passageId": "5.5.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-03:2.10.112",
+   "topicId": "exact-quotation-abstain-03",
+   "passageId": "2.10.112",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-028:8.2.68",
+   "topicId": "source-028",
+   "passageId": "8.2.68",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-01:3.1.3",
+   "topicId": "source-attribution-abstain-01",
+   "passageId": "3.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-018:2.1.1",
+   "topicId": "doctrine-018",
+   "passageId": "2.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-016:7.1.12",
+   "topicId": "teacher-student-016",
+   "passageId": "7.1.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-005:5.1.5",
+   "topicId": "teacher-student-005",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-008:8.2.55",
+   "topicId": "quotation-008",
+   "passageId": "8.2.55",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-013:3.1.3",
+   "topicId": "chronology-013",
+   "passageId": "3.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-003:3.1.21",
+   "topicId": "comparative-003",
+   "passageId": "3.1.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-012:4.7.54",
+   "topicId": "teacher-student-012",
+   "passageId": "4.7.54",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-008:8.8.91",
+   "topicId": "doctrine-008",
+   "passageId": "8.8.91",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-018:6.1.15",
+   "topicId": "quotation-018",
+   "passageId": "6.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-001:1.11.117",
+   "topicId": "teacher-student-001",
+   "passageId": "1.11.117",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-003:3.1.27",
+   "topicId": "source-003",
+   "passageId": "3.1.27",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-015:5.1.6",
+   "topicId": "source-015",
+   "passageId": "5.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-007:1.1.35",
+   "topicId": "statistics-007",
+   "passageId": "1.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-013:3.1.5",
+   "topicId": "biography-013",
+   "passageId": "3.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-016:6.2.50",
+   "topicId": "chronology-016",
+   "passageId": "6.2.50",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-04:6.9.105",
+   "topicId": "teacher-student-abstain-04",
+   "passageId": "6.9.105",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-020:7.5.170",
+   "topicId": "doctrine-020",
+   "passageId": "7.5.170",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-013:5.1.9",
+   "topicId": "doctrine-013",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-01:9.11.75",
+   "topicId": "exact-quotation-abstain-01",
+   "passageId": "9.11.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-017:7.7.184",
+   "topicId": "source-017",
+   "passageId": "7.7.184",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-03:1.11.122",
+   "topicId": "source-attribution-abstain-03",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-002:4.1.3",
+   "topicId": "quotation-002",
+   "passageId": "4.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-017:7.7.181",
+   "topicId": "chronology-017",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-004:4.8.59",
+   "topicId": "quotation-004",
+   "passageId": "4.8.59",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-004:4.6.32",
+   "topicId": "chronology-004",
+   "passageId": "4.6.32",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-023:6.2.76",
+   "topicId": "teacher-student-023",
+   "passageId": "6.2.76",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-018:5.2.38",
+   "topicId": "teacher-student-018",
+   "passageId": "5.2.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-024:2.2.4",
+   "topicId": "doctrine-024",
+   "passageId": "2.2.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-002:6.2.26",
+   "topicId": "statistics-002",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-002:2.8.80",
+   "topicId": "biography-002",
+   "passageId": "2.8.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-006:5.1.17",
+   "topicId": "statistics-006",
+   "passageId": "5.1.17",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-013:3.1.3",
+   "topicId": "source-013",
+   "passageId": "3.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-005:5.1.11",
+   "topicId": "teacher-student-005",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-02:9.1.11",
+   "topicId": "teacher-student-abstain-02",
+   "passageId": "9.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-003:8.1.6",
+   "topicId": "statistics-003",
+   "passageId": "8.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-02:9.1.11",
+   "topicId": "biography-abstain-02",
+   "passageId": "9.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-018:2.2.3",
+   "topicId": "doctrine-018",
+   "passageId": "2.2.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-005:5.1.5",
+   "topicId": "biography-005",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-04:6.2.26",
+   "topicId": "source-attribution-abstain-04",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-010:10.1.13",
+   "topicId": "teacher-student-010",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-027:2.11.120",
+   "topicId": "source-027",
+   "passageId": "2.11.120",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-006:6.1.1",
+   "topicId": "quotation-006",
+   "passageId": "6.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-002:2.7.63",
+   "topicId": "teacher-student-002",
+   "passageId": "2.7.63",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-005:5.1.2",
+   "topicId": "chronology-005",
+   "passageId": "5.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-03:4.9.65",
+   "topicId": "biography-abstain-03",
+   "passageId": "4.9.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-016:6.5.87",
+   "topicId": "source-016",
+   "passageId": "6.5.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-012:2.3.15",
+   "topicId": "doctrine-012",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-012:2.3.7",
+   "topicId": "source-012",
+   "passageId": "2.3.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-004:5.3.58",
+   "topicId": "chronology-004",
+   "passageId": "5.3.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-02:4.2.11",
+   "topicId": "exact-quotation-abstain-02",
+   "passageId": "4.2.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-019:9.7.35",
+   "topicId": "chronology-019",
+   "passageId": "9.7.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-014:4.9.65",
+   "topicId": "chronology-014",
+   "passageId": "4.9.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-016:7.1.1",
+   "topicId": "teacher-student-016",
+   "passageId": "7.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-007:7.1.36",
+   "topicId": "chronology-007",
+   "passageId": "7.1.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-023:10.1.23",
+   "topicId": "doctrine-023",
+   "passageId": "10.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-006:6.1.18",
+   "topicId": "comparative-006",
+   "passageId": "6.1.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-001:1.7.97",
+   "topicId": "biography-001",
+   "passageId": "1.7.97",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-016:7.1.84",
+   "topicId": "teacher-student-016",
+   "passageId": "7.1.84",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-016:7.1.157",
+   "topicId": "teacher-student-016",
+   "passageId": "7.1.157",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-012:2.3.6",
+   "topicId": "chronology-012",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-014:5.1.34",
+   "topicId": "comparative-014",
+   "passageId": "5.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-007:7.7.181",
+   "topicId": "comparative-007",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-022:5.3.58",
+   "topicId": "chronology-022",
+   "passageId": "5.3.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-03:8.1.27",
+   "topicId": "source-attribution-abstain-03",
+   "passageId": "8.1.27",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-002:4.2.13",
+   "topicId": "statistics-002",
+   "passageId": "4.2.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-024:2.2.3",
+   "topicId": "doctrine-024",
+   "passageId": "2.2.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-003:5.2.44",
+   "topicId": "synthesis-003",
+   "passageId": "5.2.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-03:10.1.138",
+   "topicId": "doctrine-opinion-abstain-03",
+   "passageId": "10.1.138",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-007:7.2.164",
+   "topicId": "teacher-student-007",
+   "passageId": "7.2.164",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-02:3.1.25",
+   "topicId": "source-attribution-abstain-02",
+   "passageId": "3.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-001:1.11.122",
+   "topicId": "teacher-student-001",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-025:8.2.74",
+   "topicId": "source-025",
+   "passageId": "8.2.74",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-013:2.5.44",
+   "topicId": "source-013",
+   "passageId": "2.5.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-017:3.1.3",
+   "topicId": "teacher-student-017",
+   "passageId": "3.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-007:7.2.160",
+   "topicId": "teacher-student-007",
+   "passageId": "7.2.160",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-008:8.1.37",
+   "topicId": "source-008",
+   "passageId": "8.1.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-02:1.1.23",
+   "topicId": "chronology-abstain-02",
+   "passageId": "1.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-002:2.3.15",
+   "topicId": "comparative-002",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-009:9.10.60",
+   "topicId": "biography-009",
+   "passageId": "9.10.60",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-abstain-01:8.8.87",
+   "topicId": "statistics-abstain-01",
+   "passageId": "8.8.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-023:10.1.63",
+   "topicId": "doctrine-023",
+   "passageId": "10.1.63",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-013:5.1.2",
+   "topicId": "doctrine-013",
+   "passageId": "5.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-012:4.7.51",
+   "topicId": "teacher-student-012",
+   "passageId": "4.7.51",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-028:8.2.67",
+   "topicId": "source-028",
+   "passageId": "8.2.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-004:4.1.5",
+   "topicId": "comparative-004",
+   "passageId": "4.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-017:10.1.14",
+   "topicId": "doctrine-017",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-021:8.2.58",
+   "topicId": "source-021",
+   "passageId": "8.2.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-019:2.3.11",
+   "topicId": "teacher-student-019",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-004:4.6.28",
+   "topicId": "biography-004",
+   "passageId": "4.6.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-018:4.1.3",
+   "topicId": "doctrine-018",
+   "passageId": "4.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-002:2.8.85",
+   "topicId": "source-002",
+   "passageId": "2.8.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-007:6.2.26",
+   "topicId": "statistics-007",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-006:6.5.91",
+   "topicId": "chronology-006",
+   "passageId": "6.5.91",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-017:3.1.4",
+   "topicId": "teacher-student-017",
+   "passageId": "3.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-001:1.prol.18",
+   "topicId": "statistics-001",
+   "passageId": "1.prol.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-014:4.7.51",
+   "topicId": "biography-014",
+   "passageId": "4.7.51",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-01:9.7.41",
+   "topicId": "chronology-abstain-01",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-011:9.11.95",
+   "topicId": "statistics-011",
+   "passageId": "9.11.95",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-007:7.7.181",
+   "topicId": "source-007",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-017:5.1.35",
+   "topicId": "quotation-017",
+   "passageId": "5.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-005:4.1.5",
+   "topicId": "statistics-005",
+   "passageId": "4.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-014:5.1.1",
+   "topicId": "comparative-014",
+   "passageId": "5.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-007:7.7.182",
+   "topicId": "source-007",
+   "passageId": "7.7.182",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-006:3.1.51",
+   "topicId": "synthesis-006",
+   "passageId": "3.1.51",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-012:2.2.5",
+   "topicId": "comparative-012",
+   "passageId": "2.2.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-016:6.5.85",
+   "topicId": "source-016",
+   "passageId": "6.5.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-008:8.2.75",
+   "topicId": "chronology-008",
+   "passageId": "8.2.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-013:3.1.25",
+   "topicId": "biography-013",
+   "passageId": "3.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-021:1.10.109",
+   "topicId": "source-021",
+   "passageId": "1.10.109",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-004:10.1.36",
+   "topicId": "statistics-004",
+   "passageId": "10.1.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-003:3.1.15",
+   "topicId": "quotation-003",
+   "passageId": "3.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-004:7.2.163",
+   "topicId": "statistics-004",
+   "passageId": "7.2.163",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-017:7.7.184",
+   "topicId": "chronology-017",
+   "passageId": "7.7.184",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-010:6.1.19",
+   "topicId": "synthesis-010",
+   "passageId": "6.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-006:6.1.1",
+   "topicId": "teacher-student-006",
+   "passageId": "6.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-006:6.1.19",
+   "topicId": "quotation-006",
+   "passageId": "6.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-021:8.1.12",
+   "topicId": "doctrine-021",
+   "passageId": "8.1.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-015:8.1.43",
+   "topicId": "doctrine-015",
+   "passageId": "8.1.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-01:3.1.34",
+   "topicId": "teacher-student-abstain-01",
+   "passageId": "3.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-002:1.1.35",
+   "topicId": "synthesis-002",
+   "passageId": "1.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-012:6.1.15",
+   "topicId": "statistics-012",
+   "passageId": "6.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-023:3.1.7",
+   "topicId": "chronology-023",
+   "passageId": "3.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-010:5.1.24",
+   "topicId": "statistics-010",
+   "passageId": "5.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-017:5.1.11",
+   "topicId": "quotation-017",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-013:5.1.34",
+   "topicId": "doctrine-013",
+   "passageId": "5.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-025:2.5.44",
+   "topicId": "source-025",
+   "passageId": "2.5.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-02:10.1.8",
+   "topicId": "biography-abstain-02",
+   "passageId": "10.1.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-018:5.2.40",
+   "topicId": "teacher-student-018",
+   "passageId": "5.2.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-010:10.1.3",
+   "topicId": "comparative-010",
+   "passageId": "10.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-001:1.1.39",
+   "topicId": "doctrine-001",
+   "passageId": "1.1.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-018:8.2.67",
+   "topicId": "source-018",
+   "passageId": "8.2.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-02:3.1.5",
+   "topicId": "comparative-abstain-02",
+   "passageId": "3.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-015:3.1.46",
+   "topicId": "statistics-015",
+   "passageId": "3.1.46",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-015:5.5.79",
+   "topicId": "biography-015",
+   "passageId": "5.5.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-016:1.prol.15",
+   "topicId": "quotation-016",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-003:3.1.109",
+   "topicId": "source-003",
+   "passageId": "3.1.109",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-04:8.1.43",
+   "topicId": "chronology-abstain-04",
+   "passageId": "8.1.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-021:1.1.25",
+   "topicId": "chronology-021",
+   "passageId": "1.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-009:9.7.41",
+   "topicId": "comparative-009",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-002:2.5.45",
+   "topicId": "doctrine-002",
+   "passageId": "2.5.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-026:6.2.21",
+   "topicId": "source-026",
+   "passageId": "6.2.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-019:9.7.41",
+   "topicId": "source-019",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-009:9.7.37",
+   "topicId": "source-009",
+   "passageId": "9.7.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-020:7.5.172",
+   "topicId": "doctrine-020",
+   "passageId": "7.5.172",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-009:9.12.113",
+   "topicId": "doctrine-009",
+   "passageId": "9.12.113",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-005:10.1.24",
+   "topicId": "synthesis-005",
+   "passageId": "10.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-018:5.2.39",
+   "topicId": "teacher-student-018",
+   "passageId": "5.2.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-005:3.1.2",
+   "topicId": "source-005",
+   "passageId": "3.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-03:9.11.88",
+   "topicId": "biography-abstain-03",
+   "passageId": "9.11.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-010:3.1.93",
+   "topicId": "synthesis-010",
+   "passageId": "3.1.93",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-015:5.1.5",
+   "topicId": "chronology-015",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-002:4.7.58",
+   "topicId": "statistics-002",
+   "passageId": "4.7.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-019:10.1.13",
+   "topicId": "biography-019",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-010:10.1.1",
+   "topicId": "teacher-student-010",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-013:3.1.2",
+   "topicId": "source-013",
+   "passageId": "3.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-016:4.5.25",
+   "topicId": "source-016",
+   "passageId": "4.5.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-019:9.7.42",
+   "topicId": "chronology-019",
+   "passageId": "9.7.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-019:9.7.42",
+   "topicId": "source-019",
+   "passageId": "9.7.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-009:2.5.44",
+   "topicId": "source-009",
+   "passageId": "2.5.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-013:2.5.25",
+   "topicId": "statistics-013",
+   "passageId": "2.5.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-012:4.7.48",
+   "topicId": "teacher-student-012",
+   "passageId": "4.7.48",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-01:3.1.15",
+   "topicId": "doctrine-opinion-abstain-01",
+   "passageId": "3.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-013:3.1.65",
+   "topicId": "biography-013",
+   "passageId": "3.1.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-018:8.8.91",
+   "topicId": "biography-018",
+   "passageId": "8.8.91",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-008:8.2.63",
+   "topicId": "chronology-008",
+   "passageId": "8.2.63",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-019:9.7.40",
+   "topicId": "chronology-019",
+   "passageId": "9.7.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-009:6.1.3",
+   "topicId": "synthesis-009",
+   "passageId": "6.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-008:5.1.25",
+   "topicId": "biography-008",
+   "passageId": "5.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-006:6.5.88",
+   "topicId": "chronology-006",
+   "passageId": "6.5.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-017:7.7.185",
+   "topicId": "biography-017",
+   "passageId": "7.7.185",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-002:7.2.163",
+   "topicId": "statistics-002",
+   "passageId": "7.2.163",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-019:5.1.5",
+   "topicId": "doctrine-019",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-009:9.12.110",
+   "topicId": "doctrine-009",
+   "passageId": "9.12.110",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-020:10.1.1",
+   "topicId": "source-020",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-016:7.1.38",
+   "topicId": "teacher-student-016",
+   "passageId": "7.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-005:7.1.33",
+   "topicId": "synthesis-005",
+   "passageId": "7.1.33",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-017:7.7.181",
+   "topicId": "source-017",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-003:3.1.21",
+   "topicId": "doctrine-003",
+   "passageId": "3.1.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-016:6.5.88",
+   "topicId": "biography-016",
+   "passageId": "6.5.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-abstain-01:4.2.11",
+   "topicId": "statistics-abstain-01",
+   "passageId": "4.2.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-008:1.prol.16",
+   "topicId": "synthesis-008",
+   "passageId": "1.prol.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-03:8.2.52",
+   "topicId": "teacher-student-abstain-03",
+   "passageId": "8.2.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-001:1.10.111",
+   "topicId": "chronology-001",
+   "passageId": "1.10.111",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-010:10.1.1",
+   "topicId": "doctrine-010",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-007:7.1.24",
+   "topicId": "quotation-007",
+   "passageId": "7.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-019:9.7.34",
+   "topicId": "biography-019",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-012:3.1.6",
+   "topicId": "biography-012",
+   "passageId": "3.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-01:1.prol.14",
+   "topicId": "biography-abstain-01",
+   "passageId": "1.prol.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-004:4.6.45",
+   "topicId": "biography-004",
+   "passageId": "4.6.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-022:4.2.9",
+   "topicId": "teacher-student-022",
+   "passageId": "4.2.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-012:2.2.3",
+   "topicId": "comparative-012",
+   "passageId": "2.2.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-009:9.10.60",
+   "topicId": "quotation-009",
+   "passageId": "9.10.60",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-009:9.10.59",
+   "topicId": "quotation-009",
+   "passageId": "9.10.59",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-010:7.1.77",
+   "topicId": "statistics-010",
+   "passageId": "7.1.77",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-012:2.8.75",
+   "topicId": "quotation-012",
+   "passageId": "2.8.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-002:5.1.25",
+   "topicId": "synthesis-002",
+   "passageId": "5.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-005:5.5.80",
+   "topicId": "synthesis-005",
+   "passageId": "5.5.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-012:2.10.106",
+   "topicId": "biography-012",
+   "passageId": "2.10.106",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-005:5.1.11",
+   "topicId": "doctrine-005",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-006:6.1.1",
+   "topicId": "comparative-006",
+   "passageId": "6.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-006:6.2.21",
+   "topicId": "quotation-006",
+   "passageId": "6.2.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-003:1.prol.14",
+   "topicId": "statistics-003",
+   "passageId": "1.prol.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-02:2.6.59",
+   "topicId": "source-attribution-abstain-02",
+   "passageId": "2.6.59",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-021:9.3.23",
+   "topicId": "teacher-student-021",
+   "passageId": "9.3.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-003:3.1.51",
+   "topicId": "teacher-student-003",
+   "passageId": "3.1.51",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-015:8.1.15",
+   "topicId": "statistics-015",
+   "passageId": "8.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-001:5.1.24",
+   "topicId": "synthesis-001",
+   "passageId": "5.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-002:2.3.11",
+   "topicId": "chronology-002",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-005:7.7.181",
+   "topicId": "synthesis-005",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-008:8.8.90",
+   "topicId": "doctrine-008",
+   "passageId": "8.8.90",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-014:8.2.52",
+   "topicId": "chronology-014",
+   "passageId": "8.2.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-01:2.5.25",
+   "topicId": "exact-quotation-abstain-01",
+   "passageId": "2.5.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-010:6.1.15",
+   "topicId": "synthesis-010",
+   "passageId": "6.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-010:10.1.1",
+   "topicId": "chronology-010",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-007:7.7.179",
+   "topicId": "source-007",
+   "passageId": "7.7.179",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-006:6.1.14",
+   "topicId": "doctrine-006",
+   "passageId": "6.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-003:7.2.163",
+   "topicId": "synthesis-003",
+   "passageId": "7.2.163",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-04:3.1.62",
+   "topicId": "chronology-abstain-04",
+   "passageId": "3.1.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-03:1.1.24",
+   "topicId": "source-attribution-abstain-03",
+   "passageId": "1.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-008:8.2.70",
+   "topicId": "comparative-008",
+   "passageId": "8.2.70",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-006:6.5.91",
+   "topicId": "source-006",
+   "passageId": "6.5.91",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-022:2.2.3",
+   "topicId": "chronology-022",
+   "passageId": "2.2.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-009:9.7.34",
+   "topicId": "chronology-009",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-008:3.1.85",
+   "topicId": "source-008",
+   "passageId": "3.1.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-007:7.2.161",
+   "topicId": "teacher-student-007",
+   "passageId": "7.2.161",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-012:2.8.103",
+   "topicId": "quotation-012",
+   "passageId": "2.8.103",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-009:9.10.59",
+   "topicId": "biography-009",
+   "passageId": "9.10.59",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-010:10.1.13",
+   "topicId": "biography-010",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-006:6.1.14",
+   "topicId": "teacher-student-006",
+   "passageId": "6.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-001:9.2.18",
+   "topicId": "chronology-001",
+   "passageId": "9.2.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-02:1.1.24",
+   "topicId": "doctrine-opinion-abstain-02",
+   "passageId": "1.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-007:7.7.183",
+   "topicId": "comparative-007",
+   "passageId": "7.7.183",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-004:4.6.35",
+   "topicId": "doctrine-004",
+   "passageId": "4.6.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-021:8.1.43",
+   "topicId": "doctrine-021",
+   "passageId": "8.1.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-013:1.1.28",
+   "topicId": "quotation-013",
+   "passageId": "1.1.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-019:9.7.34",
+   "topicId": "chronology-019",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-012:4.7.58",
+   "topicId": "teacher-student-012",
+   "passageId": "4.7.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-020:7.1.134",
+   "topicId": "doctrine-020",
+   "passageId": "7.1.134",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-006:7.1.138",
+   "topicId": "synthesis-006",
+   "passageId": "7.1.138",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-023:3.1.5",
+   "topicId": "source-023",
+   "passageId": "3.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-03:1.11.122",
+   "topicId": "biography-abstain-03",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-022:9.7.39",
+   "topicId": "doctrine-022",
+   "passageId": "9.7.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-007:6.2.50",
+   "topicId": "synthesis-007",
+   "passageId": "6.2.50",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-011:1.3.68",
+   "topicId": "source-011",
+   "passageId": "1.3.68",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-014:5.1.2",
+   "topicId": "comparative-014",
+   "passageId": "5.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-001:1.10.109",
+   "topicId": "chronology-001",
+   "passageId": "1.10.109",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-04:6.2.21",
+   "topicId": "source-attribution-abstain-04",
+   "passageId": "6.2.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-011:1.1.42",
+   "topicId": "biography-011",
+   "passageId": "1.1.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-001:1.7.100",
+   "topicId": "biography-001",
+   "passageId": "1.7.100",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-018:8.1.5",
+   "topicId": "chronology-018",
+   "passageId": "8.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-010:10.1.3",
+   "topicId": "biography-010",
+   "passageId": "10.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-018:6.1.14",
+   "topicId": "quotation-018",
+   "passageId": "6.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-004:1.prol.16",
+   "topicId": "statistics-004",
+   "passageId": "1.prol.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-002:3.1.31",
+   "topicId": "source-002",
+   "passageId": "3.1.31",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-009:2.6.56",
+   "topicId": "source-009",
+   "passageId": "2.6.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-009:9.7.39",
+   "topicId": "comparative-009",
+   "passageId": "9.7.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-007:7.1.138",
+   "topicId": "synthesis-007",
+   "passageId": "7.1.138",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-01:1.prol.14",
+   "topicId": "teacher-student-abstain-01",
+   "passageId": "1.prol.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-007:7.2.163",
+   "topicId": "biography-007",
+   "passageId": "7.2.163",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-012:6.1.17",
+   "topicId": "statistics-012",
+   "passageId": "6.1.17",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-022:2.3.6",
+   "topicId": "source-022",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-01:3.1.41",
+   "topicId": "biography-abstain-01",
+   "passageId": "3.1.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-009:9.7.40",
+   "topicId": "chronology-009",
+   "passageId": "9.7.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-015:8.1.48",
+   "topicId": "doctrine-015",
+   "passageId": "8.1.48",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-020:10.1.23",
+   "topicId": "chronology-020",
+   "passageId": "10.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-004:4.6.41",
+   "topicId": "teacher-student-004",
+   "passageId": "4.6.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-003:3.1.15",
+   "topicId": "chronology-003",
+   "passageId": "3.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-03:1.1.24",
+   "topicId": "teacher-student-abstain-03",
+   "passageId": "1.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-013:1.11.122",
+   "topicId": "statistics-013",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-abstain-01:10.1.8",
+   "topicId": "statistics-abstain-01",
+   "passageId": "10.1.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-008:3.1.60",
+   "topicId": "source-008",
+   "passageId": "3.1.60",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-008:5.1.25",
+   "topicId": "source-008",
+   "passageId": "5.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-003:8.1.8",
+   "topicId": "statistics-003",
+   "passageId": "8.1.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-015:5.5.75",
+   "topicId": "biography-015",
+   "passageId": "5.5.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-025:5.1.6",
+   "topicId": "source-025",
+   "passageId": "5.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-01:7.1.56",
+   "topicId": "chronology-abstain-01",
+   "passageId": "7.1.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-021:9.5.25",
+   "topicId": "teacher-student-021",
+   "passageId": "9.5.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-008:5.3.62",
+   "topicId": "statistics-008",
+   "passageId": "5.3.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-004:4.6.34",
+   "topicId": "doctrine-004",
+   "passageId": "4.6.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-012:2.3.11",
+   "topicId": "chronology-012",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-006:6.5.85",
+   "topicId": "source-006",
+   "passageId": "6.5.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-013:1.2.67",
+   "topicId": "statistics-013",
+   "passageId": "1.2.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-010:10.1.3",
+   "topicId": "teacher-student-010",
+   "passageId": "10.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-001:7.1.77",
+   "topicId": "statistics-001",
+   "passageId": "7.1.77",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-003:3.1.34",
+   "topicId": "biography-003",
+   "passageId": "3.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-014:10.1.15",
+   "topicId": "source-014",
+   "passageId": "10.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-018:8.2.74",
+   "topicId": "source-018",
+   "passageId": "8.2.74",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-001:1.1.42",
+   "topicId": "doctrine-001",
+   "passageId": "1.1.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-008:3.1.85",
+   "topicId": "statistics-008",
+   "passageId": "3.1.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-011:1.8.105",
+   "topicId": "quotation-011",
+   "passageId": "1.8.105",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-007:7.2.162",
+   "topicId": "teacher-student-007",
+   "passageId": "7.2.162",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-004:4.6.34",
+   "topicId": "source-004",
+   "passageId": "4.6.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-014:2.10.112",
+   "topicId": "quotation-014",
+   "passageId": "2.10.112",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-012:2.3.12",
+   "topicId": "chronology-012",
+   "passageId": "2.3.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-015:3.1.52",
+   "topicId": "teacher-student-015",
+   "passageId": "3.1.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-011:1.10.110",
+   "topicId": "comparative-011",
+   "passageId": "1.10.110",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-01:8.8.87",
+   "topicId": "source-attribution-abstain-01",
+   "passageId": "8.8.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-009:3.1.57",
+   "topicId": "statistics-009",
+   "passageId": "3.1.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-01:2.5.44",
+   "topicId": "chronology-abstain-01",
+   "passageId": "2.5.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-007:1.1.42",
+   "topicId": "synthesis-007",
+   "passageId": "1.1.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-005:5.1.2",
+   "topicId": "biography-005",
+   "passageId": "5.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-028:8.2.70",
+   "topicId": "source-028",
+   "passageId": "8.2.70",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-02:1.7.97",
+   "topicId": "doctrine-opinion-abstain-02",
+   "passageId": "1.7.97",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-018:8.2.66",
+   "topicId": "source-018",
+   "passageId": "8.2.66",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-002:2.3.13",
+   "topicId": "comparative-002",
+   "passageId": "2.3.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-009:9.10.60",
+   "topicId": "teacher-student-009",
+   "passageId": "9.10.60",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-004:5.5.80",
+   "topicId": "synthesis-004",
+   "passageId": "5.5.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-006:6.5.85",
+   "topicId": "chronology-006",
+   "passageId": "6.5.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-019:7.1.1",
+   "topicId": "quotation-019",
+   "passageId": "7.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-024:4.6.45",
+   "topicId": "source-024",
+   "passageId": "4.6.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-03:1.1.24",
+   "topicId": "exact-quotation-abstain-03",
+   "passageId": "1.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-017:7.7.181",
+   "topicId": "biography-017",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-015:3.1.26",
+   "topicId": "quotation-015",
+   "passageId": "3.1.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-016:9.7.37",
+   "topicId": "doctrine-016",
+   "passageId": "9.7.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-003:3.1.18",
+   "topicId": "quotation-003",
+   "passageId": "3.1.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-014:7.5.168",
+   "topicId": "doctrine-014",
+   "passageId": "7.5.168",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-007:7.2.163",
+   "topicId": "teacher-student-007",
+   "passageId": "7.2.163",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-013:5.1.16",
+   "topicId": "doctrine-013",
+   "passageId": "5.1.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-007:7.1.1",
+   "topicId": "chronology-007",
+   "passageId": "7.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-004:4.6.36",
+   "topicId": "biography-004",
+   "passageId": "4.6.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-016:10.1.13",
+   "topicId": "doctrine-016",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-006:6.2.50",
+   "topicId": "synthesis-006",
+   "passageId": "6.2.50",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-04:4.7.53",
+   "topicId": "chronology-abstain-04",
+   "passageId": "4.7.53",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-abstain-01:4.2.6",
+   "topicId": "statistics-abstain-01",
+   "passageId": "4.2.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-022:2.1.2",
+   "topicId": "chronology-022",
+   "passageId": "2.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-002:2.3.6",
+   "topicId": "comparative-002",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-028:8.2.69",
+   "topicId": "source-028",
+   "passageId": "8.2.69",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-02:6.2.79",
+   "topicId": "chronology-abstain-02",
+   "passageId": "6.2.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-014:5.1.6",
+   "topicId": "source-014",
+   "passageId": "5.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-010:10.1.120",
+   "topicId": "quotation-010",
+   "passageId": "10.1.120",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-011:2.3.11",
+   "topicId": "teacher-student-011",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-012:2.3.6",
+   "topicId": "source-012",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-016:6.5.88",
+   "topicId": "source-016",
+   "passageId": "6.5.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-010:10.1.23",
+   "topicId": "source-010",
+   "passageId": "10.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-01:7.1.56",
+   "topicId": "comparative-abstain-01",
+   "passageId": "7.1.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-03:3.1.25",
+   "topicId": "exact-quotation-abstain-03",
+   "passageId": "3.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-011:1.1.29",
+   "topicId": "source-011",
+   "passageId": "1.1.29",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-010:10.1.119",
+   "topicId": "doctrine-010",
+   "passageId": "10.1.119",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-009:9.11.63",
+   "topicId": "biography-009",
+   "passageId": "9.11.63",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-022:9.7.40",
+   "topicId": "doctrine-022",
+   "passageId": "9.7.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-005:7.7.187",
+   "topicId": "synthesis-005",
+   "passageId": "7.7.187",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-018:9.9.57",
+   "topicId": "quotation-018",
+   "passageId": "9.9.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-014:6.5.89",
+   "topicId": "teacher-student-014",
+   "passageId": "6.5.89",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-014:4.7.48",
+   "topicId": "biography-014",
+   "passageId": "4.7.48",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-015:5.1.9",
+   "topicId": "chronology-015",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-005:5.1.11",
+   "topicId": "chronology-005",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-004:4.6.45",
+   "topicId": "teacher-student-004",
+   "passageId": "4.6.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-006:6.1.1",
+   "topicId": "doctrine-006",
+   "passageId": "6.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-010:10.1.24",
+   "topicId": "doctrine-010",
+   "passageId": "10.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-02:2.5.20",
+   "topicId": "source-attribution-abstain-02",
+   "passageId": "2.5.20",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-015:2.5.39",
+   "topicId": "teacher-student-015",
+   "passageId": "2.5.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-014:4.6.44",
+   "topicId": "source-014",
+   "passageId": "4.6.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-002:2.3.11",
+   "topicId": "doctrine-002",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-001:1.5.82",
+   "topicId": "quotation-001",
+   "passageId": "1.5.82",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-006:6.1.19",
+   "topicId": "doctrine-006",
+   "passageId": "6.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-abstain-01:3.1.7",
+   "topicId": "statistics-abstain-01",
+   "passageId": "3.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-02:1.1.24",
+   "topicId": "biography-abstain-02",
+   "passageId": "1.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-016:9.9.57",
+   "topicId": "quotation-016",
+   "passageId": "9.9.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-02:1.1.43",
+   "topicId": "teacher-student-abstain-02",
+   "passageId": "1.1.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-01:9.11.70",
+   "topicId": "comparative-abstain-01",
+   "passageId": "9.11.70",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-010:10.1.13",
+   "topicId": "source-010",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-009:1.prol.16",
+   "topicId": "synthesis-009",
+   "passageId": "1.prol.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-019:1.prol.15",
+   "topicId": "biography-019",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-005:1.prol.8",
+   "topicId": "chronology-005",
+   "passageId": "1.prol.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-021:1.1.32",
+   "topicId": "chronology-021",
+   "passageId": "1.1.32",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-01:8.1.43",
+   "topicId": "comparative-abstain-01",
+   "passageId": "8.1.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-007:7.1.11",
+   "topicId": "quotation-007",
+   "passageId": "7.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-010:5.1.20",
+   "topicId": "synthesis-010",
+   "passageId": "5.1.20",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-007:7.2.164",
+   "topicId": "biography-007",
+   "passageId": "7.2.164",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-013:3.1.2",
+   "topicId": "comparative-013",
+   "passageId": "3.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-02:3.1.7",
+   "topicId": "exact-quotation-abstain-02",
+   "passageId": "3.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-01:2.1.1",
+   "topicId": "doctrine-opinion-abstain-01",
+   "passageId": "2.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-022:4.2.11",
+   "topicId": "teacher-student-022",
+   "passageId": "4.2.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-016:4.4.23",
+   "topicId": "biography-016",
+   "passageId": "4.4.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-006:6.1.19",
+   "topicId": "teacher-student-006",
+   "passageId": "6.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-005:5.1.9",
+   "topicId": "source-005",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-005:5.1.5",
+   "topicId": "chronology-005",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-003:3.1.4",
+   "topicId": "doctrine-003",
+   "passageId": "3.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-015:9.1.15",
+   "topicId": "biography-015",
+   "passageId": "9.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-007:5.4.73",
+   "topicId": "statistics-007",
+   "passageId": "5.4.73",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-001:1.8.101",
+   "topicId": "source-001",
+   "passageId": "1.8.101",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-02:10.1.143",
+   "topicId": "doctrine-opinion-abstain-02",
+   "passageId": "10.1.143",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-015:1.1.22",
+   "topicId": "biography-015",
+   "passageId": "1.1.22",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-005:2.5.44",
+   "topicId": "source-005",
+   "passageId": "2.5.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-007:7.1.6",
+   "topicId": "chronology-007",
+   "passageId": "7.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-003:3.1.28",
+   "topicId": "doctrine-003",
+   "passageId": "3.1.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-011:3.1.50",
+   "topicId": "statistics-011",
+   "passageId": "3.1.50",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-013:1.1.43",
+   "topicId": "statistics-013",
+   "passageId": "1.1.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-015:2.5.47",
+   "topicId": "quotation-015",
+   "passageId": "2.5.47",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-01:1.11.122",
+   "topicId": "doctrine-opinion-abstain-01",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-002:2.8.83",
+   "topicId": "biography-002",
+   "passageId": "2.8.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-01:6.2.77",
+   "topicId": "comparative-abstain-01",
+   "passageId": "6.2.77",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-005:8.2.55",
+   "topicId": "quotation-005",
+   "passageId": "8.2.55",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-002:2.1.1",
+   "topicId": "quotation-002",
+   "passageId": "2.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-007:7.7.181",
+   "topicId": "doctrine-007",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-01:6.2.40",
+   "topicId": "chronology-abstain-01",
+   "passageId": "6.2.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-008:8.2.56",
+   "topicId": "comparative-008",
+   "passageId": "8.2.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-018:1.prol.14",
+   "topicId": "doctrine-018",
+   "passageId": "1.prol.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-011:1.10.110",
+   "topicId": "chronology-011",
+   "passageId": "1.10.110",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-022:9.7.37",
+   "topicId": "doctrine-022",
+   "passageId": "9.7.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-001:1.1.28",
+   "topicId": "doctrine-001",
+   "passageId": "1.1.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-002:2.7.64",
+   "topicId": "teacher-student-002",
+   "passageId": "2.7.64",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-019:9.7.40",
+   "topicId": "source-019",
+   "passageId": "9.7.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-013:5.5.79",
+   "topicId": "teacher-student-013",
+   "passageId": "5.5.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-020:10.1.139",
+   "topicId": "chronology-020",
+   "passageId": "10.1.139",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-003:5.2.38",
+   "topicId": "statistics-003",
+   "passageId": "5.2.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-006:2.17.129",
+   "topicId": "statistics-006",
+   "passageId": "2.17.129",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-017:7.7.183",
+   "topicId": "biography-017",
+   "passageId": "7.7.183",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-03:5.1.1",
+   "topicId": "teacher-student-abstain-03",
+   "passageId": "5.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-011:2.3.6",
+   "topicId": "teacher-student-011",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-023:6.2.43",
+   "topicId": "teacher-student-023",
+   "passageId": "6.2.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-002:2.8.65",
+   "topicId": "biography-002",
+   "passageId": "2.8.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-009:9.7.34",
+   "topicId": "comparative-009",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-008:4.5.24",
+   "topicId": "synthesis-008",
+   "passageId": "4.5.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-003:3.1.2",
+   "topicId": "comparative-003",
+   "passageId": "3.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-002:2.7.60",
+   "topicId": "teacher-student-002",
+   "passageId": "2.7.60",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-010:10.1.13",
+   "topicId": "comparative-010",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-004:5.1.25",
+   "topicId": "synthesis-004",
+   "passageId": "5.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:corpus-synthesis-abstain-01:1.prol.21",
+   "topicId": "corpus-synthesis-abstain-01",
+   "passageId": "1.prol.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-010:7.1.73",
+   "topicId": "statistics-010",
+   "passageId": "7.1.73",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-006:6.1.19",
+   "topicId": "biography-006",
+   "passageId": "6.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-019:9.6.30",
+   "topicId": "biography-019",
+   "passageId": "9.6.30",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-016:9.7.34",
+   "topicId": "doctrine-016",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-008:9.11.89",
+   "topicId": "synthesis-008",
+   "passageId": "9.11.89",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-017:10.1.136",
+   "topicId": "doctrine-017",
+   "passageId": "10.1.136",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-03:8.2.65",
+   "topicId": "biography-abstain-03",
+   "passageId": "8.2.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-011:2.8.103",
+   "topicId": "quotation-011",
+   "passageId": "2.8.103",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-006:6.1.9",
+   "topicId": "comparative-006",
+   "passageId": "6.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-012:5.2.42",
+   "topicId": "doctrine-012",
+   "passageId": "5.2.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-017:10.1.27",
+   "topicId": "doctrine-017",
+   "passageId": "10.1.27",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-04:7.1.56",
+   "topicId": "chronology-abstain-04",
+   "passageId": "7.1.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-006:1.prol.15",
+   "topicId": "source-006",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-015:2.5.45",
+   "topicId": "teacher-student-015",
+   "passageId": "2.5.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-009:3.1.85",
+   "topicId": "statistics-009",
+   "passageId": "3.1.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-002:10.1.27",
+   "topicId": "synthesis-002",
+   "passageId": "10.1.27",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-017:3.1.52",
+   "topicId": "teacher-student-017",
+   "passageId": "3.1.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-005:5.1.2",
+   "topicId": "doctrine-005",
+   "passageId": "5.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-006:6.1.14",
+   "topicId": "biography-006",
+   "passageId": "6.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-019:9.7.34",
+   "topicId": "source-019",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-002:9.7.41",
+   "topicId": "chronology-002",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-004:4.6.32",
+   "topicId": "doctrine-004",
+   "passageId": "4.6.32",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-014:7.5.176",
+   "topicId": "doctrine-014",
+   "passageId": "7.5.176",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-004:4.1.3",
+   "topicId": "comparative-004",
+   "passageId": "4.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-008:6.2.50",
+   "topicId": "synthesis-008",
+   "passageId": "6.2.50",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-010:10.1.23",
+   "topicId": "teacher-student-010",
+   "passageId": "10.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-01:2.5.20",
+   "topicId": "exact-quotation-abstain-01",
+   "passageId": "2.5.20",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-007:7.7.185",
+   "topicId": "doctrine-007",
+   "passageId": "7.7.185",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-018:8.8.88",
+   "topicId": "biography-018",
+   "passageId": "8.8.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-008:8.8.86",
+   "topicId": "doctrine-008",
+   "passageId": "8.8.86",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-014:2.10.108",
+   "topicId": "quotation-014",
+   "passageId": "2.10.108",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-011:1.8.101",
+   "topicId": "biography-011",
+   "passageId": "1.8.101",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:corpus-synthesis-abstain-01:10.1.83",
+   "topicId": "corpus-synthesis-abstain-01",
+   "passageId": "10.1.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-013:5.5.77",
+   "topicId": "teacher-student-013",
+   "passageId": "5.5.77",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-009:3.1.86",
+   "topicId": "statistics-009",
+   "passageId": "3.1.86",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-022:2.3.11",
+   "topicId": "source-022",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-011:2.3.12",
+   "topicId": "teacher-student-011",
+   "passageId": "2.3.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-03:10.1.128",
+   "topicId": "doctrine-opinion-abstain-03",
+   "passageId": "10.1.128",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-018:5.6.91",
+   "topicId": "chronology-018",
+   "passageId": "5.6.91",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-002:2.3.11",
+   "topicId": "comparative-002",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-020:10.1.26",
+   "topicId": "source-020",
+   "passageId": "10.1.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-01:3.1.7",
+   "topicId": "biography-abstain-01",
+   "passageId": "3.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-009:9.7.41",
+   "topicId": "source-009",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-015:3.1.93",
+   "topicId": "statistics-015",
+   "passageId": "3.1.93",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-03:3.1.57",
+   "topicId": "chronology-abstain-03",
+   "passageId": "3.1.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-007:7.1.5",
+   "topicId": "quotation-007",
+   "passageId": "7.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-013:3.1.15",
+   "topicId": "chronology-013",
+   "passageId": "3.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-01:10.1.145",
+   "topicId": "doctrine-opinion-abstain-01",
+   "passageId": "10.1.145",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-006:6.1.18",
+   "topicId": "teacher-student-006",
+   "passageId": "6.1.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-015:8.1.1",
+   "topicId": "doctrine-015",
+   "passageId": "8.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-002:2.8.73",
+   "topicId": "biography-002",
+   "passageId": "2.8.73",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-009:2.5.45",
+   "topicId": "source-009",
+   "passageId": "2.5.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-007:7.1.11",
+   "topicId": "chronology-007",
+   "passageId": "7.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-01:3.1.7",
+   "topicId": "source-attribution-abstain-01",
+   "passageId": "3.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-020:6.5.87",
+   "topicId": "teacher-student-020",
+   "passageId": "6.5.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-013:3.1.45",
+   "topicId": "chronology-013",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-03:9.1.7",
+   "topicId": "doctrine-opinion-abstain-03",
+   "passageId": "9.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-01:2.1.2",
+   "topicId": "doctrine-opinion-abstain-01",
+   "passageId": "2.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-010:10.1.26",
+   "topicId": "biography-010",
+   "passageId": "10.1.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-023:3.1.25",
+   "topicId": "source-023",
+   "passageId": "3.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-011:1.8.105",
+   "topicId": "biography-011",
+   "passageId": "1.8.105",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-004:4.8.61",
+   "topicId": "quotation-004",
+   "passageId": "4.8.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-025:5.1.9",
+   "topicId": "source-025",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-019:5.1.9",
+   "topicId": "doctrine-019",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-003:3.1.44",
+   "topicId": "comparative-003",
+   "passageId": "3.1.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-009:10.1.71",
+   "topicId": "synthesis-009",
+   "passageId": "10.1.71",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-005:5.1.11",
+   "topicId": "biography-005",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-017:7.7.201",
+   "topicId": "chronology-017",
+   "passageId": "7.7.201",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-023:6.2.26",
+   "topicId": "teacher-student-023",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-004:4.6.28",
+   "topicId": "chronology-004",
+   "passageId": "4.6.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-024:4.6.42",
+   "topicId": "source-024",
+   "passageId": "4.6.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-008:1.1.24",
+   "topicId": "statistics-008",
+   "passageId": "1.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-006:6.5.87",
+   "topicId": "chronology-006",
+   "passageId": "6.5.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-001:2.5.45",
+   "topicId": "source-001",
+   "passageId": "2.5.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-001:2.6.56",
+   "topicId": "source-001",
+   "passageId": "2.6.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-001:1.8.103",
+   "topicId": "source-001",
+   "passageId": "1.8.103",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-009:9.10.58",
+   "topicId": "quotation-009",
+   "passageId": "9.10.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-020:10.1.23",
+   "topicId": "source-020",
+   "passageId": "10.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-004:4.6.29",
+   "topicId": "source-004",
+   "passageId": "4.6.29",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-04:7.1.30",
+   "topicId": "teacher-student-abstain-04",
+   "passageId": "7.1.30",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-014:3.1.87",
+   "topicId": "statistics-014",
+   "passageId": "3.1.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-008:5.1.11",
+   "topicId": "chronology-008",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-012:2.11.113",
+   "topicId": "biography-012",
+   "passageId": "2.11.113",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-005:4.2.14",
+   "topicId": "statistics-005",
+   "passageId": "4.2.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-02:1.11.122",
+   "topicId": "chronology-abstain-02",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-019:7.1.11",
+   "topicId": "quotation-019",
+   "passageId": "7.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-005:9.11.75",
+   "topicId": "statistics-005",
+   "passageId": "9.11.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-019:9.7.41",
+   "topicId": "chronology-019",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-010:10.1.5",
+   "topicId": "quotation-010",
+   "passageId": "10.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-008:8.2.57",
+   "topicId": "chronology-008",
+   "passageId": "8.2.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:corpus-synthesis-abstain-01:2.17.129",
+   "topicId": "corpus-synthesis-abstain-01",
+   "passageId": "2.17.129",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-019:7.1.31",
+   "topicId": "quotation-019",
+   "passageId": "7.1.31",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-007:2.17.129",
+   "topicId": "statistics-007",
+   "passageId": "2.17.129",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-020:7.1.37",
+   "topicId": "doctrine-020",
+   "passageId": "7.1.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-009:9.10.59",
+   "topicId": "teacher-student-009",
+   "passageId": "9.10.59",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-005:5.2.40",
+   "topicId": "quotation-005",
+   "passageId": "5.2.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-001:7.1.113",
+   "topicId": "synthesis-001",
+   "passageId": "7.1.113",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-006:6.5.90",
+   "topicId": "chronology-006",
+   "passageId": "6.5.90",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-003:5.2.49",
+   "topicId": "synthesis-003",
+   "passageId": "5.2.49",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-014:7.5.173",
+   "topicId": "doctrine-014",
+   "passageId": "7.5.173",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-007:7.2.160",
+   "topicId": "biography-007",
+   "passageId": "7.2.160",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-02:2.6.56",
+   "topicId": "chronology-abstain-02",
+   "passageId": "2.6.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-006:7.7.181",
+   "topicId": "statistics-006",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-03:4.2.13",
+   "topicId": "chronology-abstain-03",
+   "passageId": "4.2.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-021:1.1.41",
+   "topicId": "source-021",
+   "passageId": "1.1.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-012:4.7.57",
+   "topicId": "teacher-student-012",
+   "passageId": "4.7.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-003:3.1.3",
+   "topicId": "chronology-003",
+   "passageId": "3.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-013:5.1.5",
+   "topicId": "doctrine-013",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-013:3.1.19",
+   "topicId": "comparative-013",
+   "passageId": "3.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-007:7.1.12",
+   "topicId": "quotation-007",
+   "passageId": "7.1.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-011:1.8.101",
+   "topicId": "quotation-011",
+   "passageId": "1.8.101",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-009:9.7.40",
+   "topicId": "comparative-009",
+   "passageId": "9.7.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-001:3.1.87",
+   "topicId": "statistics-001",
+   "passageId": "3.1.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-004:4.6.34",
+   "topicId": "biography-004",
+   "passageId": "4.6.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-022:4.2.15",
+   "topicId": "teacher-student-022",
+   "passageId": "4.2.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-002:2.3.12",
+   "topicId": "doctrine-002",
+   "passageId": "2.3.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-004:10.1.38",
+   "topicId": "quotation-004",
+   "passageId": "10.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-009:3.1.64",
+   "topicId": "synthesis-009",
+   "passageId": "3.1.64",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-018:8.2.70",
+   "topicId": "source-018",
+   "passageId": "8.2.70",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-002:2.1.2",
+   "topicId": "quotation-002",
+   "passageId": "2.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-020:10.1.124",
+   "topicId": "chronology-020",
+   "passageId": "10.1.124",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-019:2.3.6",
+   "topicId": "teacher-student-019",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-023:10.1.5",
+   "topicId": "doctrine-023",
+   "passageId": "10.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-021:8.1.48",
+   "topicId": "doctrine-021",
+   "passageId": "8.1.48",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-013:5.5.78",
+   "topicId": "teacher-student-013",
+   "passageId": "5.5.78",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-006:1.1.35",
+   "topicId": "statistics-006",
+   "passageId": "1.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-014:7.5.170",
+   "topicId": "doctrine-014",
+   "passageId": "7.5.170",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-014:4.7.46",
+   "topicId": "biography-014",
+   "passageId": "4.7.46",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-022:2.1.1",
+   "topicId": "chronology-022",
+   "passageId": "2.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-017:5.1.19",
+   "topicId": "quotation-017",
+   "passageId": "5.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-010:10.1.2",
+   "topicId": "chronology-010",
+   "passageId": "10.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-005:8.2.74",
+   "topicId": "comparative-005",
+   "passageId": "8.2.74",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-02:8.4.79",
+   "topicId": "exact-quotation-abstain-02",
+   "passageId": "8.4.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-008:8.2.51",
+   "topicId": "comparative-008",
+   "passageId": "8.2.51",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-004:4.6.39",
+   "topicId": "chronology-004",
+   "passageId": "4.6.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-001:1.8.102",
+   "topicId": "source-001",
+   "passageId": "1.8.102",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-012:2.8.83",
+   "topicId": "quotation-012",
+   "passageId": "2.8.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-012:2.3.15",
+   "topicId": "chronology-012",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-010:9.11.85",
+   "topicId": "statistics-010",
+   "passageId": "9.11.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-005:5.2.38",
+   "topicId": "quotation-005",
+   "passageId": "5.2.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-018:8.8.89",
+   "topicId": "biography-018",
+   "passageId": "8.8.89",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-020:10.1.14",
+   "topicId": "source-020",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-010:10.1.5",
+   "topicId": "doctrine-010",
+   "passageId": "10.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-023:10.1.136",
+   "topicId": "doctrine-023",
+   "passageId": "10.1.136",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-014:7.5.172",
+   "topicId": "doctrine-014",
+   "passageId": "7.5.172",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-007:7.1.50",
+   "topicId": "doctrine-007",
+   "passageId": "7.1.50",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-018:8.2.52",
+   "topicId": "source-018",
+   "passageId": "8.2.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-014:5.1.5",
+   "topicId": "comparative-014",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-006:5.1.34",
+   "topicId": "statistics-006",
+   "passageId": "5.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-009:9.10.58",
+   "topicId": "teacher-student-009",
+   "passageId": "9.10.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-009:9.1.11",
+   "topicId": "synthesis-009",
+   "passageId": "9.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-021:8.2.55",
+   "topicId": "teacher-student-021",
+   "passageId": "8.2.55",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-012:2.3.11",
+   "topicId": "source-012",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-011:3.1.62",
+   "topicId": "statistics-011",
+   "passageId": "3.1.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-02:5.3.58",
+   "topicId": "biography-abstain-02",
+   "passageId": "5.3.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-007:5.2.42",
+   "topicId": "synthesis-007",
+   "passageId": "5.2.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-014:4.4.22",
+   "topicId": "teacher-student-014",
+   "passageId": "4.4.22",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-017:10.1.23",
+   "topicId": "doctrine-017",
+   "passageId": "10.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-018:8.1.40",
+   "topicId": "chronology-018",
+   "passageId": "8.1.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-021:8.1.49",
+   "topicId": "doctrine-021",
+   "passageId": "8.1.49",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-02:10.1.90",
+   "topicId": "doctrine-opinion-abstain-02",
+   "passageId": "10.1.90",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-018:5.2.36",
+   "topicId": "teacher-student-018",
+   "passageId": "5.2.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-008:8.2.57",
+   "topicId": "quotation-008",
+   "passageId": "8.2.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-01:3.1.45",
+   "topicId": "source-attribution-abstain-01",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-03:2.6.56",
+   "topicId": "chronology-abstain-03",
+   "passageId": "2.6.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:corpus-synthesis-abstain-01:10.1.36",
+   "topicId": "corpus-synthesis-abstain-01",
+   "passageId": "10.1.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-010:10.1.14",
+   "topicId": "comparative-010",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-005:5.1.5",
+   "topicId": "doctrine-005",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-011:1.10.109",
+   "topicId": "comparative-011",
+   "passageId": "1.10.109",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-003:3.1.15",
+   "topicId": "doctrine-003",
+   "passageId": "3.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-022:8.2.52",
+   "topicId": "chronology-022",
+   "passageId": "8.2.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-018:8.1.7",
+   "topicId": "chronology-018",
+   "passageId": "8.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-04:1.prol.18",
+   "topicId": "chronology-abstain-04",
+   "passageId": "1.prol.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-009:9.11.61",
+   "topicId": "biography-009",
+   "passageId": "9.11.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-011:1.1.29",
+   "topicId": "doctrine-011",
+   "passageId": "1.1.29",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-023:3.1.45",
+   "topicId": "chronology-023",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-003:3.1.62",
+   "topicId": "source-003",
+   "passageId": "3.1.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-015:5.1.5",
+   "topicId": "source-015",
+   "passageId": "5.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-004:4.6.34",
+   "topicId": "teacher-student-004",
+   "passageId": "4.6.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-022:4.2.14",
+   "topicId": "teacher-student-022",
+   "passageId": "4.2.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-004:4.1.4",
+   "topicId": "comparative-004",
+   "passageId": "4.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-02:1.1.24",
+   "topicId": "source-attribution-abstain-02",
+   "passageId": "1.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-021:1.1.34",
+   "topicId": "chronology-021",
+   "passageId": "1.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-015:2.5.20",
+   "topicId": "teacher-student-015",
+   "passageId": "2.5.20",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-012:2.3.13",
+   "topicId": "source-012",
+   "passageId": "2.3.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-005:1.11.122",
+   "topicId": "quotation-005",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-04:1.prol.15",
+   "topicId": "teacher-student-abstain-04",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-023:3.1.15",
+   "topicId": "chronology-023",
+   "passageId": "3.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-007:9.11.106",
+   "topicId": "synthesis-007",
+   "passageId": "9.11.106",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-005:9.7.41",
+   "topicId": "source-005",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-011:7.7.200",
+   "topicId": "statistics-011",
+   "passageId": "7.7.200",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-009:1.1.23",
+   "topicId": "statistics-009",
+   "passageId": "1.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-018:6.1.19",
+   "topicId": "quotation-018",
+   "passageId": "6.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-004:4.1.2",
+   "topicId": "comparative-004",
+   "passageId": "4.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-001:1.1.29",
+   "topicId": "doctrine-001",
+   "passageId": "1.1.29",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-014:4.8.61",
+   "topicId": "source-014",
+   "passageId": "4.8.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-017:2.5.44",
+   "topicId": "source-017",
+   "passageId": "2.5.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-008:5.3.58",
+   "topicId": "teacher-student-008",
+   "passageId": "5.3.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-015:2.4.16",
+   "topicId": "teacher-student-015",
+   "passageId": "2.4.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-006:3.1.62",
+   "topicId": "synthesis-006",
+   "passageId": "3.1.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-002:2.3.7",
+   "topicId": "chronology-002",
+   "passageId": "2.3.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-021:8.1.45",
+   "topicId": "doctrine-021",
+   "passageId": "8.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-014:3.1.65",
+   "topicId": "statistics-014",
+   "passageId": "3.1.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-012:2.2.4",
+   "topicId": "comparative-012",
+   "passageId": "2.2.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-001:4.7.48",
+   "topicId": "comparative-001",
+   "passageId": "4.7.48",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-01:3.1.52",
+   "topicId": "teacher-student-abstain-01",
+   "passageId": "3.1.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-003:2.8.68",
+   "topicId": "statistics-003",
+   "passageId": "2.8.68",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-013:9.1.15",
+   "topicId": "teacher-student-013",
+   "passageId": "9.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-005:5.1.4",
+   "topicId": "biography-005",
+   "passageId": "5.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-01:6.2.40",
+   "topicId": "exact-quotation-abstain-01",
+   "passageId": "6.2.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-011:1.11.118",
+   "topicId": "chronology-011",
+   "passageId": "1.11.118",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-009:1.11.122",
+   "topicId": "quotation-009",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-014:4.9.63",
+   "topicId": "chronology-014",
+   "passageId": "4.9.63",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-016:6.5.91",
+   "topicId": "biography-016",
+   "passageId": "6.5.91",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-020:6.5.88",
+   "topicId": "teacher-student-020",
+   "passageId": "6.5.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-005:5.1.1",
+   "topicId": "teacher-student-005",
+   "passageId": "5.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-004:4.6.41",
+   "topicId": "biography-004",
+   "passageId": "4.6.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-03:10.1.128",
+   "topicId": "source-attribution-abstain-03",
+   "passageId": "10.1.128",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-003:3.1.45",
+   "topicId": "comparative-003",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-04:6.2.74",
+   "topicId": "source-attribution-abstain-04",
+   "passageId": "6.2.74",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-011:2.6.56",
+   "topicId": "source-011",
+   "passageId": "2.6.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-002:6.2.80",
+   "topicId": "statistics-002",
+   "passageId": "6.2.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-010:10.1.27",
+   "topicId": "quotation-010",
+   "passageId": "10.1.27",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-02:3.1.7",
+   "topicId": "comparative-abstain-02",
+   "passageId": "3.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-018:8.8.86",
+   "topicId": "biography-018",
+   "passageId": "8.8.86",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-003:3.1.21",
+   "topicId": "chronology-003",
+   "passageId": "3.1.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-011:1.1.34",
+   "topicId": "doctrine-011",
+   "passageId": "1.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-013:1.1.42",
+   "topicId": "quotation-013",
+   "passageId": "1.1.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-015:8.1.7",
+   "topicId": "doctrine-015",
+   "passageId": "8.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-013:4.1.1",
+   "topicId": "source-013",
+   "passageId": "4.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-007:7.7.181",
+   "topicId": "statistics-007",
+   "passageId": "7.7.181",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-006:6.1.15",
+   "topicId": "comparative-006",
+   "passageId": "6.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-001:7.2.163",
+   "topicId": "synthesis-001",
+   "passageId": "7.2.163",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-003:3.1.18",
+   "topicId": "comparative-003",
+   "passageId": "3.1.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-010:10.1.14",
+   "topicId": "biography-010",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-001:1.5.88",
+   "topicId": "quotation-001",
+   "passageId": "1.5.88",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-003:3.1.38",
+   "topicId": "source-003",
+   "passageId": "3.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-001:1.7.94",
+   "topicId": "biography-001",
+   "passageId": "1.7.94",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-015:9.7.36",
+   "topicId": "biography-015",
+   "passageId": "9.7.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-014:4.6.45",
+   "topicId": "source-014",
+   "passageId": "4.6.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-023:6.2.80",
+   "topicId": "teacher-student-023",
+   "passageId": "6.2.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-010:10.1.8",
+   "topicId": "source-010",
+   "passageId": "10.1.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-026:6.2.77",
+   "topicId": "source-026",
+   "passageId": "6.2.77",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-004:10.1.27",
+   "topicId": "synthesis-004",
+   "passageId": "10.1.27",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-017:2.6.56",
+   "topicId": "source-017",
+   "passageId": "2.6.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-011:1.10.115",
+   "topicId": "comparative-011",
+   "passageId": "1.10.115",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-011:8.2.74",
+   "topicId": "comparative-011",
+   "passageId": "8.2.74",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-010:3.1.85",
+   "topicId": "statistics-010",
+   "passageId": "3.1.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-01:3.1.1",
+   "topicId": "biography-abstain-01",
+   "passageId": "3.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-004:3.1.99",
+   "topicId": "statistics-004",
+   "passageId": "3.1.99",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-014:7.7.192",
+   "topicId": "statistics-014",
+   "passageId": "7.7.192",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-016:6.9.104",
+   "topicId": "quotation-016",
+   "passageId": "6.9.104",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-008:8.1.1",
+   "topicId": "teacher-student-008",
+   "passageId": "8.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-017:7.1.39",
+   "topicId": "chronology-017",
+   "passageId": "7.1.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-002:2.8.86",
+   "topicId": "biography-002",
+   "passageId": "2.8.86",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-03:2.3.11",
+   "topicId": "exact-quotation-abstain-03",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-007:7.7.183",
+   "topicId": "source-007",
+   "passageId": "7.7.183",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-004:4.6.28",
+   "topicId": "doctrine-004",
+   "passageId": "4.6.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-003:3.1.32",
+   "topicId": "quotation-003",
+   "passageId": "3.1.32",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-007:7.7.183",
+   "topicId": "doctrine-007",
+   "passageId": "7.7.183",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-008:8.2.75",
+   "topicId": "quotation-008",
+   "passageId": "8.2.75",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-011:1.10.115",
+   "topicId": "chronology-011",
+   "passageId": "1.10.115",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-019:9.7.46",
+   "topicId": "biography-019",
+   "passageId": "9.7.46",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-020:6.5.89",
+   "topicId": "teacher-student-020",
+   "passageId": "6.5.89",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-021:9.3.21",
+   "topicId": "teacher-student-021",
+   "passageId": "9.3.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-024:4.6.34",
+   "topicId": "source-024",
+   "passageId": "4.6.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-019:2.3.15",
+   "topicId": "teacher-student-019",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-013:5.1.9",
+   "topicId": "source-013",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-005:3.1.62",
+   "topicId": "statistics-005",
+   "passageId": "3.1.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-009:6.2.80",
+   "topicId": "doctrine-009",
+   "passageId": "6.2.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-007:7.7.182",
+   "topicId": "comparative-007",
+   "passageId": "7.7.182",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-002:2.3.15",
+   "topicId": "doctrine-002",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-03:4.10.67",
+   "topicId": "teacher-student-abstain-03",
+   "passageId": "4.10.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-011:1.8.103",
+   "topicId": "quotation-011",
+   "passageId": "1.8.103",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-001:1.prol.16",
+   "topicId": "synthesis-001",
+   "passageId": "1.prol.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-013:1.1.29",
+   "topicId": "quotation-013",
+   "passageId": "1.1.29",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-022:2.3.7",
+   "topicId": "source-022",
+   "passageId": "2.3.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-023:3.1.3",
+   "topicId": "chronology-023",
+   "passageId": "3.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-016:6.2.76",
+   "topicId": "chronology-016",
+   "passageId": "6.2.76",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-006:4.4.23",
+   "topicId": "source-006",
+   "passageId": "4.4.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-009:9.12.111",
+   "topicId": "doctrine-009",
+   "passageId": "9.12.111",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-008:8.2.67",
+   "topicId": "comparative-008",
+   "passageId": "8.2.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-010:10.1.1",
+   "topicId": "comparative-010",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-010:10.1.14",
+   "topicId": "teacher-student-010",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-04:6.2.77",
+   "topicId": "source-attribution-abstain-04",
+   "passageId": "6.2.77",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-04:7.1.35",
+   "topicId": "teacher-student-abstain-04",
+   "passageId": "7.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-002:2.7.62",
+   "topicId": "teacher-student-002",
+   "passageId": "2.7.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-020:10.1.125",
+   "topicId": "chronology-020",
+   "passageId": "10.1.125",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-012:2.3.12",
+   "topicId": "doctrine-012",
+   "passageId": "2.3.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-008:8.8.89",
+   "topicId": "doctrine-008",
+   "passageId": "8.8.89",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-007:7.7.187",
+   "topicId": "comparative-007",
+   "passageId": "7.7.187",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-005:5.1.34",
+   "topicId": "teacher-student-005",
+   "passageId": "5.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-002:2.3.12",
+   "topicId": "comparative-002",
+   "passageId": "2.3.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-019:9.7.37",
+   "topicId": "source-019",
+   "passageId": "9.7.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-014:1.prol.15",
+   "topicId": "teacher-student-014",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-014:8.2.74",
+   "topicId": "comparative-014",
+   "passageId": "8.2.74",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-019:2.5.19",
+   "topicId": "teacher-student-019",
+   "passageId": "2.5.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-018:2.1.2",
+   "topicId": "doctrine-018",
+   "passageId": "2.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-013:1.1.32",
+   "topicId": "quotation-013",
+   "passageId": "1.1.32",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-015:1.prol.16",
+   "topicId": "statistics-015",
+   "passageId": "1.prol.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-010:10.1.1",
+   "topicId": "biography-010",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-03:3.1.37",
+   "topicId": "doctrine-opinion-abstain-03",
+   "passageId": "3.1.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-017:3.1.8",
+   "topicId": "teacher-student-017",
+   "passageId": "3.1.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-013:3.1.44",
+   "topicId": "comparative-013",
+   "passageId": "3.1.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-015:8.2.52",
+   "topicId": "chronology-015",
+   "passageId": "8.2.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-005:10.1.120",
+   "topicId": "statistics-005",
+   "passageId": "10.1.120",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-021:1.1.39",
+   "topicId": "chronology-021",
+   "passageId": "1.1.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-002:2.3.6",
+   "topicId": "chronology-002",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-01:6.2.79",
+   "topicId": "comparative-abstain-01",
+   "passageId": "6.2.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-015:8.1.49",
+   "topicId": "doctrine-015",
+   "passageId": "8.1.49",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-004:4.6.28",
+   "topicId": "teacher-student-004",
+   "passageId": "4.6.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-003:3.1.109",
+   "topicId": "biography-003",
+   "passageId": "3.1.109",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-014:1.11.122",
+   "topicId": "statistics-014",
+   "passageId": "1.11.122",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-006:6.1.9",
+   "topicId": "quotation-006",
+   "passageId": "6.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-001:1.5.85",
+   "topicId": "quotation-001",
+   "passageId": "1.5.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-018:6.1.9",
+   "topicId": "quotation-018",
+   "passageId": "6.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-011:2.3.15",
+   "topicId": "teacher-student-011",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-015:5.1.1",
+   "topicId": "chronology-015",
+   "passageId": "5.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-006:6.1.18",
+   "topicId": "doctrine-006",
+   "passageId": "6.1.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-019:5.1.11",
+   "topicId": "doctrine-019",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-005:5.1.10",
+   "topicId": "source-005",
+   "passageId": "5.1.10",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-024:2.3.6",
+   "topicId": "doctrine-024",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-013:3.1.28",
+   "topicId": "comparative-013",
+   "passageId": "3.1.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-02:5.1.35",
+   "topicId": "source-attribution-abstain-02",
+   "passageId": "5.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-007:7.7.180",
+   "topicId": "doctrine-007",
+   "passageId": "7.7.180",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-02:3.1.45",
+   "topicId": "exact-quotation-abstain-02",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-017:9.10.58",
+   "topicId": "quotation-017",
+   "passageId": "9.10.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-005:5.1.35",
+   "topicId": "comparative-005",
+   "passageId": "5.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-013:1.1.23",
+   "topicId": "statistics-013",
+   "passageId": "1.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-014:8.1.7",
+   "topicId": "teacher-student-014",
+   "passageId": "8.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-013:3.1.2",
+   "topicId": "chronology-013",
+   "passageId": "3.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-015:5.1.11",
+   "topicId": "source-015",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-027:7.7.183",
+   "topicId": "source-027",
+   "passageId": "7.7.183",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-01:9.7.36",
+   "topicId": "exact-quotation-abstain-01",
+   "passageId": "9.7.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-006:6.2.54",
+   "topicId": "synthesis-006",
+   "passageId": "6.2.54",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-014:6.9.104",
+   "topicId": "quotation-014",
+   "passageId": "6.9.104",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-028:8.2.66",
+   "topicId": "source-028",
+   "passageId": "8.2.66",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-018:8.1.44",
+   "topicId": "chronology-018",
+   "passageId": "8.1.44",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-02:3.1.45",
+   "topicId": "comparative-abstain-02",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-01:6.1.7",
+   "topicId": "teacher-student-abstain-01",
+   "passageId": "6.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-03:10.1.83",
+   "topicId": "biography-abstain-03",
+   "passageId": "10.1.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-016:4.1.5",
+   "topicId": "quotation-016",
+   "passageId": "4.1.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-011:1.10.111",
+   "topicId": "chronology-011",
+   "passageId": "1.10.111",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-010:1.prol.16",
+   "topicId": "synthesis-010",
+   "passageId": "1.prol.16",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-003:3.1.25",
+   "topicId": "chronology-003",
+   "passageId": "3.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-015:6.2.79",
+   "topicId": "source-015",
+   "passageId": "6.2.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-008:8.4.79",
+   "topicId": "biography-008",
+   "passageId": "8.4.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-002:8.2.57",
+   "topicId": "source-002",
+   "passageId": "8.2.57",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-001:1.10.115",
+   "topicId": "chronology-001",
+   "passageId": "1.10.115",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-016:6.2.31",
+   "topicId": "chronology-016",
+   "passageId": "6.2.31",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-024:4.5.24",
+   "topicId": "source-024",
+   "passageId": "4.5.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-025:5.1.2",
+   "topicId": "source-025",
+   "passageId": "5.1.2",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-011:1.1.25",
+   "topicId": "doctrine-011",
+   "passageId": "1.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-007:7.7.180",
+   "topicId": "source-007",
+   "passageId": "7.7.180",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-009:9.10.58",
+   "topicId": "biography-009",
+   "passageId": "9.10.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-02:3.1.36",
+   "topicId": "exact-quotation-abstain-02",
+   "passageId": "3.1.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-023:10.1.65",
+   "topicId": "doctrine-023",
+   "passageId": "10.1.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-001:1.7.99",
+   "topicId": "biography-001",
+   "passageId": "1.7.99",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-012:2.8.77",
+   "topicId": "quotation-012",
+   "passageId": "2.8.77",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-013:5.1.9",
+   "topicId": "chronology-013",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-004:4.9.65",
+   "topicId": "quotation-004",
+   "passageId": "4.9.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-002:2.2.4",
+   "topicId": "quotation-002",
+   "passageId": "2.2.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-007:7.2.161",
+   "topicId": "biography-007",
+   "passageId": "7.2.161",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-010:10.1.1",
+   "topicId": "source-010",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-001:1.1.34",
+   "topicId": "doctrine-001",
+   "passageId": "1.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-021:1.1.38",
+   "topicId": "chronology-021",
+   "passageId": "1.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-005:5.1.11",
+   "topicId": "comparative-005",
+   "passageId": "5.1.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-024:5.3.58",
+   "topicId": "source-024",
+   "passageId": "5.3.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-008:8.2.53",
+   "topicId": "quotation-008",
+   "passageId": "8.2.53",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-02:5.1.1",
+   "topicId": "biography-abstain-02",
+   "passageId": "5.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-012:2.10.112",
+   "topicId": "biography-012",
+   "passageId": "2.10.112",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-014:4.9.66",
+   "topicId": "chronology-014",
+   "passageId": "4.9.66",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-021:8.2.56",
+   "topicId": "teacher-student-021",
+   "passageId": "8.2.56",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-014:1.prol.18",
+   "topicId": "statistics-014",
+   "passageId": "1.prol.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-004:4.6.38",
+   "topicId": "source-004",
+   "passageId": "4.6.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-003:7.7.199",
+   "topicId": "synthesis-003",
+   "passageId": "7.7.199",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-023:3.1.4",
+   "topicId": "source-023",
+   "passageId": "3.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-009:2.5.25",
+   "topicId": "statistics-009",
+   "passageId": "2.5.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-022:4.2.6",
+   "topicId": "teacher-student-022",
+   "passageId": "4.2.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-012:5.2.46",
+   "topicId": "statistics-012",
+   "passageId": "5.2.46",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-008:8.5.83",
+   "topicId": "teacher-student-008",
+   "passageId": "8.5.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-018:8.8.90",
+   "topicId": "biography-018",
+   "passageId": "8.8.90",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-001:3.1.90",
+   "topicId": "statistics-001",
+   "passageId": "3.1.90",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-016:4.1.3",
+   "topicId": "quotation-016",
+   "passageId": "4.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-016:9.7.40",
+   "topicId": "doctrine-016",
+   "passageId": "9.7.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-009:9.7.42",
+   "topicId": "comparative-009",
+   "passageId": "9.7.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-004:4.6.39",
+   "topicId": "doctrine-004",
+   "passageId": "4.6.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-009:9.11.63",
+   "topicId": "teacher-student-009",
+   "passageId": "9.11.63",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-019:9.7.34",
+   "topicId": "teacher-student-019",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-008:8.2.67",
+   "topicId": "chronology-008",
+   "passageId": "8.2.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-026:6.2.20",
+   "topicId": "source-026",
+   "passageId": "6.2.20",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-04:9.5.25",
+   "topicId": "teacher-student-abstain-04",
+   "passageId": "9.5.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-012:2.3.15",
+   "topicId": "source-012",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-005:5.1.1",
+   "topicId": "biography-005",
+   "passageId": "5.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-012:2.3.11",
+   "topicId": "doctrine-012",
+   "passageId": "2.3.11",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-003:5.1.24",
+   "topicId": "synthesis-003",
+   "passageId": "5.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-002:5.5.80",
+   "topicId": "synthesis-002",
+   "passageId": "5.5.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-opinion-abstain-03:3.1.36",
+   "topicId": "doctrine-opinion-abstain-03",
+   "passageId": "3.1.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-02:1.11.117",
+   "topicId": "chronology-abstain-02",
+   "passageId": "1.11.117",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-abstain-03:4.7.58",
+   "topicId": "chronology-abstain-03",
+   "passageId": "4.7.58",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-011:3.1.87",
+   "topicId": "statistics-011",
+   "passageId": "3.1.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-011:1.1.42",
+   "topicId": "doctrine-011",
+   "passageId": "1.1.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-013:3.1.45",
+   "topicId": "comparative-013",
+   "passageId": "3.1.45",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-004:4.8.60",
+   "topicId": "quotation-004",
+   "passageId": "4.8.60",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-008:8.4.82",
+   "topicId": "biography-008",
+   "passageId": "8.4.82",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-020:6.5.85",
+   "topicId": "teacher-student-020",
+   "passageId": "6.5.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-017:10.1.1",
+   "topicId": "doctrine-017",
+   "passageId": "10.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-006:6.1.18",
+   "topicId": "quotation-006",
+   "passageId": "6.1.18",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-001:1.11.116",
+   "topicId": "teacher-student-001",
+   "passageId": "1.11.116",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-002:2.3.15",
+   "topicId": "chronology-002",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-006:6.1.15",
+   "topicId": "doctrine-006",
+   "passageId": "6.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-008:8.5.83",
+   "topicId": "source-008",
+   "passageId": "8.5.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-03:10.1.67",
+   "topicId": "source-attribution-abstain-03",
+   "passageId": "10.1.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-020:1.prol.15",
+   "topicId": "teacher-student-020",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-009:9.11.63",
+   "topicId": "quotation-009",
+   "passageId": "9.11.63",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-006:6.1.15",
+   "topicId": "teacher-student-006",
+   "passageId": "6.1.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-017:3.1.28",
+   "topicId": "teacher-student-017",
+   "passageId": "3.1.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-011:1.8.103",
+   "topicId": "biography-011",
+   "passageId": "1.8.103",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-006:4.4.21",
+   "topicId": "source-006",
+   "passageId": "4.4.21",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-009:9.7.37",
+   "topicId": "chronology-009",
+   "passageId": "9.7.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-011:1.10.109",
+   "topicId": "chronology-011",
+   "passageId": "1.10.109",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-003:3.1.28",
+   "topicId": "source-003",
+   "passageId": "3.1.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-014:2.10.106",
+   "topicId": "quotation-014",
+   "passageId": "2.10.106",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-013:3.1.4",
+   "topicId": "biography-013",
+   "passageId": "3.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-012:2.5.35",
+   "topicId": "chronology-012",
+   "passageId": "2.5.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-020:10.1.14",
+   "topicId": "chronology-020",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-003:3.1.47",
+   "topicId": "quotation-003",
+   "passageId": "3.1.47",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-001:1.6.89",
+   "topicId": "comparative-001",
+   "passageId": "1.6.89",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-03:5.1.17",
+   "topicId": "teacher-student-abstain-03",
+   "passageId": "5.1.17",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-003:3.1.65",
+   "topicId": "doctrine-003",
+   "passageId": "3.1.65",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-010:10.1.14",
+   "topicId": "chronology-010",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-011:2.5.19",
+   "topicId": "teacher-student-011",
+   "passageId": "2.5.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-012:4.2.12",
+   "topicId": "statistics-012",
+   "passageId": "4.2.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-001:9.2.20",
+   "topicId": "chronology-001",
+   "passageId": "9.2.20",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-003:3.1.4",
+   "topicId": "chronology-003",
+   "passageId": "3.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-019:7.1.25",
+   "topicId": "quotation-019",
+   "passageId": "7.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-001:1.6.93",
+   "topicId": "comparative-001",
+   "passageId": "1.6.93",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-abstain-01:3.1.26",
+   "topicId": "biography-abstain-01",
+   "passageId": "3.1.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-010:10.1.25",
+   "topicId": "chronology-010",
+   "passageId": "10.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-024:8.1.49",
+   "topicId": "doctrine-024",
+   "passageId": "8.1.49",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-005:5.1.6",
+   "topicId": "comparative-005",
+   "passageId": "5.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-001:1.11.119",
+   "topicId": "teacher-student-001",
+   "passageId": "1.11.119",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-017:7.7.180",
+   "topicId": "chronology-017",
+   "passageId": "7.7.180",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-011:1.8.102",
+   "topicId": "biography-011",
+   "passageId": "1.8.102",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-016:6.2.20",
+   "topicId": "chronology-016",
+   "passageId": "6.2.20",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-008:8.2.53",
+   "topicId": "comparative-008",
+   "passageId": "8.2.53",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-012:3.1.85",
+   "topicId": "statistics-012",
+   "passageId": "3.1.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-006:6.1.1",
+   "topicId": "biography-006",
+   "passageId": "6.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-006:6.1.19",
+   "topicId": "comparative-006",
+   "passageId": "6.1.19",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-attribution-abstain-04:6.2.68",
+   "topicId": "source-attribution-abstain-04",
+   "passageId": "6.2.68",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-009:9.11.61",
+   "topicId": "teacher-student-009",
+   "passageId": "9.11.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-026:6.2.76",
+   "topicId": "source-026",
+   "passageId": "6.2.76",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-023:3.1.38",
+   "topicId": "chronology-023",
+   "passageId": "3.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-004:4.6.34",
+   "topicId": "chronology-004",
+   "passageId": "4.6.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-005:5.1.35",
+   "topicId": "teacher-student-005",
+   "passageId": "5.1.35",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-019:5.1.1",
+   "topicId": "doctrine-019",
+   "passageId": "5.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-010:10.1.38",
+   "topicId": "quotation-010",
+   "passageId": "10.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-007:7.2.162",
+   "topicId": "biography-007",
+   "passageId": "7.2.162",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-027:7.7.185",
+   "topicId": "source-027",
+   "passageId": "7.7.185",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-027:4.8.61",
+   "topicId": "source-027",
+   "passageId": "4.8.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-003:3.1.4",
+   "topicId": "teacher-student-003",
+   "passageId": "3.1.4",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-010:10.1.29",
+   "topicId": "quotation-010",
+   "passageId": "10.1.29",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-015:1.prol.15",
+   "topicId": "quotation-015",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-02:6.1.7",
+   "topicId": "comparative-abstain-02",
+   "passageId": "6.1.7",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-001:1.1.42",
+   "topicId": "comparative-001",
+   "passageId": "1.1.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-008:8.1.37",
+   "topicId": "teacher-student-008",
+   "passageId": "8.1.37",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-015:1.prol.8",
+   "topicId": "chronology-015",
+   "passageId": "1.prol.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-016:9.7.42",
+   "topicId": "doctrine-016",
+   "passageId": "9.7.42",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-004:4.1.1",
+   "topicId": "comparative-004",
+   "passageId": "4.1.1",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-023:3.1.24",
+   "topicId": "source-023",
+   "passageId": "3.1.24",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-017:7.7.180",
+   "topicId": "biography-017",
+   "passageId": "7.7.180",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-001:1.11.120",
+   "topicId": "teacher-student-001",
+   "passageId": "1.11.120",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-008:3.1.61",
+   "topicId": "biography-008",
+   "passageId": "3.1.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-003:3.1.8",
+   "topicId": "biography-003",
+   "passageId": "3.1.8",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-002:6.2.26",
+   "topicId": "synthesis-002",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-015:5.1.34",
+   "topicId": "statistics-015",
+   "passageId": "5.1.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-020:7.5.173",
+   "topicId": "doctrine-020",
+   "passageId": "7.5.173",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-008:10.1.147",
+   "topicId": "synthesis-008",
+   "passageId": "10.1.147",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-017:1.prol.15",
+   "topicId": "quotation-017",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-011:1.3.72",
+   "topicId": "source-011",
+   "passageId": "1.3.72",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-023:3.1.3",
+   "topicId": "source-023",
+   "passageId": "3.1.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-019:7.1.12",
+   "topicId": "quotation-019",
+   "passageId": "7.1.12",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-02:6.2.40",
+   "topicId": "teacher-student-abstain-02",
+   "passageId": "6.2.40",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-026:6.2.79",
+   "topicId": "source-026",
+   "passageId": "6.2.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-024:2.2.5",
+   "topicId": "doctrine-024",
+   "passageId": "2.2.5",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-009:9.7.38",
+   "topicId": "chronology-009",
+   "passageId": "9.7.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-005:5.1.6",
+   "topicId": "chronology-005",
+   "passageId": "5.1.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-02:6.1.13",
+   "topicId": "teacher-student-abstain-02",
+   "passageId": "6.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-007:7.1.84",
+   "topicId": "quotation-007",
+   "passageId": "7.1.84",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-003:3.1.52",
+   "topicId": "teacher-student-003",
+   "passageId": "3.1.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-009:9.7.41",
+   "topicId": "chronology-009",
+   "passageId": "9.7.41",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-021:1.10.111",
+   "topicId": "source-021",
+   "passageId": "1.10.111",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-002:2.7.61",
+   "topicId": "teacher-student-002",
+   "passageId": "2.7.61",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-011:1.3.73",
+   "topicId": "source-011",
+   "passageId": "1.3.73",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-008:3.1.60",
+   "topicId": "statistics-008",
+   "passageId": "3.1.60",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-003:3.1.28",
+   "topicId": "biography-003",
+   "passageId": "3.1.28",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-014:6.5.85",
+   "topicId": "teacher-student-014",
+   "passageId": "6.5.85",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-012:3.1.50",
+   "topicId": "comparative-012",
+   "passageId": "3.1.50",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-017:7.7.185",
+   "topicId": "source-017",
+   "passageId": "7.7.185",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-010:10.1.23",
+   "topicId": "comparative-010",
+   "passageId": "10.1.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-001:10.1.36",
+   "topicId": "statistics-001",
+   "passageId": "10.1.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:statistics-008:3.1.59",
+   "topicId": "statistics-008",
+   "passageId": "3.1.59",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-002:2.8.83",
+   "topicId": "source-002",
+   "passageId": "2.8.83",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-010:10.1.14",
+   "topicId": "source-010",
+   "passageId": "10.1.14",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-016:6.5.87",
+   "topicId": "biography-016",
+   "passageId": "6.5.87",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-002:2.7.62",
+   "topicId": "source-002",
+   "passageId": "2.7.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-01:2.5.47",
+   "topicId": "teacher-student-abstain-01",
+   "passageId": "2.5.47",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-005:6.2.22",
+   "topicId": "quotation-005",
+   "passageId": "6.2.22",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-013:1.1.25",
+   "topicId": "quotation-013",
+   "passageId": "1.1.25",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-022:9.7.43",
+   "topicId": "doctrine-022",
+   "passageId": "9.7.43",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-013:3.1.38",
+   "topicId": "biography-013",
+   "passageId": "3.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-011:1.10.113",
+   "topicId": "comparative-011",
+   "passageId": "1.10.113",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-003:3.1.38",
+   "topicId": "teacher-student-003",
+   "passageId": "3.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-007:7.1.31",
+   "topicId": "chronology-007",
+   "passageId": "7.1.31",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-002:2.2.3",
+   "topicId": "quotation-002",
+   "passageId": "2.2.3",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-005:5.1.9",
+   "topicId": "doctrine-005",
+   "passageId": "5.1.9",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-001:4.2.13",
+   "topicId": "synthesis-001",
+   "passageId": "4.2.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-010:10.1.13",
+   "topicId": "chronology-010",
+   "passageId": "10.1.13",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-abstain-02:8.4.79",
+   "topicId": "comparative-abstain-02",
+   "passageId": "8.4.79",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-012:2.8.78",
+   "topicId": "quotation-012",
+   "passageId": "2.8.78",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-016:6.2.26",
+   "topicId": "chronology-016",
+   "passageId": "6.2.26",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-016:1.prol.15",
+   "topicId": "biography-016",
+   "passageId": "1.prol.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-022:2.3.15",
+   "topicId": "source-022",
+   "passageId": "2.3.15",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-012:2.10.108",
+   "topicId": "biography-012",
+   "passageId": "2.10.108",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-004:4.6.39",
+   "topicId": "source-004",
+   "passageId": "4.6.39",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-009:9.12.112",
+   "topicId": "doctrine-009",
+   "passageId": "9.12.112",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-004:5.3.62",
+   "topicId": "synthesis-004",
+   "passageId": "5.3.62",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-015:5.2.36",
+   "topicId": "quotation-015",
+   "passageId": "5.2.36",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:corpus-synthesis-abstain-01:7.1.93",
+   "topicId": "corpus-synthesis-abstain-01",
+   "passageId": "7.1.93",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-001:1.7.95",
+   "topicId": "biography-001",
+   "passageId": "1.7.95",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:quotation-003:3.1.38",
+   "topicId": "quotation-003",
+   "passageId": "3.1.38",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-012:2.3.6",
+   "topicId": "doctrine-012",
+   "passageId": "2.3.6",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:chronology-014:4.10.67",
+   "topicId": "chronology-014",
+   "passageId": "4.10.67",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:teacher-student-abstain-02:6.9.103",
+   "topicId": "teacher-student-abstain-02",
+   "passageId": "6.9.103",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:source-015:8.2.52",
+   "topicId": "source-015",
+   "passageId": "8.2.52",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:doctrine-022:9.7.34",
+   "topicId": "doctrine-022",
+   "passageId": "9.7.34",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-008:8.4.80",
+   "topicId": "biography-008",
+   "passageId": "8.4.80",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:comparative-001:1.6.90",
+   "topicId": "comparative-001",
+   "passageId": "1.6.90",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:biography-006:2.5.47",
+   "topicId": "biography-006",
+   "passageId": "2.5.47",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:exact-quotation-abstain-03:9.3.23",
+   "topicId": "exact-quotation-abstain-03",
+   "passageId": "9.3.23",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  },
+  {
+   "itemId": "pool-msh2q50y-9069bb:synthesis-004:5.4.73",
+   "topicId": "synthesis-004",
+   "passageId": "5.4.73",
+   "fromRuns": [
+    "run-msh2ct6e-18623b"
+   ]
+  }
+ ]
+}

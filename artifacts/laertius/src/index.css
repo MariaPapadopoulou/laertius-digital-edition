@@ -1,0 +1,329 @@
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/400-italic.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/600-italic.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/source-serif-4/300.css";
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/400-italic.css";
+@import "@fontsource/source-serif-4/600.css";
+@import "@fontsource/source-serif-4/600-italic.css";
+@import "@fontsource/source-serif-4/700.css";
+@import "@fontsource/eb-garamond/greek-400.css";
+@import "@fontsource/eb-garamond/greek-400-italic.css";
+@import "@fontsource/eb-garamond/greek-600.css";
+@import "@fontsource/eb-garamond/greek-600-italic.css";
+@import "@fontsource/eb-garamond/greek-700.css";
+@import "@fontsource/eb-garamond/greek-ext-400.css";
+@import "@fontsource/eb-garamond/greek-ext-400-italic.css";
+@import "@fontsource/eb-garamond/greek-ext-600.css";
+@import "@fontsource/eb-garamond/greek-ext-600-italic.css";
+@import "@fontsource/eb-garamond/greek-ext-700.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/geist-mono/400.css";
+@import "@fontsource/geist-mono/500.css";
+@import "@fontsource/geist-mono/600.css";
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-certainty-asserted: hsl(var(--certainty-asserted));
+  --color-certainty-reported: hsl(var(--certainty-reported));
+  --color-certainty-disputed: hsl(var(--certainty-disputed));
+  --color-certainty-conjectured: hsl(var(--certainty-conjectured));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-display: var(--app-font-display);
+  --font-mono: var(--app-font-mono);
+
+  /* Lightened elevation: hairline shadows so cards sit flatter on the page. */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-md: 0 2px 6px -1px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 4px 12px -2px rgb(0 0 0 / 0.07);
+  --shadow-xl: 0 8px 20px -4px rgb(0 0 0 / 0.08);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Editorial palette (harmonized with the homepage design):
+     white ground, near-black ink, hairline warm-gray borders, and the
+     Harvard crimson #8B1A1A accent for links, marks, and primary actions. */
+  --background: 0 0% 100%; /* must stay 0 0% 100% */
+  --foreground: 0 0% 12%;
+  --border: 36 10% 88%;
+  --input: 36 10% 88%;
+  --ring: 0 68% 32%;
+
+  --card: 30 20% 99%; /* visually flat on background, warm family kept */
+  --card-foreground: 0 0% 12%;
+  --card-border: 36 10% 88%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 12%;
+  --popover-border: 36 10% 88%;
+
+  --primary: 0 68% 32%; /* Harvard crimson */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 40 10% 95%; /* very subtle gray */
+  --secondary-foreground: 0 0% 20%;
+
+  --muted: 40 10% 97%;
+  --muted-foreground: 0 0% 40%; /* ~40% lightness is readable */
+
+  --accent: 10 18% 95%;
+  --accent-foreground: 0 68% 32%; /* crimson text on light warm background */
+
+  --destructive: 0 84% 45%; /* deeper red for print */
+  --destructive-foreground: 0 0% 100%;
+
+  /* Certainty scale for assertion badges (Legomena). */
+  --certainty-asserted: 0 0% 15%;
+  --certainty-reported: 215 25% 45%;
+  --certainty-disputed: 25 85% 38%;
+  --certainty-conjectured: 270 15% 42%;
+
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: 'Source Serif 4', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --app-font-display: 'Playfair Display', 'Palatino Linotype', Georgia, serif;
+  --app-font-mono: 'Geist Mono', Menlo, monospace;
+  --app-font-grc: 'EB Garamond', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --radius: 0rem;
+
+  --sidebar-primary-border: hsl(var(--primary));
+  --sidebar-accent-border: hsl(var(--accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+/* Homepage palette: fixed light values, remapped in dark so the home page
+   follows the site theme instead of staying bright white. */
+.laertius-root {
+  --home-bg: #ffffff;
+  --home-card: #f7f6f3;
+  --home-card2: #fdfcfb;
+  --home-shade: #f4f2ee;
+  --home-border: #e7e4de;
+  --home-heading: #1a1a1a;
+  --home-text: #333333;
+  --home-body: #444444;
+  --home-muted: #6b6b6b;
+  --home-faint: #6d6d6d;
+  --home-crimson-solid: #8b1a1a;
+  --home-crimson: #8b1a1a;
+  --home-crimson-dark: #701515;
+  --home-crimson-light: #f5edec;
+  --home-crimson-border: #f2cfcf;
+}
+
+.dark .laertius-root {
+  --home-bg: hsl(220 28% 8%);
+  --home-card: hsl(220 26% 11%);
+  --home-card2: hsl(220 25% 12%);
+  --home-shade: hsl(219 24% 15%);
+  --home-border: hsl(219 22% 21%);
+  --home-heading: hsl(218 20% 92%);
+  --home-text: hsl(218 18% 86%);
+  --home-body: hsl(218 15% 78%);
+  --home-muted: hsl(218 12% 62%);
+  --home-faint: hsl(218 10% 60%);
+  --home-crimson: #c9736c;
+  --home-crimson-dark: #d68b85;
+  --home-crimson-light: hsl(0 25% 16%);
+  --home-crimson-border: hsl(0 25% 30%);
+  --home-crimson-solid: #8b1a1a;
+}
+
+.dark {
+  --background: 220 28% 8%;
+  --foreground: 218 18% 86%;
+  --border: 219 22% 16%; /* softer dark border */
+  --input: 219 22% 16%;
+  --ring: 218 18% 86%;
+
+  --card: 220 28% 8%; /* match background */
+  --card-foreground: 218 18% 86%;
+  --card-border: 219 22% 16%;
+
+  --popover: 220 28% 8%;
+  --popover-foreground: 218 18% 86%;
+  --popover-border: 219 22% 16%;
+
+  --primary: 218 22% 86%;
+  --primary-foreground: 220 28% 8%;
+
+  --secondary: 219 24% 12%;
+  --secondary-foreground: 218 18% 80%;
+
+  --muted: 219 24% 12%;
+  --muted-foreground: 218 12% 65%;
+
+  --accent: 219 24% 12%;
+  --accent-foreground: 218 18% 86%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --certainty-asserted: 218 18% 86%;
+  --certainty-reported: 215 30% 65%;
+  --certainty-disputed: 25 70% 60%;
+  --certainty-conjectured: 270 20% 65%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  /* Academic typographic rhythm */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-foreground;
+    letter-spacing: 0.015em;
+    line-height: 1.2;
+  }
+  p, li {
+    line-height: 1.75;
+  }
+  /* Ancient Greek runs get a polytonic-capable serif; Source Serif 4
+     has no polytonic glyphs, so grc spans would otherwise fall back
+     to arbitrary system fonts. */
+  [lang="grc"] {
+    font-family: var(--app-font-grc, var(--app-font-serif));
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+}
+
+@layer utilities {
+  /* digiTatti-inspired light display treatment: thin/light weight,
+     airy letter-spacing. Used for large hero/section headings. */
+  .type-display {
+    font-family: var(--app-font-display, var(--app-font-serif));
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .type-eyebrow {
+    font-family: var(--app-font-mono);
+    font-weight: 400;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+  }
+}
+
+/* Keyword highlight (digiTatti-style): a soft underline wash behind a
+   handful of meaningful terms in prose, growing to a full wash on hover.
+   Light and dark variants derive from the theme's primary channel. */
+.kw {
+  text-decoration: underline;
+  text-decoration-color: hsl(var(--primary) / 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 320ms ease;
+}
+.kw:hover {
+  text-decoration-color: hsl(var(--primary) / 0.7);
+}
+.dark .kw {
+  text-decoration-color: hsl(var(--primary) / 0.45);
+}
+.dark .kw:hover {
+  text-decoration-color: hsl(var(--primary) / 0.8);
+}
+@media (prefers-reduced-motion: reduce) {
+  .kw {
+    transition: none;
+  }
+}
+
+/* Dark mode: invert the raster map tiles so the Map page's base layer
+   matches the dark palette. Only the tile pane is filtered; markers,
+   labels and popups are separate panes and keep their true colors. */
+.dark .leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) saturate(60%);
+}
+.dark .leaflet-container {
+  background: hsl(var(--background));
+}
+
+/* Custom scrollbar for an archival feel (from Legomena). */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Accessibility: visible keyboard focus indicator site-wide. */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}

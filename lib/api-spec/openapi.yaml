@@ -1,0 +1,4443 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: RAG API over Diogenes Laertius, Lives of Eminent Philosophers
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: corpus
+    description: Corpus browsing
+  - name: rag
+    description: Retrieval and answering
+  - name: graph
+    description: Knowledge graph and linked open data
+  - name: otb
+    description: Ontoterminology (TEDI-compatible OTB layer)
+  - name: eval
+    description: Evaluation infrastructure (snapshots, runs, pools, judgments, agreement)
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /corpus/stats:
+    get:
+      operationId: getCorpusStats
+      tags: [corpus]
+      summary: Corpus statistics
+      description: Totals and index status for the corpus
+      responses:
+        "200":
+          description: Stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorpusStats"
+  /stats/detailed:
+    get:
+      operationId: getDetailedStats
+      tags: [corpus]
+      summary: Detailed corpus and knowledge-layer statistics
+      description: >
+        Per-book coverage, claim certainty and property distributions, topic
+        breakdowns for sayings and anecdotes, epistle authenticity verdicts,
+        work-ontology facets, tagging-layer figures, map coverage, and Linked
+        Open Data graph counts. Computed once and cached for the process
+        lifetime.
+      responses:
+        "200":
+          description: Detailed statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DetailedStats"
+  /philosophers:
+    get:
+      operationId: listPhilosophers
+      tags: [corpus]
+      summary: List philosophers
+      description: All philosophers (chapters) with school and section counts
+      responses:
+        "200":
+          description: Philosophers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Philosopher"
+  /sections:
+    get:
+      operationId: listSections
+      tags: [corpus]
+      summary: List sections
+      description: Browse corpus sections, filterable by book and philosopher
+      parameters:
+        - name: book
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: philosopher
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Sections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Section"
+  /sections/{id}:
+    get:
+      operationId: getSection
+      tags: [corpus]
+      summary: Get a section
+      description: A single section by its D.L. reference id (e.g. 1.1.24)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Section
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Section"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /sections/{id}/annotations:
+    get:
+      operationId: getSectionAnnotations
+      tags: [annotations]
+      summary: OTV annotations for a section
+      description: >
+        Deterministic occurrence-level tags for one section: named
+        individuals of the knowledge graph (philosophers, schools, places,
+        persons, cited sources, works) matched case-sensitively in the
+        Hicks English, and curated Greek terms (otv:Term) matched in the
+        Greek with conservative inflection handling. Offsets index the
+        section's own text/textEn strings.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Annotations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SectionAnnotations"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /annotations/entities:
+    get:
+      operationId: listAnnotatedEntities
+      tags: [annotations]
+      summary: All tagged entities with occurrence counts
+      description: >
+        Every knowledge-graph individual and Greek term the tagger finds
+        in the corpus, with total occurrences and the number of sections
+        it appears in, most frequent first.
+      responses:
+        "200":
+          description: Tagged entities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AnnotatedEntity"
+  /annotations/sections:
+    get:
+      operationId: listEntitySections
+      tags: [annotations]
+      summary: Sections where a tagged entity occurs
+      description: >
+        All corpus sections (in reading order) where the given entity URI
+        is tagged, with per-section occurrence counts.
+      parameters:
+        - name: entity
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Entity URI as returned by the annotations endpoints
+      responses:
+        "200":
+          description: Sections for the entity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EntityOccurrences"
+        "400":
+          description: Missing or empty entity query parameter
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "404":
+          description: Entity never tagged
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /verses:
+    get:
+      operationId: listVerses
+      tags: [corpus]
+      summary: List verses and epigrams
+      description: >
+        The block-quote verse layer of the Lives - death-epigrams, oracles,
+        epitaphs, and quoted poetry - Greek with aligned Hicks English.
+        Filterable by philosopher and book, and keyword-searchable (q).
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Keyword query (Greek or English); empty returns the full list
+        - name: philosopher
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: book
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: genre
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [epigram]
+          description: >
+            Filter by verse genre. Only "epigram" is classified (Greek
+            Anthology sourced pieces and Diogenes Laertius' own Pammetros
+            epigrams); other verses are unclassified.
+        - name: author
+          in: query
+          required: false
+          schema:
+            type: string
+          description: >
+            Filter by curated poet attribution (exact label,
+            case-insensitive), e.g. "Diogenes Laertius", "Timon", "Solon".
+            Only verses where the text names the poet carry an attribution.
+      responses:
+        "200":
+          description: Verses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Verse"
+  /sayings:
+    get:
+      operationId: listSayings
+      tags: [corpus]
+      summary: List sayings and apophthegms
+      description: >
+        The curated apophthegm layer of the Lives - pithy sayings, retorts and
+        maxims attributed to the philosophers, each cited to a D.L. section and
+        carrying the Hicks English (with Greek when curated). Filterable by
+        philosopher, topic, and book, and keyword-searchable (q).
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Keyword query (Greek or English); empty returns the full list
+        - name: philosopher
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: topic
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: book
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Sayings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Saying"
+  /doxai:
+    get:
+      operationId: listDoxai
+      tags: [corpus]
+      summary: List doxai (reported doctrines)
+      description: >
+        The curated doxography layer of the Lives - the philosophical tenets
+        (doctrines, opinions) Diogenes Laertius reports, one entry per tenet,
+        as opposed to the biographical facts of the claims layer and the bare
+        dicta of the sayings layer. Each is cited to a D.L. section and
+        carries the verbatim Hicks English (with Greek when curated), a
+        one-line gloss, and a controlled doctrinal domain. Filterable by
+        philosopher, domain, and book, and keyword-searchable (q).
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Keyword query (Greek or English); empty returns the full list
+        - name: philosopher
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: domain
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: book
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Doxai
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Doxa"
+  /anecdotes:
+    get:
+      operationId: listAnecdotes
+      tags: [corpus]
+      summary: List anecdotes
+      description: >
+        The curated anecdote layer of the Lives - narrated biographical
+        incidents (chreiai with action, encounters, vignettes), as opposed to
+        the bare dicta of the sayings layer. Each is cited to a D.L. section
+        and carries the verbatim Hicks English (with Greek when curated), a
+        one-line gloss, and a controlled narrative topic. Filterable by
+        philosopher, topic, and book, and keyword-searchable (q).
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Keyword query (Greek or English); empty returns the full list
+        - name: philosopher
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: topic
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: book
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Anecdotes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Anecdote"
+  /epistles:
+    get:
+      operationId: listEpistles
+      tags: [corpus]
+      summary: List quoted letters (epistles)
+      description: >
+        The curated epistle layer of the Lives - the letters Diogenes Laertius
+        quotes verbatim: the (fictional) correspondence of the Seven Sages, the
+        royal exchanges, and Epicurus' doctrinal epistles. Each is cited to a
+        D.L. section, carries a Hicks English excerpt with the Greek incipit or
+        salutation, and a curated authenticity verdict. Filterable by sender,
+        topic, book and authenticity, and keyword-searchable (q).
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Keyword query (Greek or English); empty returns the full list
+        - name: sender
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: topic
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: book
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: authenticity
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Epistles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Epistle"
+  /testaments:
+    get:
+      operationId: listTestaments
+      tags: [corpus]
+      summary: List quoted wills (testaments)
+      description: >
+        The curated testament layer of the Lives - the six wills Diogenes
+        Laertius quotes verbatim, for all of which he is the sole surviving
+        source: Plato, Aristotle, Theophrastus, Strato, Lyco and Epicurus.
+        Each spans several contiguous sections and carries the verbatim
+        Hicks English opening with the Greek incipit, the curated cast
+        (beneficiaries, executors, witnesses) exactly as the text names
+        them, and curated key provisions.
+      responses:
+        "200":
+          description: Testaments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Testament"
+  /search:
+    post:
+      operationId: searchCorpus
+      tags: [rag]
+      summary: Hybrid retrieval search
+      description: BM25 + dense embedding retrieval with reciprocal rank fusion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SearchInput"
+      responses:
+        "200":
+          description: Ranked passages
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchResult"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /ask:
+    post:
+      operationId: askQuestion
+      tags: [rag]
+      summary: Ask a question (RAG)
+      description: Retrieves relevant passages and generates a cited answer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AskInput"
+      responses:
+        "200":
+          description: Answer with cited passages
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AskResult"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "503":
+          description: Index not ready
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /graph:
+    get:
+      operationId: getKnowledgeGraph
+      tags: [graph]
+      summary: Knowledge graph
+      description: >
+        Philosophers as nodes, curated relations (teacher-pupil, influence,
+        marriage) as edges, following the successions in Diogenes Laertius.
+      responses:
+        "200":
+          description: Knowledge graph
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeGraph"
+  /claims/{philosopher}:
+    get:
+      operationId: getPhilosopherClaims
+      tags: [graph]
+      summary: Curated claims for a philosopher
+      description: >
+        Cited, certainty-tagged claims curated from the text of Diogenes
+        Laertius for one philosopher: biography, works, affiliations and
+        doctrines, with D.L.'s conflicting reports recorded as linked
+        alternative claims rather than silently resolved.
+      parameters:
+        - name: philosopher
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Claims for the philosopher
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PhilosopherClaims"
+        "404":
+          description: Unknown philosopher
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /map/places:
+    get:
+      operationId: listMapPlaces
+      tags: [graph]
+      summary: Places of the ancient world map
+      description: >
+        Every place carrying curated coordinates (Wikidata P625, fetched at
+        curation time - the runtime stays offline): claim-value places with
+        the cited life events (births, deaths, residences, travels) located
+        there, plus mention-only places the text names without a life event.
+        Each place also lists the passages where the deterministic tagger
+        found it named in the text.
+      responses:
+        "200":
+          description: Places with coordinates and events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MapPlace"
+  /map/itineraries:
+    get:
+      operationId: listMapItineraries
+      tags: [graph]
+      summary: Life journeys of the philosophers
+      description: >
+        Per-philosopher itineraries joined from the located life-event
+        claims of the knowledge graph: birthplace(s) first, then
+        residences and travels in the order D.L. gives them (the curated
+        claims preserve his narrative order), deathplace(s) last. Only
+        philosophers whose cited events span at least two distinct
+        places are included; rival accounts (disputed birthplaces,
+        competing deathplaces) are kept as stops with their own hedging.
+      responses:
+        "200":
+          description: Ordered journeys, most-traveled first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MapItinerary"
+  /timeline:
+    get:
+      operationId: getTimeline
+      tags: [graph]
+      summary: Chronology of the philosophers from D.L.'s dated claims
+      description: >
+        Philosophers with dated birth/death/floruit claims, earliest first.
+        Years are parsed only from the modern-year glosses the curated
+        claims already carry ("Born in the first year of the 35th Olympiad
+        (640/639 BCE)") - no modern reference dates are injected. Negative
+        years are BCE. When one endpoint is missing it may be derived from
+        a stated age at death and flagged approximate; every dated claim
+        is kept as an event with its citation, certainty, and named source.
+      responses:
+        "200":
+          description: Dated philosophers with their dated claims
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TimelinePhilosopher"
+  /competency/questions:
+    get:
+      operationId: listCompetencyQuestions
+      tags: [graph]
+      summary: List competency questions
+      description: >
+        The curated set of scholarly competency questions the knowledge
+        graph is designed to answer: questions about school membership,
+        teacher-pupil relations, places, works, and doctrines. Returns
+        the catalogue without running any SPARQL queries.
+      responses:
+        "200":
+          description: Competency question catalogue
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CompetencyQuestionList"
+  /competency/questions/{id}:
+    get:
+      operationId: getCompetencyQuestion
+      tags: [graph]
+      summary: Run a competency question
+      description: >
+        Runs the SPARQL SELECT query for the given competency question
+        against the in-memory oxigraph store (the plain knowledge graph),
+        extracts the relevant KG subgraph, and returns the answer rows,
+        the subgraph nodes and edges, and a list of source section ids.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Competency question id as returned by the catalogue
+      responses:
+        "200":
+          description: Competency question result with KG subgraph
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CompetencyQuestionResult"
+        "404":
+          description: Unknown question id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "500":
+          description: SPARQL query error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /lod/graph.jsonld:
+    get:
+      operationId: getLodGraphJsonLd
+      tags: [graph]
+      summary: Knowledge graph as JSON-LD
+      description: >
+        The full knowledge graph (philosophers, schools, works, doctrines,
+        cited claims and ontology extras) as linked open data in JSON-LD.
+      responses:
+        "200":
+          description: JSON-LD serialization of the graph
+          content:
+            application/ld+json:
+              schema:
+                type: object
+                additionalProperties: true
+  /lod/graph.ttl:
+    get:
+      operationId: getLodGraphTurtle
+      tags: [graph]
+      summary: Knowledge graph as Turtle
+      description: The full knowledge graph as linked open data in Turtle.
+      responses:
+        "200":
+          description: Turtle serialization of the graph
+          content:
+            text/turtle:
+              schema:
+                type: string
+  /lod/graph.rdf:
+    get:
+      operationId: getLodGraphRdfXml
+      tags: [graph]
+      summary: Knowledge graph as RDF/XML
+      description: >
+        The full knowledge graph as linked open data in RDF/XML, derived from
+        the Turtle serialization so it is guaranteed to be the same graph.
+      responses:
+        "200":
+          description: RDF/XML serialization of the graph
+          content:
+            application/rdf+xml:
+              schema:
+                type: string
+  /lod/graph-annotated.jsonld:
+    get:
+      operationId: getLodAnnotatedGraphJsonLd
+      tags: [graph]
+      summary: Knowledge graph with all stand-off annotations as JSON-LD
+      description: >
+        The full knowledge graph plus the complete stand-off annotation
+        layer - one lo:Passage node per tagged corpus section and one W3C
+        oa:Annotation per deterministic text tag - as JSON-LD.
+      responses:
+        "200":
+          description: JSON-LD serialization of the annotated graph
+          content:
+            application/ld+json:
+              schema:
+                type: object
+                additionalProperties: true
+  /lod/graph-annotated.ttl:
+    get:
+      operationId: getLodAnnotatedGraphTurtle
+      tags: [graph]
+      summary: Knowledge graph with all stand-off annotations as Turtle
+      description: >
+        The full knowledge graph plus the complete stand-off annotation
+        layer (lo:Passage nodes and W3C oa:Annotation nodes) as Turtle.
+      responses:
+        "200":
+          description: Turtle serialization of the annotated graph
+          content:
+            text/turtle:
+              schema:
+                type: string
+  /lod/graph-annotated.rdf:
+    get:
+      operationId: getLodAnnotatedGraphRdfXml
+      tags: [graph]
+      summary: Knowledge graph with all stand-off annotations as RDF/XML
+      description: >
+        The full knowledge graph plus the complete stand-off annotation
+        layer as RDF/XML, derived from the same quads as the Turtle so it
+        is guaranteed to be the same graph.
+      responses:
+        "200":
+          description: RDF/XML serialization of the annotated graph
+          content:
+            application/rdf+xml:
+              schema:
+                type: string
+  /lod/ontology.ttl:
+    get:
+      operationId: getLodOntologyTurtle
+      tags: [graph]
+      summary: Ontology (TBox) as Turtle
+      description: >
+        The ontology schema - classes and properties for philosophers,
+        schools, works, doctrines, claims and their transmission - as Turtle.
+      responses:
+        "200":
+          description: Turtle serialization of the ontology
+          content:
+            text/turtle:
+              schema:
+                type: string
+  /lod/ontology.rdf:
+    get:
+      operationId: getLodOntologyRdfXml
+      tags: [graph]
+      summary: Ontology (TBox) as RDF/XML
+      description: >
+        The ontology schema as RDF/XML, derived from the Turtle serialization
+        so it is guaranteed to be the same graph.
+      responses:
+        "200":
+          description: RDF/XML serialization of the ontology
+          content:
+            application/rdf+xml:
+              schema:
+                type: string
+  /lod/section/{id}.jsonld:
+    get:
+      operationId: getLodSectionJsonLd
+      tags: [graph]
+      summary: Semantically annotated passage as JSON-LD
+      description: >
+        A single passage as linked open data: a lo:Passage node with the
+        Greek and English text plus the subgraph of claims, sayings, verses
+        and related entities cited to that section.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Section id (book.chapter.section, e.g. 2.5.21)
+      responses:
+        "200":
+          description: JSON-LD serialization of the annotated passage
+          content:
+            application/ld+json:
+              schema:
+                type: object
+                additionalProperties: true
+        "404":
+          description: Unknown section id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /lod/section/{id}.rdf:
+    get:
+      operationId: getLodSectionRdfXml
+      tags: [graph]
+      summary: Semantically annotated passage as RDF/XML
+      description: >
+        A single passage as linked open data in RDF/XML, derived from the
+        same quads as the JSON-LD serialization.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Section id (book.chapter.section, e.g. 2.5.21)
+      responses:
+        "200":
+          description: RDF/XML serialization of the annotated passage
+          content:
+            application/rdf+xml:
+              schema:
+                type: string
+        "404":
+          description: Unknown section id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /lod/sparql:
+    get:
+      operationId: querySparqlGet
+      tags: [graph]
+      summary: Read-only SPARQL query endpoint
+      description: >
+        Executes a SPARQL 1.1 query against an in-memory store loaded from
+        the knowledge graph and ontology Turtle exports. SELECT/ASK results
+        are returned as application/sparql-results+json, CONSTRUCT/DESCRIBE
+        as Turtle. Updates are rejected. Without a query parameter, a short
+        usage document is returned.
+      parameters:
+        - name: query
+          in: query
+          required: false
+          schema:
+            type: string
+          description: URL-encoded SPARQL query
+      responses:
+        "200":
+          description: Query results (or a usage document when no query is given)
+          content:
+            application/sparql-results+json:
+              schema:
+                type: string
+            text/turtle:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        "400":
+          description: Invalid query, update attempt, or query too long
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+    post:
+      operationId: querySparqlPost
+      tags: [graph]
+      summary: Read-only SPARQL query endpoint (POST)
+      description: >
+        Same as the GET form; accepts the query as an
+        application/sparql-query body or as a form-encoded "query" field.
+        Updates are rejected.
+      requestBody:
+        required: true
+        content:
+          application/sparql-query:
+            schema:
+              type: string
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+      responses:
+        "200":
+          description: Query results
+          content:
+            application/sparql-results+json:
+              schema:
+                type: string
+            text/turtle:
+              schema:
+                type: string
+        "400":
+          description: Invalid query, update attempt, or query too long
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/overview:
+    get:
+      operationId: getEvalOverview
+      tags: [eval]
+      summary: Evaluation infrastructure overview
+      description: Headline counts across snapshots, topic sets, runs, pools, batches and judgments.
+      responses:
+        "200":
+          description: Overview
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalOverview"
+  /eval/snapshots:
+    get:
+      operationId: listEvalSnapshots
+      tags: [eval]
+      summary: List frozen corpus snapshots
+      responses:
+        "200":
+          description: Snapshots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EvalSnapshot"
+    post:
+      operationId: createEvalSnapshot
+      tags: [eval]
+      summary: Freeze the current corpus as a versioned snapshot
+      description: >
+        Copies the live corpus (all sections, Greek and English) into an
+        immutable snapshot file, computes a SHA-256 content hash over the
+        canonical JSONL serialization, and records the index definition.
+        Runs and judgments bind to a snapshot id, never to the live corpus.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvalSnapshotInput"
+      responses:
+        "201":
+          description: Created snapshot
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalSnapshot"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/snapshots/{id}:
+    get:
+      operationId: getEvalSnapshot
+      tags: [eval]
+      summary: Snapshot detail
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Snapshot detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalSnapshotDetail"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/snapshots/{id}/corpus.jsonl:
+    get:
+      operationId: getEvalSnapshotCorpus
+      tags: [eval]
+      summary: Download the frozen snapshot corpus as JSONL
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Snapshot corpus, one passage per line
+          content:
+            application/x-ndjson:
+              schema:
+                type: string
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/topic-sets:
+    get:
+      operationId: listEvalTopicSets
+      tags: [eval]
+      summary: List topic sets
+      responses:
+        "200":
+          description: Topic sets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EvalTopicSet"
+    post:
+      operationId: createEvalTopicSet
+      tags: [eval]
+      summary: Upload a topic set (questions) bound to a snapshot
+      description: >
+        Accepts JSONL, one topic per line:
+        {"topic_id":"T001","question":"...","question_lang":"el","split":"dev"}.
+        Unknown fields are preserved but ignored.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvalTopicSetInput"
+      responses:
+        "201":
+          description: Created topic set
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalTopicSet"
+        "400":
+          description: Invalid topic lines
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/topic-sets/{id}:
+    get:
+      operationId: getEvalTopicSet
+      tags: [eval]
+      summary: Topic set detail with all topics
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Topic set detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalTopicSetDetail"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/runs:
+    get:
+      operationId: listEvalRuns
+      tags: [eval]
+      summary: List registered system runs
+      responses:
+        "200":
+          description: Runs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EvalRun"
+    post:
+      operationId: createEvalRun
+      tags: [eval]
+      summary: Register a system run (ranked retrieval output)
+      description: >
+        Accepts JSONL, one ranked result per line:
+        {"topic_id":"T001","passage_id":"1.22","rank":1,"score":12.3}.
+        Every passage_id must exist in the bound snapshot and every
+        topic_id in the bound topic set; violations are rejected with a
+        line-numbered report. System identity is stored but never shown
+        to judges.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvalRunInput"
+      responses:
+        "201":
+          description: Registered run
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalRun"
+        "400":
+          description: Invalid run lines
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/runs/{id}/gold-score:
+    get:
+      operationId: getEvalRunGoldScore
+      tags: [eval]
+      summary: Score a run against the committed gold qrels
+      description: >
+        Scores the run's ranked output against the current committed gold
+        qrels file (data/eval/gold/gold-qrels-v<CURRENT_VERSION>.jsonl):
+        MRR / recall@k / nDCG@k / hit@k over answerable topics, plus the
+        abstention breakdown reported per subtype (out_of_corpus,
+        false_premise, underspecified_homonym) — never merged.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: k
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+          description: Ranking cutoff (default 10)
+      responses:
+        "200":
+          description: Gold-qrels score for the run
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalRunGoldScore"
+        "404":
+          description: Run not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "409":
+          description: Gold qrels unavailable or unresolvable for this run's snapshot
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/pools:
+    get:
+      operationId: listEvalPools
+      tags: [eval]
+      summary: List judgment pools
+      responses:
+        "200":
+          description: Pools
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EvalPool"
+    post:
+      operationId: createEvalPool
+      tags: [eval]
+      summary: Build a blind judgment pool from runs
+      description: >
+        Unions the top-k results of the selected runs per topic, removes
+        duplicates, shuffles deterministically, and creates one blind
+        pool item per (topic, passage) pair. Records which runs
+        contributed each item (never shown to judges) and the pool depth
+        per topic.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvalPoolInput"
+      responses:
+        "201":
+          description: Created pool
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalPool"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/pools/{id}:
+    get:
+      operationId: getEvalPool
+      tags: [eval]
+      summary: Pool detail with coverage summary
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Pool detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalPoolDetail"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/pools/{id}/coverage:
+    get:
+      operationId: getEvalPoolCoverage
+      tags: [eval]
+      summary: Per-item judgment coverage of a pool
+      description: >
+        For every pool item, how many independent judgments it has
+        received and from whom, so the batch builder can route items that
+        still need a first or second judgment.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Coverage
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalPoolCoverage"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/pools/{id}/batches:
+    get:
+      operationId: listEvalBatches
+      tags: [eval]
+      summary: List batches issued from a pool
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Batches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EvalBatchSummary"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+    post:
+      operationId: createEvalBatch
+      tags: [eval]
+      summary: Issue a blind judging batch for an annotator
+      description: >
+        Selects pool items that still need judgments, preferring items
+        with zero judgments, then items needing a second independent
+        judgment - never items this annotator has already judged.
+        Returns blind items only (no system, rank or score).
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvalBatchInput"
+      responses:
+        "201":
+          description: Issued batch
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalBatch"
+        "400":
+          description: Nothing left to judge or bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/judge/batches:
+    get:
+      operationId: listEvalJudgeBatches
+      tags: [eval]
+      summary: List the batches assigned to the presenting judge
+      description: >
+        Resolves the presented per-judge access token to a judge code and
+        returns only that judge's batches. The judge environment uses this
+        instead of the coordinator's batch listing, so a judge never needs
+        (or sees) anyone else's assignments.
+      parameters:
+        - name: X-Judge-Token
+          in: header
+          required: true
+          description: Per-judge access token from the personal link
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The judge's batches
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalJudgeBatchList"
+        "401":
+          description: Unknown or missing token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/batches/{id}:
+    get:
+      operationId: getEvalBatch
+      tags: [eval]
+      summary: Fetch an issued batch (blind items)
+      description: >
+        Requires the per-judge access token of the judge the batch was
+        issued to, passed as the `X-Judge-Token` header; a valid token
+        for a DIFFERENT judge is rejected with 403.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Batch
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalBatch"
+        "401":
+          description: Unknown or missing token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "403":
+          description: Token belongs to a different judge
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/batches/{id}/revoke:
+    post:
+      operationId: revokeEvalBatch
+      tags: [eval]
+      summary: Revoke a batch, releasing its outstanding assignments
+      description: >
+        Marks the batch revoked. Unjudged items are released: for a
+        resolution batch they drop back from "awaiting third judge" to
+        the arbiter's queue ("awaiting adjudicator"); for an ordinary
+        batch they become issuable to another judge again. Judgments
+        already ingested against the batch keep counting.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Revoked batch summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalBatchSummary"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "409":
+          description: Batch already revoked
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/judgments:
+    get:
+      operationId: listEvalJudgmentUploads
+      tags: [eval]
+      summary: List judgment uploads
+      responses:
+        "200":
+          description: Uploads
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EvalJudgmentUploadSummary"
+    post:
+      operationId: uploadEvalJudgments
+      tags: [eval]
+      summary: Ingest judgments (judge export JSONL)
+      description: >
+        Accepts the judge environment's export format, one judgment per
+        line. Judgments are keyed by (item_id, annotator); re-uploads
+        replace earlier judgments of the same key. Requires the judge's
+        personal access token; the token must resolve to the same judge
+        code as the submitted annotator or the upload is rejected (401
+        unknown token, 403 identity mismatch).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvalJudgmentIngest"
+      responses:
+        "201":
+          description: Ingest result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalJudgmentIngestResult"
+        "400":
+          description: Invalid judgment lines
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/pools/{id}/agreement:
+    get:
+      operationId: getEvalPoolAgreement
+      tags: [eval]
+      summary: Inter-annotator agreement for a pool
+      description: >
+        Krippendorff's alpha over all items with two or more judgments
+        (ordinal distance for the 0-3 relevance scale, nominal for
+        certainty), plus pairwise Cohen's kappa and raw observed
+        agreement per annotator pair.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Agreement report
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalAgreementReport"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/pools/{id}/disagreements:
+    get:
+      operationId: listEvalPoolDisagreements
+      tags: [eval]
+      summary: Items whose judges disagree, for arbitration
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Disagreements
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EvalDisagreement"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/adjudications:
+    post:
+      operationId: createEvalAdjudication
+      tags: [eval]
+      summary: Record the arbiter's final grade for a disputed item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvalAdjudicationInput"
+      responses:
+        "201":
+          description: Recorded adjudication
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvalAdjudication"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+        "404":
+          description: Unknown pool or item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /eval/pools/{id}/qrels:
+    get:
+      operationId: getEvalPoolQrels
+      tags: [eval]
+      summary: Export arbitrated relevance judgments as TREC qrels
+      description: >
+        One line per resolved item: "topic_id 0 passage_id grade".
+        An item is resolved when its judges agree or an adjudication
+        exists; unresolved items are omitted and counted in a trailing
+        comment line.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: qrels file
+          content:
+            text/plain:
+              schema:
+                type: string
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /otb/overview:
+    get:
+      operationId: getOtbOverview
+      tags: [otb]
+      summary: Ontoterminology overview
+      description: >
+        Metadata and headline counts of the OTB ontoterminology layer - the
+        TEDI-compatible modelling of the full corpus into categories,
+        concepts, objects, proper names, terms and cited assertions.
+      responses:
+        "200":
+          description: Overview
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OtbOverview"
+  /otb/concepts:
+    get:
+      operationId: listOtbConcepts
+      tags: [otb]
+      summary: List ontoterminology concepts
+      description: >
+        The concept inventory: each concept with its category, parent
+        (isA), relation and attribute signature, denoting terms and the
+        number of objects instantiating it.
+      responses:
+        "200":
+          description: Concepts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OtbConcept"
+  /otb/objects:
+    get:
+      operationId: listOtbObjects
+      tags: [otb]
+      summary: List ontoterminology objects
+      description: >
+        Paginated object inventory. Filterable by concept, category and
+        keyword (label, note and proper-name match, case-insensitive).
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Keyword filter over label, note and proper names
+        - name: concept
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Exact concept id (e.g. Philosopher, Assertion)
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Exact category id (e.g. Person, Document)
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 200
+            default: 50
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+      responses:
+        "200":
+          description: Objects page
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OtbObjectList"
+  /otb/objects/{id}:
+    get:
+      operationId: getOtbObject
+      tags: [otb]
+      summary: Ontoterminology object detail
+      description: >
+        One object with its literals, outbound and inbound relations
+        (with resolved labels) and proper names with allonyms.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Object fragment id (e.g. zenoOfCitium)
+      responses:
+        "200":
+          description: Object detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OtbObjectDetail"
+        "404":
+          description: Unknown object id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /otb/names:
+    get:
+      operationId: listOtbNames
+      tags: [otb]
+      summary: List proper names
+      description: >
+        Paginated proper-name inventory (otv:ProperName). Filterable by
+        language and keyword.
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Keyword filter over the name and its object label
+        - name: lang
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [en, grc, fr]
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 200
+            default: 50
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+      responses:
+        "200":
+          description: Proper names page
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OtbNameList"
+  /otb/ontoterminology.rdf:
+    get:
+      operationId: getOtbRdfXml
+      tags: [otb]
+      summary: Ontoterminology as RDF/XML
+      description: >
+        The complete TEDI 4.1 compatible ontoterminology export in RDF/XML,
+        section for section in the shape of a TEDI project export (SKOS,
+        OWL, OntoLex, OTV vocabulary and OTV layer).
+      responses:
+        "200":
+          description: RDF/XML export
+          content:
+            application/rdf+xml:
+              schema:
+                type: string
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+        denseIndexReady:
+          type: boolean
+          description: >
+            True when the dense embedding index is loaded AND the local
+            embedding model has warmed up — i.e. hybrid/dense semantic
+            retrieval for Ask/search is fully available. False means
+            retrieval is degraded to sparse-only (e.g. missing model cache).
+        modelReady:
+          type: boolean
+          description: >
+            True once the local embedding model has warmed up (loaded at
+            startup and produced a first embedding). Deployment checks can
+            poll this to wait until the first search will answer instantly.
+      required:
+        - status
+        - denseIndexReady
+        - modelReady
+    ErrorMessage:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+    CorpusStats:
+      type: object
+      required:
+        [
+          totalSections,
+          totalBooks,
+          totalPhilosophers,
+          englishCoverage,
+          indexReady,
+          embeddedSections,
+          totalClaims,
+          totalVerses,
+          totalSayings,
+          totalAnecdotes,
+          totalEpistles,
+          totalTestaments,
+          totalDoxai,
+          taggedEntities,
+          totalAnnotations,
+          sourceCitations,
+          totalGreekWords,
+        ]
+      properties:
+        totalSections:
+          type: integer
+        totalBooks:
+          type: integer
+        totalPhilosophers:
+          type: integer
+        englishCoverage:
+          type: integer
+          description: Number of sections with an aligned English translation
+        indexReady:
+          type: boolean
+          description: Whether the dense embedding index is built and loaded
+        embeddedSections:
+          type: integer
+        totalClaims:
+          type: integer
+          description: Curated cited claims in the knowledge graph
+        totalVerses:
+          type: integer
+          description: Verses and epigrams extracted from the text
+        totalSayings:
+          type: integer
+          description: Curated sayings and apophthegms
+        totalAnecdotes:
+          type: integer
+          description: Curated narrated incidents (anecdote layer)
+        totalEpistles:
+          type: integer
+          description: Letters quoted verbatim in the text (curated epistle layer)
+        totalTestaments:
+          type: integer
+          description: Wills quoted verbatim in the text (curated testament layer)
+        totalDoxai:
+          type: integer
+          description: Curated doctrinal tenets (doxography layer)
+        taggedEntities:
+          type: integer
+          description: Distinct entities in the text-tagging layer
+        totalAnnotations:
+          type: integer
+          description: Occurrence-level text annotations across the corpus
+        sourceCitations:
+          type: integer
+          description: Rows in the cited-authorities index
+        totalGreekWords:
+          type: integer
+          description: Word tokens in the Greek text across all sections
+    NamedCount:
+      type: object
+      required: [name, count]
+      properties:
+        name:
+          type: string
+        count:
+          type: integer
+    BookStats:
+      type: object
+      required:
+        [book, label, sections, lives, claims, verses, sayings, doxai, anecdotes]
+      properties:
+        book:
+          type: integer
+        label:
+          type: string
+          description: Conventional description of the book's contents
+        sections:
+          type: integer
+        lives:
+          type: integer
+          description: Distinct philosophers (chapters) in the book
+        claims:
+          type: integer
+        verses:
+          type: integer
+        sayings:
+          type: integer
+        doxai:
+          type: integer
+        anecdotes:
+          type: integer
+    DetailedStats:
+      type: object
+      required:
+        [
+          books,
+          claims,
+          verses,
+          sayings,
+          anecdotes,
+          epistles,
+          testaments,
+          entities,
+          works,
+          places,
+          sources,
+          lod,
+        ]
+      properties:
+        books:
+          type: array
+          items:
+            $ref: "#/components/schemas/BookStats"
+        claims:
+          type: object
+          required: [total, byCertainty, byProperty, withGreekExcerpt, conflictPairs]
+          properties:
+            total:
+              type: integer
+            byCertainty:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+            byProperty:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+              description: Sorted by count, descending
+            withGreekExcerpt:
+              type: integer
+              description: Claims carrying a verbatim Greek excerpt
+            conflictPairs:
+              type: integer
+              description: Distinct pairs of mutually conflicting claims
+        verses:
+          type: object
+          required: [total, attributed, poets, epigrams]
+          properties:
+            total:
+              type: integer
+            attributed:
+              type: integer
+              description: Verses with a curated poet attribution
+            poets:
+              type: integer
+              description: Distinct attributed poets
+            epigrams:
+              type: integer
+        sayings:
+          type: object
+          required: [total, speakers, byTopic, topSpeakers]
+          properties:
+            total:
+              type: integer
+            speakers:
+              type: integer
+            byTopic:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+            topSpeakers:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+        anecdotes:
+          type: object
+          required: [total, protagonists, byTopic, topProtagonists]
+          properties:
+            total:
+              type: integer
+            protagonists:
+              type: integer
+            byTopic:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+            topProtagonists:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+        epistles:
+          type: object
+          required: [total, byAuthenticity]
+          properties:
+            total:
+              type: integer
+            byAuthenticity:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+        testaments:
+          type: object
+          required: [total]
+          properties:
+            total:
+              type: integer
+        entities:
+          type: object
+          required: [total, annotations, byKind, topEntities]
+          properties:
+            total:
+              type: integer
+            annotations:
+              type: integer
+            byKind:
+              type: array
+              items:
+                type: object
+                required: [kind, entities, occurrences]
+                properties:
+                  kind:
+                    type: string
+                  entities:
+                    type: integer
+                  occurrences:
+                    type: integer
+            topEntities:
+              type: array
+              items:
+                type: object
+                required: [uri, label, kind, occurrences, sections]
+                properties:
+                  uri:
+                    type: string
+                    description: Entity URI, the deep-link key of the Index page
+                  label:
+                    type: string
+                  kind:
+                    type: string
+                  occurrences:
+                    type: integer
+                  sections:
+                    type: integer
+        works:
+          type: object
+          required: [total, philosophical, bySurvival, byForm, byTopic, byCentury, unknownCentury]
+          properties:
+            total:
+              type: integer
+            philosophical:
+              type: integer
+            bySurvival:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+            byForm:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+            byTopic:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+              description: Sorted by count, descending
+            byCentury:
+              type: array
+              items:
+                type: object
+                required: [century, count]
+                properties:
+                  century:
+                    type: integer
+                    description: Composition century, negative = BCE
+                  count:
+                    type: integer
+            unknownCentury:
+              type: integer
+              description: Works whose composition century is curated ignorance
+        places:
+          type: object
+          required: [total, events, mentionSections, itineraries]
+          properties:
+            total:
+              type: integer
+            events:
+              type: integer
+              description: Cited life events located on the map
+            mentionSections:
+              type: integer
+              description: Sections in which a mapped place is mentioned
+            itineraries:
+              type: integer
+        sources:
+          type: object
+          required: [citations, authorities]
+          properties:
+            citations:
+              type: integer
+            authorities:
+              type: integer
+        lod:
+          type: object
+          required:
+            [triples, nodesByClass, annotationBodies, properNames, terms, concepts]
+          properties:
+            triples:
+              type: integer
+              description: Deduped triples in the annotated graph export
+            nodesByClass:
+              type: array
+              items:
+                $ref: "#/components/schemas/NamedCount"
+              description: Named nodes per core ontology class
+            annotationBodies:
+              type: integer
+              description: Stand-off annotation nodes in the annotated graph
+            properNames:
+              type: integer
+              description: OTV ProperName linguistic nodes
+            terms:
+              type: integer
+              description: OTV Term linguistic nodes
+            concepts:
+              type: integer
+              description: Doctrine and vocabulary individuals typed otv:Concept
+    ExternalLinks:
+      type: object
+      description: Links to external authority records for a philosopher
+      properties:
+        qid:
+          type: string
+          description: Wikidata entity id
+        enwiki:
+          type: string
+          description: English Wikipedia title
+    Philosopher:
+      type: object
+      required: [name, school, book, chapter, sectionCount, firstId]
+      properties:
+        name:
+          type: string
+        school:
+          type: string
+        schoolGrc:
+          type: string
+          description: Curated Greek display form of `school` (greek-names curation); absent when the label has no curated Greek form
+        book:
+          type: integer
+        chapter:
+          type: string
+        sectionCount:
+          type: integer
+        firstId:
+          type: string
+        externalLinks:
+          $ref: "#/components/schemas/ExternalLinks"
+    Section:
+      type: object
+      required: [id, urn, book, chapter, section, philosopher, school, text]
+      properties:
+        id:
+          type: string
+        urn:
+          type: string
+        book:
+          type: integer
+        chapter:
+          type: string
+        section:
+          type: string
+        philosopher:
+          type: string
+        school:
+          type: string
+        schoolGrc:
+          type: string
+          description: Curated Greek display form of `school` (greek-names curation); absent when the label has no curated Greek form
+        text:
+          type: string
+          description: Greek text
+        textEn:
+          type: ["string", "null"]
+          description: Aligned English translation (Hicks), when available
+        externalLinks:
+          $ref: "#/components/schemas/ExternalLinks"
+    TextAnnotation:
+      type: object
+      required: [start, end, surface, lang, kind, entityUri, label]
+      properties:
+        start:
+          type: integer
+          description: UTF-16 start offset into the section's text (grc) or textEn (en)
+        end:
+          type: integer
+          description: UTF-16 end offset (exclusive); text.slice(start, end) === surface
+        surface:
+          type: string
+          description: The exact matched text
+        lang:
+          type: string
+          enum: [grc, en]
+        kind:
+          type: string
+          enum: [philosopher, school, place, person, source, work, term]
+        entityUri:
+          type: string
+          description: URI of the tagged individual or otv:Term node
+        label:
+          type: string
+          description: Canonical label (entities) or curated lemma (terms)
+        nameUri:
+          type: string
+          description: otv:ProperName node the surface belongs to, when one exists
+        conceptUris:
+          type: array
+          items:
+            type: string
+          description: Doctrine concepts a Greek term denotes (otv:denotedConcept)
+        heuristic:
+          type: string
+          enum: [section-owner]
+          description: Present when the match needed the section-owner heuristic
+    SectionAnnotations:
+      type: object
+      required: [sectionId, annotations]
+      properties:
+        sectionId:
+          type: string
+        annotations:
+          type: array
+          items:
+            $ref: "#/components/schemas/TextAnnotation"
+    AnnotatedEntity:
+      type: object
+      required: [entityUri, label, kind, occurrences, sectionCount]
+      properties:
+        entityUri:
+          type: string
+        label:
+          type: string
+        kind:
+          type: string
+          enum: [philosopher, school, place, person, source, work, term]
+        occurrences:
+          type: integer
+        sectionCount:
+          type: integer
+        otbObjectId:
+          type: string
+          description: Id of the ontoterminology object whose label exactly matches this entry within a kind-compatible category (unique matches only, never guessed), for linking into the Terminology section
+        denotedConcepts:
+          type: array
+          items:
+            type: string
+          description: Doctrine concepts this Greek term denotes (otv:denotedConcept, from the claims layer); term entries only
+        philosophyPages:
+          type: string
+          description: Philosophy Pages site path (philosophypages.com), e.g. dy/t.htm#telos
+        pleiades:
+          type: string
+          description: Curated Pleiades gazetteer id for place entities, e.g. "579885"
+        altTitle:
+          type: string
+          description: Alternate title D.L. reports for a work, e.g. "On the Soul" for Phaedo
+        altTitleRef:
+          type: string
+          description: Hicks reference (book.section) where D.L. records the double title, e.g. "3.58"
+        altTitleSectionId:
+          type: string
+          description: Corpus section id resolving altTitleRef, for linking
+        homonyms:
+          type: array
+          description: Other work entries sharing a title with this one, so homonymous works are not confused
+          items:
+            $ref: "#/components/schemas/EntityCrossRef"
+        grc:
+          type: string
+          description: Curated Greek nominative (greek-names curation), so a pasted Greek name that is not a shared homonym form still matches in the Index. Philosophers always carry it; place, person and source entries carry it only when the form is unique across differently-labelled bearers or the entry is a certified bearer with grcHomonymForm disambiguation
+        grcHomonymForm:
+          type: string
+          description: The curated Greek nominative this person-like entry shares with at least one other bearer (for certified pairs, the form behind the owl:differentFrom axioms in the LOD graph)
+        sharesGreekNameWith:
+          type: array
+          description: Other person-like bearers of the same Greek nominative; certified pairs are owl:differentFrom in the LOD graph, uncertified same-form bearers (grcHomonymUncertified) carry no such axiom
+          items:
+            $ref: "#/components/schemas/GreekNameBearer"
+        grcHomonymUncertified:
+          type: boolean
+          description: True when the shared Greek form is fully withheld from certification (no philosopher or certified bearer surfaces it), so the namesake note is softer - the bearers are not curator-certified distinct individuals and no owl:differentFrom axiom is asserted
+    GreekNameBearer:
+      type: object
+      required: [label]
+      properties:
+        label:
+          type: string
+        entityUri:
+          type: string
+          description: The other bearer's own tagged index entry, when it is itself tagged, so readers can jump to it
+    EntityCrossRef:
+      type: object
+      required: [entityUri, label, sharedTitle]
+      properties:
+        entityUri:
+          type: string
+        label:
+          type: string
+        sharedTitle:
+          type: string
+          description: The title both entries share, e.g. "On Philosophy"
+        author:
+          type: string
+          description: >-
+            Author of the other work, when the claims layer records exactly
+            one wrote attribution for it
+        authorEntityUri:
+          type: string
+          description: >-
+            Entity URI of the author's own tagged index entry, when the
+            author's name is itself a tagged philosopher
+    EntityOccurrences:
+      type: object
+      required: [entityUri, label, kind, sections]
+      properties:
+        entityUri:
+          type: string
+        label:
+          type: string
+        kind:
+          type: string
+          enum: [philosopher, school, place, person, source, work, term]
+        altTitle:
+          type: string
+          description: Alternate title D.L. reports for a work, e.g. "On the Soul" for Phaedo
+        sections:
+          type: array
+          items:
+            type: object
+            required: [id, book, philosopher, occurrences]
+            properties:
+              id:
+                type: string
+              book:
+                type: integer
+              philosopher:
+                type: string
+              occurrences:
+                type: integer
+              snippet:
+                type: string
+                description: >-
+                  Short English excerpt from the section, centered on the
+                  first tagged occurrence of the entity when one exists in
+                  the English text
+              snippetStart:
+                type: integer
+                description: >-
+                  Start offset (UTF-16) of the highlighted occurrence
+                  within snippet; absent when no English occurrence
+              snippetEnd:
+                type: integer
+                description: End offset of the highlighted occurrence within snippet
+    Verse:
+      type: object
+      required: [id, sectionId, book, philosopher, school, linesGrc, continued]
+      properties:
+        id:
+          type: string
+          description: Verse id, `${sectionId}#${ordinal}`
+        sectionId:
+          type: string
+          description: D.L. section reference the verse appears in
+        book:
+          type: integer
+        philosopher:
+          type: string
+        school:
+          type: string
+        schoolGrc:
+          type: string
+          description: Curated Greek display form of `school` (greek-names curation); absent when the label has no curated Greek form
+        linesGrc:
+          type: array
+          description: Greek verse lines
+          items:
+            type: string
+        linesEn:
+          type: ["array", "null"]
+          description: Aligned English verse lines (Hicks), when available
+          items:
+            type: string
+        source:
+          type: ["string", "null"]
+          description: Editorial source label (e.g. "Anth. Pal. vii. 616.")
+        continued:
+          type: boolean
+          description: Whether the quotation continues across a section boundary
+        genre:
+          type: string
+          enum: [epigram]
+          description: >
+            Verse genre, when deterministically classifiable - "epigram" for
+            Greek Anthology sourced pieces and Diogenes Laertius' own
+            Pammetros epigrams. Absent for unclassified verses.
+        author:
+          type: string
+          description: >
+            Curated poet attribution - present only where Diogenes Laertius
+            (or the Hicks translation) names the author of the lines;
+            anonymous epitaphs, oracles and unnamed quotations carry none.
+            "Diogenes Laertius" marks his own Pammetros epigrams.
+        authorIsPhilosopher:
+          type: boolean
+          description: >
+            True when `author` names a corpus philosopher (a knowledge-graph
+            node), so clients can link the attribution to the philosopher's
+            graph page. Absent otherwise.
+    Saying:
+      type: object
+      required: [id, philosopher, school, book, topic, gloss, en, ref, certainty]
+      properties:
+        id:
+          type: string
+          description: Stable id, prefixed per philosopher
+        philosopher:
+          type: string
+        school:
+          type: string
+        schoolGrc:
+          type: string
+          description: Curated Greek display form of `school` (greek-names curation); absent when the label has no curated Greek form
+        book:
+          type: integer
+        topic:
+          type: string
+          description: Controlled thematic facet (wit, wealth, death, virtue, ...)
+        gloss:
+          type: string
+          description: One-line editorial summary of the saying
+        grc:
+          type: ["string", "null"]
+          description: Greek text of the saying, when curated
+        en:
+          type: string
+          description: Verbatim Hicks English excerpt of the saying
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: ["string", "null"]
+          description: Corpus section id resolving the citation, for linking
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        to:
+          type: string
+          description: The named interlocutor the saying is spoken (or written) to, when the cited passage itself names them
+        accordingTo:
+          type: string
+          description: The source D.L. names for the saying, when he names one
+        alsoAttributedTo:
+          type: string
+          description: A rival figure D.L. reports the saying is also attributed to
+        note:
+          type: string
+    Doxa:
+      type: object
+      required: [id, philosopher, school, book, domain, gloss, en, ref, certainty]
+      properties:
+        id:
+          type: string
+          description: Stable id, prefixed per philosopher
+        philosopher:
+          type: string
+          description: The philosopher who holds the tenet
+        school:
+          type: string
+        schoolGrc:
+          type: string
+          description: Curated Greek display form of `school` (greek-names curation); absent when the label has no curated Greek form
+        book:
+          type: integer
+        domain:
+          type: string
+          description: Controlled doctrinal domain (first-principles, cosmology, physics, soul, gods, epistemology, logic, ethics, pleasure, politics, fate, death)
+        gloss:
+          type: string
+          description: One-line editorial summary of the tenet
+        grc:
+          type: ["string", "null"]
+          description: Greek text of the tenet, when curated
+        en:
+          type: string
+          description: Verbatim Hicks English excerpt of the tenet
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: ["string", "null"]
+          description: Corpus section id resolving the citation, for linking
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        doctrine:
+          type: string
+          description: Label of the existing knowledge-graph doctrine node this tenet instantiates, when curated
+        accordingTo:
+          type: string
+          description: The source D.L. names for the tenet, when he names one
+        alsoAttributedTo:
+          type: string
+          description: A rival figure D.L. reports the tenet is also attributed to
+        note:
+          type: string
+    Anecdote:
+      type: object
+      required: [id, philosopher, school, book, topic, gloss, en, ref, certainty]
+      properties:
+        id:
+          type: string
+          description: Stable id, prefixed per philosopher
+        philosopher:
+          type: string
+          description: The philosopher the incident is told about
+        school:
+          type: string
+        schoolGrc:
+          type: string
+          description: Curated Greek display form of `school` (greek-names curation); absent when the label has no curated Greek form
+        book:
+          type: integer
+        topic:
+          type: string
+          description: Controlled narrative facet (conversion, defiance, wit, death, ...)
+        gloss:
+          type: string
+          description: One-line editorial summary of the incident
+        grc:
+          type: ["string", "null"]
+          description: Greek text of the incident, when curated
+        en:
+          type: string
+          description: Verbatim Hicks English excerpt of the incident
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: ["string", "null"]
+          description: Corpus section id resolving the citation, for linking
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        involves:
+          type: string
+          description: The named counterpart in the incident, when the cited passage itself names them
+        accordingTo:
+          type: string
+          description: The source D.L. names for the incident, when he names one
+        alsoAttributedTo:
+          type: string
+          description: A rival figure D.L. reports the incident is also attributed to
+        framesSaying:
+          type: string
+          description: Id of the curated saying whose narrative setting this incident gives
+        note:
+          type: string
+    Epistle:
+      type: object
+      required: [id, sender, to, book, topic, authenticity, gloss, en, ref]
+      properties:
+        id:
+          type: string
+          description: Stable id (sender-to-addressee)
+        sender:
+          type: string
+          description: The letter's named sender (for spurious letters, the fictional one)
+        to:
+          type: string
+          description: The letter's addressee, as the text names them
+        book:
+          type: integer
+        topic:
+          type: string
+          description: Controlled thematic facet (invitation, politics, philosophy, writings, death, family)
+        authenticity:
+          type: string
+          enum: [authentic, disputed, spurious]
+          description: The curator's verdict, following modern scholarship
+        gloss:
+          type: string
+          description: One-line editorial summary of the letter
+        grc:
+          type: ["string", "null"]
+          description: Greek incipit or salutation of the letter
+        en:
+          type: string
+          description: Verbatim Hicks English excerpt (opening or key passage)
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: ["string", "null"]
+          description: Corpus section id resolving the citation, for linking
+        dramaticDate:
+          type: string
+          description: The letter's own dramatic date, only when the text supplies one
+        note:
+          type: string
+    Testament:
+      type: object
+      required:
+        [
+          id,
+          philosopher,
+          book,
+          ref,
+          sectionId,
+          sections,
+          grc,
+          en,
+          gloss,
+          beneficiaries,
+          executors,
+          witnesses,
+          provisions,
+          involves,
+        ]
+      properties:
+        id:
+          type: string
+          description: Stable id (the testator's name, lowercased)
+        philosopher:
+          type: string
+          description: The testator - always a philosopher with a Life of his own
+        book:
+          type: integer
+        ref:
+          type: string
+          description: Display citation (book.section span, Hicks numbering, e.g. 3.41–43)
+        sectionId:
+          type: ["string", "null"]
+          description: Corpus section id of the will's opening, for linking
+        sections:
+          type: array
+          items:
+            type: string
+          description: The full ordered span of corpus sections the will occupies
+        grc:
+          type: string
+          description: Verbatim Greek incipit - the will's opening formula
+        en:
+          type: string
+          description: Verbatim Hicks English opening
+        gloss:
+          type: string
+          description: One-line editorial summary of the will
+        beneficiaries:
+          type: array
+          items:
+            type: string
+          description: Principal legatees, exactly as the text names them
+        executors:
+          type: array
+          items:
+            type: string
+          description: Named executors; empty when the will appoints none
+        witnesses:
+          type: array
+          items:
+            type: string
+          description: Named witnesses; empty when the text records none
+        provisions:
+          type: array
+          items:
+            type: string
+          description: Curated key provisions (curator's words, not the text's)
+        involves:
+          type: array
+          items:
+            type: string
+          description: Corpus philosophers certainly identified in the will
+        note:
+          type: string
+          description: Curator's note - identifications, transmission, exclusions
+    Passage:
+      type: object
+      required:
+        [id, urn, book, chapter, section, philosopher, school, text, score, source]
+      properties:
+        id:
+          type: string
+        urn:
+          type: string
+        book:
+          type: integer
+        chapter:
+          type: string
+        section:
+          type: string
+        philosopher:
+          type: string
+        school:
+          type: string
+        schoolGrc:
+          type: string
+          description: Curated Greek display form of `school` (greek-names curation); absent when the label has no curated Greek form
+        text:
+          type: string
+        textEn:
+          type: ["string", "null"]
+        score:
+          type: number
+        source:
+          type: string
+          description: Retrieval source (hybrid, bm25, dense)
+    SearchInput:
+      type: object
+      required: [query]
+      properties:
+        query:
+          type: string
+          minLength: 1
+        topK:
+          type: integer
+          minimum: 1
+          maximum: 20
+        mode:
+          type: string
+          enum: [hybrid, sparse, dense]
+    SearchResult:
+      type: object
+      required: [hits, mode]
+      properties:
+        hits:
+          type: array
+          items:
+            $ref: "#/components/schemas/Passage"
+        mode:
+          type: string
+    AskInput:
+      type: object
+      required: [query]
+      properties:
+        query:
+          type: string
+          minLength: 1
+        topK:
+          type: integer
+          minimum: 1
+          maximum: 12
+    AskResult:
+      type: object
+      required: [answer, passages]
+      properties:
+        answer:
+          type: string
+        answerMode:
+          type: string
+          enum: [generative, extractive, stats]
+          description: >
+            How `answer`/`generated` were produced. `generative` means an
+            LLM synthesized `generated` from the retrieved context;
+            `extractive` means the top-passage excerpt answer (LLM absent,
+            disabled, or failed); `stats` means the question was recognized
+            as a dataset-statistics question and `answer` was computed from
+            live dataset counts (see `statsAnswer`). Absent in older
+            responses = extractive.
+        generated:
+          $ref: "#/components/schemas/GeneratedAnswer"
+        statsAnswer:
+          $ref: "#/components/schemas/StatsAnswer"
+        passages:
+          type: array
+          items:
+            $ref: "#/components/schemas/Passage"
+        graphContext:
+          $ref: "#/components/schemas/GraphContext"
+        claimAnswers:
+          type: array
+          description: >
+            Direct answers from the curated claims layer for
+            biography-style questions, grouped per philosopher and topic.
+          items:
+            $ref: "#/components/schemas/ClaimAnswer"
+        verseAnswers:
+          type: array
+          description: >
+            Verses/epigrams matching a verse-intent question (e.g. the
+            death-epigram for a philosopher named in the query).
+          items:
+            $ref: "#/components/schemas/Verse"
+        sayingAnswers:
+          type: array
+          description: >
+            Sayings/apophthegms matching a saying-intent question, for
+            philosophers named in the query.
+          items:
+            $ref: "#/components/schemas/Saying"
+    StatsAnswer:
+      type: object
+      required: [intent, value, text, source]
+      description: >
+        Authoritative answer for a dataset-statistics question (corpus-wide
+        counts and distributions), computed live from the curated dataset
+        rather than passage retrieval. Its citation is the dataset
+        statistics source, not a CTS passage.
+      properties:
+        intent:
+          type: string
+          description: Which statistic the question was matched to (e.g. total-sayings, top-book-claims)
+        value:
+          type: string
+          description: The bare answer value (a count, or a ranked/distribution summary)
+        text:
+          type: string
+          description: Human-readable answer sentence containing the value
+        source:
+          type: string
+          description: Citation label for the statistics source, e.g. "Dataset statistics (live corpus counts)"
+    GeneratedAnswer:
+      type: object
+      required: [text, citations, model]
+      description: >
+        LLM-synthesized answer grounded strictly in the retrieved passages
+        and curated hits. Inline citations appear in `text` as
+        [D.L. <section-id>]; `citations` lists the unique cited sections
+        (already validated against the supplied context) for chip rendering.
+      properties:
+        text:
+          type: string
+        citations:
+          type: array
+          items:
+            type: object
+            required: [sectionId, label]
+            properties:
+              sectionId:
+                type: string
+                description: Corpus section id (book.chapter.section) for deep-linking
+              label:
+                type: string
+                description: Display label, e.g. "D.L. 2.5.21"
+        model:
+          type: string
+    ClaimAnswer:
+      type: object
+      required: [philosopher, topic, claims]
+      properties:
+        philosopher:
+          type: string
+        topic:
+          type: string
+          description: Human-readable question topic (Teachers, Death, ...)
+        claims:
+          type: array
+          items:
+            $ref: "#/components/schemas/Claim"
+    GraphContext:
+      type: object
+      required: [matched, related]
+      description: >
+        Philosophers detected in the query and their knowledge-graph
+        neighbours used to boost retrieval.
+      properties:
+        matched:
+          type: array
+          items:
+            type: string
+        related:
+          type: array
+          items:
+            type: string
+    KgNode:
+      type: object
+      required:
+        [
+          name,
+          movement,
+          movementLabel,
+          school,
+          book,
+          chapter,
+          sectionCount,
+          firstId,
+        ]
+      properties:
+        name:
+          type: string
+        movement:
+          type: string
+        movementLabel:
+          type: string
+        school:
+          type: string
+        book:
+          type: integer
+        chapter:
+          type: string
+        sectionCount:
+          type: integer
+        firstId:
+          type: string
+        qid:
+          type: string
+          description: Wikidata entity id (owl:sameAs)
+        viaf:
+          type: string
+          description: VIAF authority id
+        britannica:
+          type: string
+          description: Encyclopaedia Britannica article path
+        enwiki:
+          type: string
+          description: English Wikipedia title (DBpedia URI derives from it)
+        inpho:
+          type: string
+          description: InPhO entity path (Indiana Philosophy Ontology, owl:sameAs), e.g. thinker/3724
+        philosophyPages:
+          type: string
+          description: Philosophy Pages site path (philosophypages.com), e.g. ph/plat.htm
+        founderOf:
+          type: string
+          description: Movement founded by this philosopher
+        founderRef:
+          type: string
+          description: D.L. citation (book.section) where the foundership is named, when he names it
+        founderSectionId:
+          type: string
+          description: Corpus section id resolving the foundership citation, for linking
+        earliestYear:
+          type: integer
+          description: Earliest attested year from the dated claims; negative = BCE
+        latestYear:
+          type: integer
+          description: Latest attested year from the dated claims; negative = BCE
+        approximateDates:
+          type: boolean
+          description: True when the date bounds are hedged (Olympiad "flourished about ...") rather than pinned
+        dateRefs:
+          type: array
+          items:
+            type: string
+          description: D.L. citations the year bounds were derived from
+        grcHomonymForm:
+          type: string
+          description: The curated Greek nominative this philosopher shares with at least one other (the form behind the owl:differentFrom axioms in the LOD graph)
+        sharesGreekNameWith:
+          type: array
+          items:
+            type: string
+          description: Other philosophers bearing the same Greek nominative; each pair is owl:differentFrom in the LOD graph
+    KgEdge:
+      type: object
+      required: [from, to, type]
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        type:
+          type: string
+          enum: [teacherOf, influenced, spouseOf]
+        ref:
+          type: string
+          description: D.L. citation (book.section) supporting the relation
+    KgMovement:
+      type: object
+      required: [id, label]
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        grc:
+          type: string
+          description: Curated Greek school name (D.L.'s prologue sect survey, 1.17-19); absent for the Unaffiliated bucket
+        doctrine:
+          type: string
+          description: The school's principal doctrine (the end / telos) as D.L. summarizes it
+        doctrineRef:
+          type: string
+          description: D.L. citation (book.section) for the doctrine summary
+        doctrineSectionId:
+          type: string
+          description: Corpus section id resolving the doctrine citation, for linking
+        doctrineNote:
+          type: string
+          description: Curated hedge note qualifying the doctrine summary, drawn from D.L.'s own qualifications at the cited passage
+    MapPlaceEvent:
+      type: object
+      required: [philosopher, property, certainty, ref]
+      properties:
+        philosopher:
+          type: string
+        property:
+          type: string
+          enum: [birthPlace, deathPlace, livedIn, traveledTo]
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        accordingTo:
+          type: string
+          description: The source D.L. names for the claim, when he names one
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: string
+          description: Corpus section id resolving the citation, for linking
+        deathAccounts:
+          type: array
+          description: For deathPlace events, every manner-of-death account D.L. records for the philosopher (he often gives rival versions)
+          items:
+            $ref: "#/components/schemas/MapDeathAccount"
+    MapDeathAccount:
+      type: object
+      required: [value, certainty, ref]
+      properties:
+        value:
+          type: string
+          description: The manner of death as curated from the text
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        accordingTo:
+          type: string
+          description: The source D.L. names for the account, when he names one
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: string
+          description: Corpus section id resolving the citation, for linking
+    MapPlaceMention:
+      type: object
+      required: [sectionId, count]
+      properties:
+        sectionId:
+          type: string
+        count:
+          type: integer
+          description: Occurrences within the section (usually 1)
+    MapPlace:
+      type: object
+      required: [label, placeType, lat, lon, events, mentions]
+      properties:
+        label:
+          type: string
+        qid:
+          type: string
+          description: Wikidata entity id, when curated
+        pleiades:
+          type: string
+          description: Pleiades gazetteer place id, when curated
+        placeType:
+          type: string
+          enum: [city, island, region, deme, landmark, naturalFeature, place]
+          description: Curated ontology type ("place" = compound/uncertain label)
+        locatedIn:
+          type: string
+          description: Curated containing place label, when asserted
+        lat:
+          type: number
+        lon:
+          type: number
+        events:
+          type: array
+          items:
+            $ref: "#/components/schemas/MapPlaceEvent"
+          description: Cited life events located here (empty for mention-only places)
+        mentions:
+          type: array
+          items:
+            $ref: "#/components/schemas/MapPlaceMention"
+          description: Passages where the text names the place, in corpus order
+    MapItineraryStop:
+      type: object
+      required: [place, lat, lon, property, certainty, ref]
+      properties:
+        place:
+          type: string
+          description: Place label - joins to MapPlace.label
+        lat:
+          type: number
+        lon:
+          type: number
+        property:
+          type: string
+          enum: [birthPlace, deathPlace, livedIn, traveledTo]
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        accordingTo:
+          type: string
+          description: The source D.L. names for the claim, when he names one
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: string
+          description: Corpus section id resolving the citation, for linking
+    MapItinerary:
+      type: object
+      required: [philosopher, stops, placeCount]
+      properties:
+        philosopher:
+          type: string
+        stops:
+          type: array
+          items:
+            $ref: "#/components/schemas/MapItineraryStop"
+          description: >
+            Ordered journey - birthplace(s) first, then residences and
+            travels in D.L.'s narrative order, deathplace(s) last
+        placeCount:
+          type: integer
+          description: Distinct places along the journey
+    TimelineEvent:
+      type: object
+      required: [kind, value, ref, certainty]
+      properties:
+        kind:
+          type: string
+          enum: [born, died, flourished]
+        year:
+          type: integer
+          description: Year from the claim's parenthetical gloss, negative = BCE
+        endYear:
+          type: integer
+          description: Later bound of an Olympiad span gloss ("640/639 BCE")
+        age:
+          type: integer
+          description: Age stated in the claim text, when one is given
+        value:
+          type: string
+          description: The claim text exactly as curated
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: string
+          description: Corpus section id resolving the citation, for linking
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        accordingTo:
+          type: string
+          description: The source D.L. names for the claim, when he names one
+    TimelinePhilosopher:
+      type: object
+      required: [name, book, movement, movementLabel, events]
+      properties:
+        name:
+          type: string
+        book:
+          type: integer
+        movement:
+          type: string
+          description: Movement id - joins to the knowledge graph movements
+        movementLabel:
+          type: string
+        movementGrc:
+          type: string
+          description: Curated Greek school name (greek-names curation); absent for the Unaffiliated bucket, which stays English-only
+        birthYear:
+          type: integer
+          description: Attested or derived birth year, negative = BCE
+        deathYear:
+          type: integer
+          description: Attested or derived death year, negative = BCE
+        floruitYear:
+          type: integer
+          description: Floruit year when D.L. dates the acme, negative = BCE
+        approxBirth:
+          type: boolean
+          description: True when the birth year is derived from a stated age
+        approxDeath:
+          type: boolean
+          description: True when the death year is derived from a stated age
+        events:
+          type: array
+          items:
+            $ref: "#/components/schemas/TimelineEvent"
+          description: Every dated claim, including rival accounts
+    Claim:
+      type: object
+      required: [id, property, value, valueType, ref, certainty]
+      properties:
+        id:
+          type: string
+        subject:
+          type: string
+          description: >
+            Philosopher the claim is about, when it may differ from the
+            surrounding grouping (e.g. reverse matches in claimAnswers)
+        property:
+          type: string
+          description: Claim property (birthPlace, wrote, heldDoctrine, ...)
+        value:
+          type: string
+        valueType:
+          type: string
+          description: place | work | philosopher | person | school | doctrine | literal
+        ref:
+          type: string
+          description: D.L. citation (book.section, Hicks numbering)
+        sectionId:
+          type: string
+          description: Corpus section id resolving the citation, for linking
+        certainty:
+          type: string
+          enum: [asserted, reported, disputed, conjectured]
+        accordingTo:
+          type: string
+          description: The source D.L. names for the claim, when he names one
+        accordingToUri:
+          type: string
+          description: LOD entity URI of the named authority, present only when it resolves to an Index entry
+        conflictsWith:
+          type: array
+          items:
+            type: string
+          description: Ids of alternative claims D.L. records for the same question
+        greek:
+          type: string
+          description: Polytonic Greek key term attached to a doctrine
+        grc:
+          type: string
+          description: Verbatim Greek excerpt from the cited section, when curated
+        note:
+          type: string
+        transmission:
+          type: string
+          enum: [spurious, disputed-authorship, extant, lost]
+          description: For wrote claims, the transmission fate D.L. reports for the work, when he reports one
+        altTitle:
+          type: string
+          description: For wrote claims, the alternate title D.L. gives for the work, when he gives one
+        altTitleRef:
+          type: string
+          description: Hicks reference (book.section) where the alternate title appears
+        altTitleSectionId:
+          type: string
+          description: Corpus section id for the alternate-title citation, when resolvable
+        sourceWork:
+          type: string
+          description: Title of the specific source work D.L. cites for this claim, when he names one
+        sourceWorkUri:
+          type: string
+          description: LOD entity URI of the cited source work, for linking to its Index entry
+        chain:
+          type: array
+          description: Intermediate authorities in a transmission chain (D.L.'s named source is itself citing an earlier source)
+          items:
+            $ref: "#/components/schemas/ChainLink"
+    ChainLink:
+      type: object
+      required: [authority]
+      properties:
+        authority:
+          type: string
+          description: The intermediate authority who transmitted the claim
+        authorityUri:
+          type: string
+          description: LOD entity URI of the authority's source node, for linking to its Index entry
+        work:
+          type: string
+          description: The work of the intermediate authority, when known
+        workUri:
+          type: string
+          description: LOD entity URI of the authority's work, for linking to its Index entry
+    PhilosopherClaims:
+      type: object
+      required: [philosopher, claims]
+      properties:
+        philosopher:
+          type: string
+        claims:
+          type: array
+          items:
+            $ref: "#/components/schemas/Claim"
+    SchoolAssociate:
+      type: object
+      required: [name, movement, movementLabel, anchor, ref, asserted]
+      properties:
+        name:
+          type: string
+        movement:
+          type: string
+          description: Movement id - joins to the knowledge graph movements
+        movementLabel:
+          type: string
+        anchor:
+          type: string
+          description: The KG philosopher this associate orbits (the school's founder)
+        ref:
+          type: string
+          description: D.L. citation (book.section) naming the membership
+        sectionId:
+          type: string
+          description: Corpus section id resolving the citation, for linking
+        note:
+          type: string
+          description: Curated membership note (who they were, per D.L.)
+        asserted:
+          type: boolean
+          description: False when the membership is hedged (recorded with its citation but not asserted of this exact bearer)
+        teacher:
+          type: string
+          description: Name of the node this associate hangs from in the cited succession (succession-links.ts) - a KG philosopher or another associate; absent for roster-only members
+        teacherAsserted:
+          type: boolean
+          description: False when the teacher link itself is hedged (e.g. the disputed Hippobotus/Sotion pupil list at 9.115)
+    KnowledgeGraph:
+      type: object
+      required: [nodes, edges, movements]
+      properties:
+        nodes:
+          type: array
+          items:
+            $ref: "#/components/schemas/KgNode"
+        edges:
+          type: array
+          items:
+            $ref: "#/components/schemas/KgEdge"
+        movements:
+          type: array
+          items:
+            $ref: "#/components/schemas/KgMovement"
+        associates:
+          type: array
+          items:
+            $ref: "#/components/schemas/SchoolAssociate"
+          description: Cited school members beyond the 82 chapter subjects (school-members.ts), shown as satellite nodes
+    CompetencyQuestion:
+      type: object
+      required: [id, question, category, rowCount]
+      properties:
+        id:
+          type: string
+          description: Stable question identifier (slug)
+        question:
+          type: string
+          description: The competency question in English
+        greekTerm:
+          type: string
+          description: Key Greek term associated with the question, when relevant
+        category:
+          type: string
+          description: Thematic category (Schools & Membership, People & Relationships, People & Places, Works & Survival, Doctrines & Topics)
+        queryHash:
+          type: string
+          description: Fingerprint of the compiled SPARQL query (placeholder-URI hash), used to detect query-only edits
+        seedHash:
+          type: string
+          description: Fingerprint of the question's anchor philosopher seedLabels (order-insensitive), used to detect seed-only edits
+        rowCount:
+          type: integer
+          description: Number of result rows the question's SPARQL query returns, computed once server-side and cached
+    CompetencyQuestionList:
+      type: object
+      required: [questions]
+      properties:
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/CompetencyQuestion"
+    CompetencyQuestionResult:
+      type: object
+      required: [id, question, category, variables, rows, nodes, edges, movements, sectionIds]
+      properties:
+        id:
+          type: string
+        question:
+          type: string
+        greekTerm:
+          type: string
+        category:
+          type: string
+        variables:
+          type: array
+          items:
+            type: string
+          description: SPARQL variable names (column headers for the rows)
+        rows:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+          description: SPARQL result rows, each a parallel array of string values
+        nodes:
+          type: array
+          items:
+            $ref: "#/components/schemas/KgNode"
+          description: KG subgraph nodes relevant to the answer
+        edges:
+          type: array
+          items:
+            $ref: "#/components/schemas/KgEdge"
+          description: KG subgraph edges between the answer nodes
+        movements:
+          type: array
+          items:
+            $ref: "#/components/schemas/KgMovement"
+          description: Movements present in the subgraph
+        sectionIds:
+          type: array
+          items:
+            type: string
+          description: Corpus section ids for the answer philosophers, for linking to passages
+        terms:
+          type: array
+          items:
+            type: object
+            required: [en, type]
+            properties:
+              en:
+                type: string
+                description: English label
+              grc:
+                type: string
+                description: Greek label if known
+              type:
+                type: string
+                enum: [philosopher, sage, school, place, work, person, doctrine]
+                description: Entity type
+              firstId:
+                type: string
+                description: Opening section id for the entity
+          description: Bilingual entities relevant to the answer, grouped by entity type
+        passages:
+          type: array
+          items:
+            type: object
+            required: [id]
+            properties:
+              id:
+                type: string
+                description: Section id (book.chapter.section)
+              en:
+                type: string
+                description: English passage snippet (first ~200 chars)
+              grc:
+                type: string
+                description: Greek passage snippet (first ~200 chars)
+          description: Bilingual passage snippets for the answer source sections
+        droppedSeeds:
+          type: array
+          items:
+            type: object
+            required: [en]
+            properties:
+              en:
+                type: string
+                description: English name of the dropped anchor
+              grc:
+                type: string
+                description: Curated Greek name form, if known
+          description: Reviewed exceptions - curated anchor figures who have no Life chapter (and thus no knowledge-graph node) and are deliberately dropped from the answer subgraph; shown as a labelled note on the competency page instead of a silent omission
+        sparql:
+          type: string
+          description: The compiled SPARQL SELECT query for this question, with the runtime base URI and ontology namespace substituted
+    OtbOverview:
+      type: object
+      required: [title, author, publisher, description, base, exportDate, counts, categoryCounts, conceptCounts, extensions]
+      properties:
+        title:
+          type: string
+        author:
+          type: string
+        publisher:
+          type: string
+        description:
+          type: string
+        base:
+          type: string
+          description: Hash-namespace base URI of the ontoterminology
+        exportDate:
+          type: string
+        counts:
+          type: object
+          required: [categories, concepts, relations, attributes, terms, objects, properNames, assertions]
+          properties:
+            categories:
+              type: integer
+            concepts:
+              type: integer
+            relations:
+              type: integer
+            attributes:
+              type: integer
+            terms:
+              type: integer
+            objects:
+              type: integer
+            properNames:
+              type: integer
+            assertions:
+              type: integer
+        categoryCounts:
+          type: array
+          items:
+            type: object
+            required: [id, count]
+            properties:
+              id:
+                type: string
+              count:
+                type: integer
+          description: Objects per category, descending
+        conceptCounts:
+          type: array
+          items:
+            type: object
+            required: [id, category, count]
+            properties:
+              id:
+                type: string
+              category:
+                type: string
+              count:
+                type: integer
+          description: Objects per concept, descending
+        extensions:
+          type: array
+          items:
+            type: string
+          description: Documented deviations from the reference TEDI export
+    OtbConcept:
+      type: object
+      required: [id, category, relations, attributes, terms, objectCount]
+      properties:
+        id:
+          type: string
+        category:
+          type: string
+          description: Top ancestor concept (the OTV category)
+        isA:
+          type: string
+          description: Parent concept id; absent for top concepts
+        shortName:
+          type: string
+        definition:
+          type: string
+        related:
+          type: array
+          items:
+            type: string
+          description: skos:related concept ids
+        relations:
+          type: array
+          items:
+            type: object
+            required: [id, ranges]
+            properties:
+              id:
+                type: string
+              ranges:
+                type: array
+                items:
+                  type: string
+          description: Relation signature (own and inherited), with ranges
+        attributes:
+          type: array
+          items:
+            type: string
+          description: Attribute signature (own and inherited)
+        terms:
+          type: array
+          items:
+            type: object
+            required: [id, name, lang]
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              lang:
+                type: string
+          description: Terms denoting the concept
+        examples:
+          type: array
+          items:
+            type: object
+            required: [id, label]
+            properties:
+              id:
+                type: string
+              label:
+                type: string
+          description: skos:example objects illustrating the concept
+        objectCount:
+          type: integer
+    OtbObjectSummary:
+      type: object
+      required: [id, label, concept, category, nameCount, relationCount]
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        concept:
+          type: string
+        category:
+          type: string
+        note:
+          type: string
+        nameCount:
+          type: integer
+        relationCount:
+          type: integer
+    OtbObjectList:
+      type: object
+      required: [total, items]
+      properties:
+        total:
+          type: integer
+          description: Matching objects before pagination
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/OtbObjectSummary"
+    OtbObjectDetail:
+      type: object
+      required: [id, label, concept, category, literals, relations, inbound, names]
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        concept:
+          type: string
+        category:
+          type: string
+        note:
+          type: string
+        literals:
+          type: array
+          items:
+            type: object
+            required: [attr, value]
+            properties:
+              attr:
+                type: string
+              value:
+                type: string
+              lang:
+                type: string
+                description: Language tag (grc/en) for text literals
+        relations:
+          type: array
+          items:
+            type: object
+            required: [rel, target, targetLabel, targetConcept]
+            properties:
+              rel:
+                type: string
+              target:
+                type: string
+              targetLabel:
+                type: string
+              targetConcept:
+                type: string
+          description: Outbound relations with resolved target labels
+        inbound:
+          type: array
+          items:
+            type: object
+            required: [rel, source, sourceLabel, sourceConcept]
+            properties:
+              rel:
+                type: string
+              source:
+                type: string
+              sourceLabel:
+                type: string
+              sourceConcept:
+                type: string
+          description: Inbound relations (capped at 200, most relevant first)
+        inboundTotal:
+          type: integer
+          description: Total inbound relations before the cap
+        names:
+          type: array
+          items:
+            $ref: "#/components/schemas/OtbProperName"
+    OtbProperName:
+      type: object
+      required: [id, name, lang, object, objectLabel, allonyms]
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        lang:
+          type: string
+        object:
+          type: string
+          description: Fragment id of the denoted object
+        objectLabel:
+          type: string
+        allonyms:
+          type: array
+          items:
+            type: string
+          description: Fragment ids of allonymous names of the same object
+    OtbNameList:
+      type: object
+      required: [total, items]
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/OtbProperName"
+    EvalOverview:
+      type: object
+      required: [snapshots, topicSets, runs, pools, batches, judgments, annotators]
+      properties:
+        snapshots:
+          type: integer
+        topicSets:
+          type: integer
+        runs:
+          type: integer
+        pools:
+          type: integer
+        batches:
+          type: integer
+        judgments:
+          type: integer
+        annotators:
+          type: integer
+    EvalSnapshotInput:
+      type: object
+      required: [label]
+      properties:
+        label:
+          type: string
+          description: Human label, e.g. "corpus v0.2 frozen 2026-08-05"
+        note:
+          type: string
+    EvalSnapshot:
+      type: object
+      required: [id, label, createdAt, sha256, nPassages, indexDefinition]
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        note:
+          type: string
+        createdAt:
+          type: string
+          description: ISO timestamp
+        sha256:
+          type: string
+          description: SHA-256 of the canonical JSONL serialization
+        nPassages:
+          type: integer
+        indexDefinition:
+          type: string
+          description: Frozen description of the retrieval index configuration at snapshot time
+    EvalSnapshotDetail:
+      allOf:
+        - $ref: "#/components/schemas/EvalSnapshot"
+        - type: object
+          required: [byBook]
+          properties:
+            byBook:
+              type: array
+              items:
+                type: object
+                required: [book, passages]
+                properties:
+                  book:
+                    type: integer
+                  passages:
+                    type: integer
+    EvalTopicSetInput:
+      type: object
+      required: [label, snapshotId, lines]
+      properties:
+        label:
+          type: string
+        snapshotId:
+          type: string
+        lines:
+          type: string
+          description: JSONL, one topic per line
+        note:
+          type: string
+    EvalTopicSet:
+      type: object
+      required: [id, label, snapshotId, createdAt, nTopics, bySplit]
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        note:
+          type: string
+        snapshotId:
+          type: string
+        createdAt:
+          type: string
+        nTopics:
+          type: integer
+        bySplit:
+          type: array
+          items:
+            $ref: "#/components/schemas/NamedCount"
+        nAbstain:
+          type: integer
+          description: Topics whose correct behaviour is abstention (hard negatives)
+        byQuestionType:
+          type: array
+          items:
+            $ref: "#/components/schemas/NamedCount"
+        byAbstainType:
+          type: array
+          items:
+            $ref: "#/components/schemas/NamedCount"
+          description: >-
+            Abstention subtypes (out_of_corpus, false_premise,
+            underspecified_homonym). Never merged in reporting.
+    EvalTopic:
+      type: object
+      required: [topic_id, question]
+      properties:
+        topic_id:
+          type: string
+        question:
+          type: string
+        question_lang:
+          type: string
+        split:
+          type: string
+        question_type:
+          type: string
+        question_en:
+          type: string
+        expected_answer:
+          type: string
+        must_abstain:
+          type: boolean
+        abstain_type:
+          type: string
+          description: out_of_corpus, false_premise or underspecified_homonym
+    EvalTopicSetDetail:
+      allOf:
+        - $ref: "#/components/schemas/EvalTopicSet"
+        - type: object
+          required: [topics]
+          properties:
+            topics:
+              type: array
+              items:
+                $ref: "#/components/schemas/EvalTopic"
+    EvalRunInput:
+      type: object
+      required: [systemId, snapshotId, topicSetId, lines]
+      properties:
+        systemId:
+          type: string
+          description: Stable system identifier, e.g. "laertius-hybrid", "bm25"
+        label:
+          type: string
+        snapshotId:
+          type: string
+        topicSetId:
+          type: string
+        lines:
+          type: string
+          description: JSONL, one ranked result per line
+        note:
+          type: string
+    EvalRun:
+      type: object
+      required: [id, systemId, snapshotId, topicSetId, createdAt, nLines, nTopics, maxRank]
+      properties:
+        id:
+          type: string
+        systemId:
+          type: string
+        label:
+          type: string
+        note:
+          type: string
+        snapshotId:
+          type: string
+        topicSetId:
+          type: string
+        createdAt:
+          type: string
+        nLines:
+          type: integer
+        nTopics:
+          type: integer
+          description: Distinct topics covered by the run
+        maxRank:
+          type: integer
+    EvalGoldAnswerableMetrics:
+      type: object
+      required: [nTopics, nScored, mrr, recallAtK, ndcgAtK, hitAtK, k]
+      properties:
+        nTopics:
+          type: integer
+          description: Answerable (non-abstain) topics in the topic set
+        nScored:
+          type: integer
+          description: Answerable topics with at least one resolvable relevant passage
+        mrr:
+          type: number
+        recallAtK:
+          type: number
+        ndcgAtK:
+          type: number
+        hitAtK:
+          type: number
+        k:
+          type: integer
+    EvalGoldAbstainSubtype:
+      type: object
+      required: [abstainType, nTopics, nWithEvidence, evidenceHitAtK]
+      properties:
+        abstainType:
+          type: string
+        nTopics:
+          type: integer
+        nWithEvidence:
+          type: integer
+          description: Subtype topics that carry gold evidence passages in the qrels
+        evidenceHitAtK:
+          type: integer
+          description: Of those, runs that surfaced at least one evidence passage in top k
+    EvalGoldPerTopic:
+      type: object
+      required: [topic_id, must_abstain, nRelevant, relevantInTopK]
+      properties:
+        topic_id:
+          type: string
+        must_abstain:
+          type: boolean
+        abstain_type:
+          type: string
+        nRelevant:
+          type: integer
+        firstRelevantRank:
+          type: integer
+          nullable: true
+        relevantInTopK:
+          type: integer
+    EvalRunGoldScore:
+      type: object
+      required:
+        [runId, systemId, topicSetId, snapshotId, k, goldVersion,
+         qrelsRows, qrelsTopics, qrelsErrors, answerable, abstainBySubtype, perTopic]
+      properties:
+        runId:
+          type: string
+        systemId:
+          type: string
+        topicSetId:
+          type: string
+        snapshotId:
+          type: string
+        k:
+          type: integer
+        goldVersion:
+          type: string
+          description: Gold set version the qrels file belongs to (CURRENT_VERSION)
+        qrelsRows:
+          type: integer
+        qrelsTopics:
+          type: integer
+          description: Distinct topic ids present in the qrels file
+        qrelsErrors:
+          type: array
+          items:
+            type: string
+          description: Qrels rows that could not be resolved against the snapshot
+        answerable:
+          $ref: "#/components/schemas/EvalGoldAnswerableMetrics"
+        abstainBySubtype:
+          type: array
+          items:
+            $ref: "#/components/schemas/EvalGoldAbstainSubtype"
+          description: >-
+            Per-subtype abstention reporting (out_of_corpus, false_premise,
+            underspecified_homonym) — one entry per subtype, never merged.
+        perTopic:
+          type: array
+          items:
+            $ref: "#/components/schemas/EvalGoldPerTopic"
+    EvalPoolInput:
+      type: object
+      required: [label, runIds, depth, judgmentsPerItem]
+      properties:
+        label:
+          type: string
+        runIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        depth:
+          type: integer
+          description: Pool depth k - top-k of each run is pooled
+        judgmentsPerItem:
+          type: integer
+          description: Independent judgments each item should receive (1 or 2)
+        note:
+          type: string
+    EvalPool:
+      type: object
+      required: [id, label, snapshotId, topicSetId, runIds, depth, judgmentsPerItem, createdAt, nItems, nTopics]
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        note:
+          type: string
+        snapshotId:
+          type: string
+        topicSetId:
+          type: string
+        runIds:
+          type: array
+          items:
+            type: string
+        depth:
+          type: integer
+        judgmentsPerItem:
+          type: integer
+        createdAt:
+          type: string
+        nItems:
+          type: integer
+        nTopics:
+          type: integer
+    EvalPoolDetail:
+      allOf:
+        - $ref: "#/components/schemas/EvalPool"
+        - type: object
+          required: [depthPerTopic, coverageSummary]
+          properties:
+            depthPerTopic:
+              type: array
+              items:
+                type: object
+                required: [topicId, poolSize]
+                properties:
+                  topicId:
+                    type: string
+                  poolSize:
+                    type: integer
+            coverageSummary:
+              $ref: "#/components/schemas/EvalCoverageSummary"
+    EvalCoverageSummary:
+      type: object
+      required: [zero, one, twoPlus, complete, unanimous, majority, adjudicated, needsArbitration, awaitingThirdJudge]
+      properties:
+        zero:
+          type: integer
+          description: Items with no judgment yet
+        one:
+          type: integer
+        twoPlus:
+          type: integer
+        complete:
+          type: integer
+          description: Items that reached the target number of judgments
+        unanimous:
+          type: integer
+          description: Items resolved by full agreement of all target judgments
+        majority:
+          type: integer
+          description: Items resolved by a guaranteed 2-of-3 majority (pools with 3 judges)
+        adjudicated:
+          type: integer
+          description: Items resolved by an arbiter's decision
+        needsArbitration:
+          type: integer
+          description: Items with all target judgments in but no majority (true deadlock)
+        awaitingThirdJudge:
+          type: integer
+          description: >-
+            Deadlocked items already escalated to a third judge whose
+            judgment has not arrived yet
+    EvalPoolCoverage:
+      type: object
+      required: [poolId, summary, items]
+      properties:
+        poolId:
+          type: string
+        summary:
+          $ref: "#/components/schemas/EvalCoverageSummary"
+        items:
+          type: array
+          items:
+            type: object
+            required: [itemId, topicId, passageId, judgments, annotators]
+            properties:
+              itemId:
+                type: string
+              topicId:
+                type: string
+              passageId:
+                type: string
+              judgments:
+                type: integer
+              annotators:
+                type: array
+                items:
+                  type: string
+    EvalBatchInput:
+      type: object
+      required: [annotator]
+      properties:
+        annotator:
+          type: string
+          description: Judge code, e.g. "MP"
+        size:
+          type: integer
+          description: Maximum items in the batch; omit for all eligible items
+        resolution:
+          type: boolean
+          description: >-
+            Issue a resolution batch: only deadlocked items (pool target of
+            2 judgments, both in and disagreeing, no adjudication) are
+            selected and issued to a judge who has not judged them, raising
+            their effective target to 3 so the 2-of-3 majority rule can
+            settle them without an arbiter.
+    EvalJudgeItem:
+      type: object
+      required: [item_id, task, passage_id, text_grc]
+      description: Blind judging item in the judge environment's file format
+      properties:
+        item_id:
+          type: string
+        task:
+          type: string
+          enum: [relevance, certainty, answer]
+        question:
+          type: string
+        question_lang:
+          type: string
+        question_en:
+          type: string
+          description: English rendering of the question, when the topic carries one
+        claim:
+          type: string
+        candidate_answer:
+          type: string
+        passage_id:
+          type: string
+        cts_urn:
+          type: string
+        text_grc:
+          type: string
+        text_en:
+          type: string
+        calibration:
+          type: boolean
+        reference_grade:
+          type: ["string", "null"]
+    EvalBatchSummary:
+      type: object
+      required: [id, poolId, annotator, createdAt, nItems, judged]
+      properties:
+        id:
+          type: string
+        poolId:
+          type: string
+        annotator:
+          type: string
+        createdAt:
+          type: string
+        nItems:
+          type: integer
+        judged:
+          type: integer
+          description: Items of this batch with an ingested judgment by this annotator
+        judgeToken:
+          type: string
+          description: >-
+            The judge's personal access token (coordinator view only): embed
+            it in the judge's personal link. Required by the judge
+            environment to load batches and submit judgments.
+        resolution:
+          type: boolean
+          description: True when this batch re-issued deadlocked items to a third judge
+        revokedAt:
+          type: string
+          description: >-
+            Present when the batch was revoked; its unjudged assignments
+            are released (resolution-batch items return to the arbiter)
+    EvalAllBatchSummary:
+      type: object
+      required: [id, poolId, annotator, createdAt, itemCount, submitted]
+      properties:
+        id:
+          type: string
+        poolId:
+          type: string
+        poolLabel:
+          type: string
+          description: Human-readable pool label when the pool still exists
+        annotator:
+          type: string
+        createdAt:
+          type: string
+        itemCount:
+          type: integer
+        submitted:
+          type: boolean
+          description: True when a judgment upload already exists for this batch
+        revokedAt:
+          type: string
+          description: Present when the batch was revoked
+    EvalBatch:
+      type: object
+      required: [id, poolId, annotator, createdAt, items]
+      properties:
+        id:
+          type: string
+        poolId:
+          type: string
+        annotator:
+          type: string
+        createdAt:
+          type: string
+        judgeToken:
+          type: string
+          description: >-
+            The judge's personal access token, minted on first issue.
+            Returned on creation so the coordinator can hand out the
+            personal link.
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/EvalJudgeItem"
+    EvalJudgeBatchList:
+      type: object
+      required: [annotator, batches]
+      description: >-
+        The batches assigned to the judge identified by a presented access
+        token.
+      properties:
+        annotator:
+          type: string
+          description: Judge code the token resolves to
+        batches:
+          type: array
+          items:
+            $ref: "#/components/schemas/EvalAllBatchSummary"
+    EvalJudgmentIngest:
+      type: object
+      required: [annotator, lines, token]
+      properties:
+        annotator:
+          type: string
+          description: Must match the annotator field inside the lines
+        token:
+          type: string
+          description: >-
+            The judge's personal access token; must resolve to the same
+            judge code as annotator or the upload is rejected.
+        batchId:
+          type: string
+        lines:
+          type: string
+          description: JSONL in the judge export format
+    EvalJudgmentIngestResult:
+      type: object
+      required: [accepted, replaced, rejected, errors]
+      properties:
+        accepted:
+          type: integer
+        replaced:
+          type: integer
+          description: Judgments that overwrote an earlier (item, annotator) judgment
+        rejected:
+          type: integer
+        errors:
+          type: array
+          items:
+            type: string
+          description: Line-numbered reasons for rejected lines (capped)
+    EvalJudgmentUploadSummary:
+      type: object
+      required: [id, annotator, createdAt, nJudgments]
+      properties:
+        id:
+          type: string
+        annotator:
+          type: string
+        batchId:
+          type: string
+        createdAt:
+          type: string
+        nJudgments:
+          type: integer
+    EvalAgreementReport:
+      type: object
+      required: [poolId, perTask, pairwise]
+      properties:
+        poolId:
+          type: string
+        perTask:
+          type: array
+          items:
+            type: object
+            required: [task, scale, nItemsDouble, krippendorffAlpha]
+            properties:
+              task:
+                type: string
+              scale:
+                type: string
+                enum: [ordinal, nominal]
+              nItemsDouble:
+                type: integer
+                description: Items with two or more judgments
+              krippendorffAlpha:
+                type: ["number", "null"]
+                description: Null when fewer than two double-judged items exist
+        pairwise:
+          type: array
+          items:
+            type: object
+            required: [annotatorA, annotatorB, task, nShared, observedAgreement, cohenKappa]
+            properties:
+              annotatorA:
+                type: string
+              annotatorB:
+                type: string
+              task:
+                type: string
+              nShared:
+                type: integer
+              observedAgreement:
+                type: number
+              cohenKappa:
+                type: ["number", "null"]
+                description: Null when kappa is undefined (no variance)
+    EvalDisagreement:
+      type: object
+      required: [itemId, topicId, passageId, task, grades, adjudicated]
+      properties:
+        itemId:
+          type: string
+        topicId:
+          type: string
+        passageId:
+          type: string
+        task:
+          type: string
+        question:
+          type: string
+        grades:
+          type: array
+          items:
+            type: object
+            required: [annotator, grade]
+            properties:
+              annotator:
+                type: string
+              grade:
+                type: string
+              notes:
+                type: string
+              flag:
+                type: boolean
+        adjudicated:
+          type: boolean
+        finalGrade:
+          type: string
+          description: Present when an adjudication exists
+        resolution:
+          type: string
+          enum: [adjudicated, deadlock, awaiting_third]
+          description: >-
+            Why the item appears here: "adjudicated" (kept for the audit
+            trail), "awaiting_third" (escalated to a third judge whose
+            judgment is still outstanding) or "deadlock" (no majority
+            possible, an arbiter is required). Majority-resolved items
+            never appear in this list.
+    EvalAdjudicationInput:
+      type: object
+      required: [poolId, itemId, grade, arbiter]
+      properties:
+        poolId:
+          type: string
+        itemId:
+          type: string
+        grade:
+          type: string
+        arbiter:
+          type: string
+        note:
+          type: string
+    EvalAdjudication:
+      type: object
+      required: [poolId, itemId, grade, arbiter, createdAt]
+      properties:
+        poolId:
+          type: string
+        itemId:
+          type: string
+        grade:
+          type: string
+        arbiter:
+          type: string
+        note:
+          type: string
+        createdAt:
+          type: string

@@ -1,0 +1,9 @@
+{
+ "id": "snap-msflk3v5-7936e0",
+ "label": "corpus v0.2 frozen 2026-08-05",
+ "note": "smoke",
+ "createdAt": "2026-08-05T04:38:38.226Z",
+ "sha256": "825ba618adb28395892e87f1830ba627c78198397ef6c072e6d8559e5a41fce4",
+ "nPassages": 1211,
+ "indexDefinition": "Hybrid retrieval: BM25 (unicode-folded Greek/English tokens) + dense cosine (multilingual MiniLM embeddings), reciprocal-rank fusion, knowledge-graph entity boosts; passage unit = Perseus section (CTS urn:cts:greekLit:tlg0004.tlg001)."
+}

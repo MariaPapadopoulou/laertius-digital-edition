@@ -1,0 +1,931 @@
+openapi: 3.1.0
+info:
+  # Do not change the title: generated output filenames (legomena.ts) derive from it.
+  title: Legomena
+  version: 0.1.0
+  description: >
+    Ontology-first companion API over Diogenes Laertius. A committed Turtle
+    dataset (assertion ontology, annotation layer, bilingual passage texts)
+    is loaded into an in-memory triple store at startup, and every endpoint
+    is answered exclusively by querying that store: the knowledge graph is
+    reconstructed from reified assertions, the reader renders stored text
+    literals with the stored stand-off annotation layer, and Ask retrieves
+    passages indexed from the dataset's own text literals, answering with
+    cited assertions.
+servers:
+  - url: /legomena/api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: dataset
+    description: Dataset provenance and statistics
+  - name: graph
+    description: Knowledge graph derived from assertions by SPARQL
+  - name: entities
+    description: Entity browsing derived from the store
+  - name: reader
+    description: Passage reader served from stored text literals
+  - name: ask
+    description: Assertion-grounded retrieval and answering
+  - name: sparql
+    description: Raw SPARQL access to the very store feeding every page
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health and triple-store readiness
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /dataset/stats:
+    get:
+      operationId: getDatasetStats
+      tags: [dataset]
+      summary: Dataset statistics
+      description: >
+        Provenance of the committed Turtle files (name, size, content hash)
+        and store-derived counts: entities per class, assertions by kind and
+        certainty, passages and annotations. Every number is computed by
+        SPARQL against the loaded store.
+      responses:
+        "200":
+          description: Stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DatasetStats"
+  /graph:
+    get:
+      operationId: getDerivedGraph
+      tags: [graph]
+      summary: Knowledge graph derived from assertions
+      description: >
+        Philosopher nodes and relation edges reconstructed purely from the
+        store: nodes from chapter-subject class assertions, edges from the
+        reified rdf:Statement assertions carrying D.L. citations. Each edge
+        reports the citation, the certainty derived from the presence of a
+        direct triple, and the attribution (named authorities where the
+        dataset records them). The SPARQL queries used for the derivation
+        are included verbatim.
+      responses:
+        "200":
+          description: Derived graph
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OntologyGraph"
+  /entities:
+    get:
+      operationId: listEntities
+      tags: [entities]
+      summary: List entities
+      description: >
+        Entities of the assertion ontology (philosophers, sages, schools,
+        places, works, persons, sources, doctrines), with per-entity
+        assertion and annotation counts derived from the store. Filterable
+        by kind and by case-insensitive label substring.
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Case-insensitive substring filter on labels and Greek names
+        - name: kind
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Entity kind filter (philosopher, sage, school, place, work, person, source, doctrine)
+      responses:
+        "200":
+          description: Entities
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EntityList"
+  /entity:
+    get:
+      operationId: getEntity
+      tags: [entities]
+      summary: Entity detail with its assertions
+      description: >
+        One entity by URI: labels, classes, Greek proper names, external
+        links, and every assertion about it - claims where it is subject or
+        object, reified relation statements, each with certainty,
+        attribution, transmission chain and D.L. citation.
+      parameters:
+        - name: uri
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Entity URI as it appears in the dataset
+      responses:
+        "200":
+          description: Entity detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EntityDetail"
+        "404":
+          description: URI not present as a subject in the store
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /sections:
+    get:
+      operationId: listPassages
+      tags: [reader]
+      summary: List passages
+      description: >
+        Every lo:Passage node of the dataset in reading order, with
+        citation, Life attribution, English availability, and stored
+        annotation counts. Filterable by book.
+      parameters:
+        - name: book
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Passages
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PassageList"
+  /sections/{id}:
+    get:
+      operationId: getPassage
+      tags: [reader]
+      summary: Passage detail with stored annotations
+      description: >
+        One passage by section id: the stored Greek and English text
+        literals, the stand-off annotation layer (exact quote, offsets,
+        language, tagged entity), and the assertions cited to this section.
+        No runtime tagging is involved; highlights come from the dataset.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Section id (book.chapter.section, e.g. 2.5.21)
+      responses:
+        "200":
+          description: Passage detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PassageDetail"
+        "404":
+          description: Unknown section id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /ask:
+    post:
+      operationId: askOntology
+      tags: [ask]
+      summary: Ask a question, answered by cited assertions
+      description: >
+        Hybrid retrieval (BM25 and dense embeddings, both indexed from the
+        dataset's own text literals) selects passages; the stored annotation
+        layer of those passages names the entities involved; and the answer
+        lines are the assertions about those entities whose citations
+        resolve into the retrieved passages. Every line carries the
+        assertion URI, its certainty and attribution, and the D.L. citation.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AskInput"
+      responses:
+        "200":
+          description: Cited assertion lines with the retrieved passages
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OntologyAnswer"
+        "400":
+          description: Empty question
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /sparql:
+    post:
+      operationId: runSparql
+      tags: [sparql]
+      summary: Run a read-only SPARQL query
+      description: >
+        Executes a SPARQL 1.1 query against the in-memory store that feeds
+        every other endpoint. SELECT and ASK return bindings; CONSTRUCT and
+        DESCRIBE return Turtle. Updates are rejected.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SparqlInput"
+      responses:
+        "200":
+          description: Query result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SparqlResult"
+        "400":
+          description: Invalid query, update attempt, or query too long
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /sparql/examples:
+    get:
+      operationId: listSparqlExamples
+      tags: [sparql]
+      summary: Curated example queries
+      description: >
+        Example SPARQL queries demonstrating the assertion ontology - the
+        same queries the server itself uses for its derivations, plus
+        smaller didactic ones.
+      responses:
+        "200":
+          description: Examples
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SparqlExampleList"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      required: [status, storeReady, tripleCount, denseIndexReady, modelReady]
+      properties:
+        status:
+          type: string
+        storeReady:
+          type: boolean
+          description: Whether the Turtle dataset finished loading into the store
+        tripleCount:
+          type: integer
+          description: Triples currently in the store
+        denseIndexReady:
+          type: boolean
+          description: Whether the dense embedding index and query embedder are available
+        modelReady:
+          type: boolean
+          description: >
+            True once the local embedding model has warmed up (loaded at
+            startup and produced a first embedding). Deployment checks can
+            poll this to wait until the first search will answer instantly.
+    ErrorMessage:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+    NamedCount:
+      type: object
+      required: [name, count]
+      properties:
+        name:
+          type: string
+        count:
+          type: integer
+    DatasetFile:
+      type: object
+      required: [name, sha256, bytes]
+      properties:
+        name:
+          type: string
+          description: File name inside the committed dataset directory
+        sha256:
+          type: string
+          description: Content hash recorded by the materializer
+        bytes:
+          type: integer
+        triples:
+          type: integer
+          description: Triples contributed to the store by this file
+    DatasetStats:
+      type: object
+      required:
+        [generatedAt, files, totalTriples, entityCounts, assertions, passages]
+      properties:
+        generatedAt:
+          type: string
+          description: Timestamp recorded in the dataset manifest
+        files:
+          type: array
+          items:
+            $ref: "#/components/schemas/DatasetFile"
+        totalTriples:
+          type: integer
+        entityCounts:
+          type: array
+          items:
+            $ref: "#/components/schemas/NamedCount"
+          description: Named individuals per core ontology class
+        assertions:
+          $ref: "#/components/schemas/AssertionStats"
+        passages:
+          $ref: "#/components/schemas/PassageStats"
+    AssertionStats:
+      type: object
+      required: [claims, relationStatements, byCertainty, byPredicate]
+      properties:
+        claims:
+          type: integer
+          description: lo:Claim reifications in the store
+        relationStatements:
+          type: integer
+          description: rdf:Statement reifications carrying D.L. citations
+        byCertainty:
+          type: array
+          items:
+            $ref: "#/components/schemas/NamedCount"
+        byPredicate:
+          type: array
+          items:
+            $ref: "#/components/schemas/NamedCount"
+          description: Claim predicates by frequency, descending
+    PassageStats:
+      type: object
+      required: [total, withEnglish, annotated, annotations]
+      properties:
+        total:
+          type: integer
+          description: lo:Passage nodes in the dataset
+        withEnglish:
+          type: integer
+        annotated:
+          type: integer
+          description: Passages with at least one stored annotation
+        annotations:
+          type: integer
+          description: oa:Annotation nodes in the dataset
+    GraphDerivation:
+      type: object
+      required: [description, nodeQuery, edgeQuery]
+      properties:
+        description:
+          type: string
+        nodeQuery:
+          type: string
+          description: The SPARQL query that produced the nodes
+        edgeQuery:
+          type: string
+          description: The SPARQL query that produced the edges
+    OntologyGraphNode:
+      type: object
+      required:
+        [uri, name, school, schoolUri, schoolLabel, book, chapter, claimCount]
+      properties:
+        uri:
+          type: string
+        name:
+          type: string
+        grcName:
+          type: string
+          description: Greek proper name form recorded for the entity, when unique
+        school:
+          type: string
+          description: School slug derived from the lo:memberOf URI
+        schoolUri:
+          type: string
+        schoolLabel:
+          type: string
+        book:
+          type: integer
+        chapter:
+          type: string
+        claimCount:
+          type: integer
+          description: Claims in the store whose rdf:subject is this node
+        sage:
+          type: boolean
+          description: True when the node is classed lo:Sage (Book 1)
+    OntologyGraphEdge:
+      type: object
+      required:
+        [from, to, fromUri, toUri, type, predicateUri, ref, citation, certainty, attribution]
+      properties:
+        from:
+          type: string
+          description: Label of the subject philosopher
+        to:
+          type: string
+        fromUri:
+          type: string
+        toUri:
+          type: string
+        type:
+          type: string
+          enum: [teacherOf, influenced, spouseOf]
+        predicateUri:
+          type: string
+        ref:
+          type: string
+          description: D.L. reference (book.section, Hicks numbering)
+        citation:
+          type: string
+          description: Full bibliographic citation literal from the statement
+        certainty:
+          type: string
+          description: >-
+            "asserted" when the store also holds the direct triple the
+            statement reifies; "reported" when the relation exists only as a
+            reification
+        attribution:
+          type: string
+          description: >-
+            Named authorities (lo:accordingTo) when the dataset records
+            them, otherwise Diogenes Laertius himself
+        sectionId:
+          type: string
+          description: Corpus section id the citation resolves to, when unambiguous
+    OntologyGraph:
+      type: object
+      required: [nodes, edges, derivation]
+      properties:
+        nodes:
+          type: array
+          items:
+            $ref: "#/components/schemas/OntologyGraphNode"
+        edges:
+          type: array
+          items:
+            $ref: "#/components/schemas/OntologyGraphEdge"
+        derivation:
+          $ref: "#/components/schemas/GraphDerivation"
+    EntitySummary:
+      type: object
+      required: [uri, label, kind, claimCount, annotationCount]
+      properties:
+        uri:
+          type: string
+        label:
+          type: string
+        kind:
+          type: string
+          description: Primary ontology class (philosopher, sage, school, place, work, person, source, doctrine)
+        grcName:
+          type: string
+        claimCount:
+          type: integer
+          description: Assertions (claims and relation statements) touching this entity
+        annotationCount:
+          type: integer
+          description: Stored stand-off annotations whose body is this entity
+    EntityList:
+      type: object
+      required: [entities, total]
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: "#/components/schemas/EntitySummary"
+        total:
+          type: integer
+          description: Matching entities before any truncation
+    LinkOut:
+      type: object
+      required: [uri]
+      properties:
+        uri:
+          type: string
+        label:
+          type: string
+    ProperName:
+      type: object
+      required: [uri, form, lang]
+      properties:
+        uri:
+          type: string
+        form:
+          type: string
+        lang:
+          type: string
+    ChainLink:
+      type: object
+      required: [authorityUri, authorityLabel, order]
+      properties:
+        authorityUri:
+          type: string
+        authorityLabel:
+          type: string
+        order:
+          type: integer
+          description: Position in the transmission chain, 1 = D.L.'s immediate source
+    ConflictRef:
+      type: object
+      required: [uri]
+      properties:
+        uri:
+          type: string
+        summary:
+          type: string
+          description: Verbalized subject-predicate-object of the conflicting claim
+    Assertion:
+      type: object
+      required:
+        [uri, kind, subjectUri, subjectLabel, predicateUri, predicateLabel, certainty, citation, ref]
+      properties:
+        uri:
+          type: string
+          description: Claim URI, or a synthetic statement identifier for reified relations
+        kind:
+          type: string
+          enum: [claim, relation]
+        subjectUri:
+          type: string
+        subjectLabel:
+          type: string
+        predicateUri:
+          type: string
+        predicateLabel:
+          type: string
+          description: rdfs:label of the predicate from the ontology TBox in the store
+        objectUri:
+          type: string
+        objectLabel:
+          type: string
+        objectValue:
+          type: string
+          description: Literal object value, when the assertion's object is a literal
+        objectLang:
+          type: string
+        certainty:
+          type: string
+          description: asserted, reported, disputed or conjectured (from lo:certainty)
+        accordingTo:
+          type: array
+          items:
+            $ref: "#/components/schemas/LinkOut"
+          description: Authorities D.L. names for the assertion
+        assertedInWork:
+          $ref: "#/components/schemas/LinkOut"
+        chain:
+          type: array
+          items:
+            $ref: "#/components/schemas/ChainLink"
+          description: Transmission chain, outermost authority first
+        conflictsWith:
+          type: array
+          items:
+            $ref: "#/components/schemas/ConflictRef"
+        citation:
+          type: string
+        ref:
+          type: string
+        sectionId:
+          type: string
+        grc:
+          type: string
+          description: Verbatim Greek excerpt carried by the claim, when curated
+        note:
+          type: string
+    EntityDetail:
+      type: object
+      required: [uri, label, kinds, properNames, sameAs, seeAlso, assertions, mentions, relations, annotatedSections]
+      properties:
+        uri:
+          type: string
+        label:
+          type: string
+        kinds:
+          type: array
+          items:
+            type: string
+          description: All ontology classes of the entity, qnames
+        grcName:
+          type: string
+        book:
+          type: integer
+        chapter:
+          type: string
+        schoolUri:
+          type: string
+        schoolLabel:
+          type: string
+        founderOf:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        properNames:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProperName"
+        sameAs:
+          type: array
+          items:
+            $ref: "#/components/schemas/LinkOut"
+        seeAlso:
+          type: array
+          items:
+            $ref: "#/components/schemas/LinkOut"
+        doctrines:
+          type: array
+          items:
+            $ref: "#/components/schemas/LinkOut"
+          description: Principal doctrines, for school entities
+        assertions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Assertion"
+          description: Assertions whose subject is this entity
+        mentions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Assertion"
+          description: Assertions whose object is this entity
+        relations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OntologyGraphEdge"
+          description: Derived relation edges touching this entity
+        annotatedSections:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnnotatedSectionRef"
+    AnnotatedSectionRef:
+      type: object
+      required: [sectionId, citation, count]
+      properties:
+        sectionId:
+          type: string
+        citation:
+          type: string
+        lifeOf:
+          type: string
+        count:
+          type: integer
+          description: Stored annotations of this entity in the section
+    PassageSummary:
+      type: object
+      required: [id, citation, book, chapter, section, hasEnglish, annotationCount, assertionCount]
+      properties:
+        id:
+          type: string
+        citation:
+          type: string
+        book:
+          type: integer
+        chapter:
+          type: string
+        section:
+          type: string
+        lifeOf:
+          type: string
+        lifeOfUri:
+          type: string
+        hasEnglish:
+          type: boolean
+        annotationCount:
+          type: integer
+        assertionCount:
+          type: integer
+          description: Assertions whose citation resolves to this section
+    PassageList:
+      type: object
+      required: [sections]
+      properties:
+        sections:
+          type: array
+          items:
+            $ref: "#/components/schemas/PassageSummary"
+    AnnotationSpan:
+      type: object
+      required: [annotationUri, start, end, lang, exact, entityUri]
+      properties:
+        annotationUri:
+          type: string
+        start:
+          type: integer
+          description: UTF-16 offset into the stored greekText (grc) or englishText (en)
+        end:
+          type: integer
+        lang:
+          type: string
+          enum: [grc, en]
+        exact:
+          type: string
+          description: The oa:exact quote stored in the TextQuoteSelector
+        entityUri:
+          type: string
+        entityLabel:
+          type: string
+        entityKind:
+          type: string
+        nameUri:
+          type: string
+          description: otv:ProperName body, when the annotation realizes a name
+        conceptUris:
+          type: array
+          items:
+            type: string
+          description: otv:Concept bodies a term annotation denotes
+    PassageDetail:
+      type: object
+      required: [id, citation, urn, book, chapter, section, greekText, annotations, assertions]
+      properties:
+        id:
+          type: string
+        citation:
+          type: string
+        urn:
+          type: string
+        book:
+          type: integer
+        chapter:
+          type: string
+        section:
+          type: string
+        lifeOf:
+          type: string
+        lifeOfUri:
+          type: string
+        greekText:
+          type: string
+          description: The stored lo:greekText literal
+        englishText:
+          type: ["string", "null"]
+          description: The stored lo:englishText literal, when the dataset has one
+        annotations:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnnotationSpan"
+        assertions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Assertion"
+          description: Assertions whose D.L. citation resolves to this section
+        prevId:
+          type: string
+        nextId:
+          type: string
+    AskInput:
+      type: object
+      required: [question]
+      properties:
+        question:
+          type: string
+          minLength: 1
+        topK:
+          type: integer
+          minimum: 1
+          maximum: 25
+          default: 8
+          description: Number of passages to retrieve
+    RetrievedPassage:
+      type: object
+      required: [sectionId, citation, rank, score, snippet, annotationCount]
+      properties:
+        sectionId:
+          type: string
+        citation:
+          type: string
+        rank:
+          type: integer
+        score:
+          type: number
+          description: Fused retrieval score (reciprocal rank fusion)
+        lifeOf:
+          type: string
+        snippet:
+          type: string
+          description: Short excerpt of the stored English (or Greek) text
+        snippetLang:
+          type: string
+          enum: [grc, en]
+        annotationCount:
+          type: integer
+    AnswerLine:
+      type: object
+      required: [text, assertion]
+      properties:
+        text:
+          type: string
+          description: Verbalized assertion, subject - predicate - object
+        assertion:
+          $ref: "#/components/schemas/Assertion"
+        passageRank:
+          type: integer
+          description: Rank of the retrieved passage that grounded this line
+    OntologyAnswer:
+      type: object
+      required: [question, mode, lines, passages, entities]
+      properties:
+        question:
+          type: string
+        mode:
+          type: string
+          enum: [hybrid, sparse]
+          description: Whether dense retrieval participated
+        lines:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnswerLine"
+        passages:
+          type: array
+          items:
+            $ref: "#/components/schemas/RetrievedPassage"
+        entities:
+          type: array
+          items:
+            $ref: "#/components/schemas/LinkOut"
+          description: Entities named by the retrieved passages' annotations that grounded the lines
+        notice:
+          type: string
+          description: Degradation notice, e.g. dense index unavailable
+    SparqlInput:
+      type: object
+      required: [query]
+      properties:
+        query:
+          type: string
+          minLength: 1
+          maxLength: 20000
+    SparqlCell:
+      type: object
+      required: [bound]
+      properties:
+        bound:
+          type: boolean
+        termType:
+          type: string
+          enum: [uri, literal, bnode]
+        value:
+          type: string
+        lang:
+          type: string
+        datatype:
+          type: string
+    SparqlRow:
+      type: object
+      required: [cells]
+      properties:
+        cells:
+          type: array
+          items:
+            $ref: "#/components/schemas/SparqlCell"
+    SparqlResult:
+      type: object
+      required: [form, rowCount, elapsedMs]
+      properties:
+        form:
+          type: string
+          enum: [select, ask, construct, describe]
+        columns:
+          type: array
+          items:
+            type: string
+        rows:
+          type: array
+          items:
+            $ref: "#/components/schemas/SparqlRow"
+        boolean:
+          type: boolean
+          description: ASK result
+        turtle:
+          type: string
+          description: CONSTRUCT / DESCRIBE result serialized as Turtle
+        rowCount:
+          type: integer
+        elapsedMs:
+          type: number
+    SparqlExample:
+      type: object
+      required: [id, title, description, query]
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        query:
+          type: string
+    SparqlExampleList:
+      type: object
+      required: [examples]
+      properties:
+        examples:
+          type: array
+          items:
+            $ref: "#/components/schemas/SparqlExample"

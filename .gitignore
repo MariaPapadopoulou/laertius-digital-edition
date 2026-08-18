@@ -1,0 +1,43 @@
+# Dependencies and build output
+node_modules/
+.pnpm-store/
+dist/
+build/
+.vite/
+.cache/
+coverage/
+
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and local runtime files
+*.log
+logs/
+*.pid
+*.sock
+
+# Local model caches
+data/models/
+**/data/models/
+
+# Live evaluation state (research snapshots and published reports remain tracked)
+**/data/eval/batches/
+**/data/eval/judgments/
+**/data/eval/adjudications/
+**/data/eval/judge-tokens.json
+**/data/eval/*token*
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+

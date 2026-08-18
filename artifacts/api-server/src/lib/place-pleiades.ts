@@ -1,0 +1,217 @@
+/**
+ * Curated Pleiades gazetteer ids (https://pleiades.stoa.org) for every
+ * place node in the graph, keyed by the exact place label - the same
+ * keys as PLACE_QIDS/PLACE_COORDS (claim places) and MENTION_PLACES
+ * (mention-only places).
+ *
+ * Curation pipeline (July 2026, runtime stays offline):
+ * - Primary source: Wikidata P1584 (Pleiades id) fetched once for every
+ *   curated place QID - 151 of 169 QIDs carried one.
+ * - Multi-valued P1584 resolved against the Pleiades reprPoint by
+ *   distance to our curated coordinates: Colchis -> 863770 (the region,
+ *   not the Pontic town), Clazomenae -> 550650 (the archaic site where
+ *   Anaxagoras was born, not the Hellenistic refoundation), Smyrna ->
+ *   550893 (Smyrna/Eurydikeia).
+ * - The 18 QIDs without P1584 (modern-country/modern-city items such as
+ *   Athens, Egypt, Italy) were resolved in Pleiades itself and each id
+ *   verified by title AND by reprPoint distance to our curated
+ *   coordinates - never guessed. Regions carry Pleiades region entries
+ *   (Egypt -> 766 Aegyptus, Italy -> 1052 Italia, Macedonia -> 491656,
+ *   Boeotia -> 540689, Pontus -> 857287, India -> 50004, Thracian
+ *   Chersonese -> 501386 Chersonesus). Bosporus -> 854675 Cimmerius
+ *   Bosporus (matches the curated QID Q321371, the Cimmerian strait).
+ * - Thria (the Attic deme, no trustworthy Wikidata item) -> 580120,
+ *   found and coordinate-verified directly in Pleiades - the only
+ *   entry without a QID counterpart.
+ *
+ * Notes: "Heraclea" and "Heraclea in the Pontus" intentionally share
+ * 844944 (Heraclea Pontica), like their shared QID and coordinates.
+ * The three compound/uncertain claim labels ("Abdera, or, according to
+ * some, Miletus", "Elea, but some say Abdera and others Miletus",
+ * "Chen (a village in the district of Oeta or Laconia)") stay unmapped
+ * here too, same as in PLACE_QIDS and PLACE_COORDS.
+ */
+export const PLACE_PLEIADES: Record<string, string> = {
+  // ---- claim places (keys of PLACE_QIDS / PLACE_COORDS) ----
+  Abdera: "501323",
+  Academy: "479670108",
+  Aegina: "579844",
+  "Agrigentum (Acragas)": "462086",
+  Alexandria: "727070",
+  Assos: "550463",
+  Astypalaea: "599535",
+  Athens: "579885",
+  Borysthenes: "226546",
+  Bosporus: "854675",
+  Carthage: "314921",
+  Chalcedon: "520988",
+  Chalcis: "540703",
+  Chios: "550497",
+  Cilicia: "658440",
+  Citium: "707534",
+  Clazomenae: "550650",
+  Cnidos: "599576",
+  "Cnossos in Crete": "589872",
+  Colophon: "599577",
+  Corinth: "570182",
+  Croton: "452317",
+  Cyprus: "707498",
+  Cyrene: "373778",
+  Cyzicus: "511218",
+  Egypt: "766",
+  Elea: "452488",
+  Elis: "570221",
+  Ephesus: "599612",
+  Eresus: "550533",
+  Eretria: "579925",
+  Gela: "462214",
+  Heraclea: "844944",
+  "Heraclea in the Pontus": "844944",
+  Italy: "1052",
+  Lacedaemon: "570685",
+  Lampsacus: "501570",
+  Lindus: "589913",
+  Maroneia: "501507",
+  Megara: "570468",
+  Metapontum: "442658",
+  Miletus: "599799",
+  Mitylene: "550763",
+  Peloponnesus: "570577",
+  Phalerum: "580072",
+  Phlius: "570602",
+  Pisa: "570612",
+  Pitane: "550833",
+  Priene: "599905",
+  Salamis: "580101",
+  Samos: "599925",
+  Scillus: "570674",
+  Scythia: "1273",
+  Sicily: "462492",
+  Sinope: "857321",
+  Soli: "648781",
+  Stagira: "501625",
+  Syracuse: "462503",
+  Syros: "590067",
+  Tarentum: "442810",
+  Tarsus: "648789",
+  Teos: "550913",
+  Thebes: "541138",
+  Troas: "550944",
+
+  // ---- mention-only places (labels of MENTION_PLACES) ----
+  Acharnae: "579842",
+  Aegospotami: "501336",
+  Aenus: "501337",
+  Alopece: "579858",
+  Amastris: "844856",
+  Ambracia: "530794",
+  Amphipolis: "501347",
+  Anaphlystus: "579866",
+  Arcadia: "570102",
+  Argos: "570106",
+  Aspendus: "638776",
+  Atarneus: "550469",
+  Attica: "579888",
+  Babylon: "893951",
+  Boeotia: "540689",
+  Byzantium: "520985",
+  Callatis: "216744",
+  Catana: "462270",
+  Ceos: "570348",
+  Ceramicus: "97294452",
+  Chaeronea: "540701",
+  Colchis: "863770",
+  Collytus: "582864",
+  Colonus: "579985",
+  Corcyra: "530835",
+  Cos: "599581",
+  Crete: "589748",
+  Cyme: "550506",
+  Cynosarges: "158698879",
+  Cythera: "570186",
+  Delos: "599588",
+  Delphi: "540726",
+  Eleusis: "579920",
+  Epidaurus: "570228",
+  Etna: "462077",
+  Euboea: "540775",
+  Gargettus: "579935",
+  Halicarnassus: "599636",
+  Hellespont: "501434",
+  // Hermion(e), eastern Argolid - no Wikidata item carries this P1584
+  // (Q994564 is the modern town); id verified in the Pleiades dump by
+  // title and reprPoint (37.3852, 23.2436 ~ curated 37.3833, 23.25).
+  Hermione: "570292",
+  Iasus: "599664",
+  Ida: "589816",
+  India: "50004",
+  Ionia: "550597",
+  Isthmus: "570317",
+  Laconia: "570406",
+  Larissa: "540905",
+  Lemnos: "550693",
+  Leontini: "462279",
+  Lesbos: "550696",
+  Libya: "716588",
+  Lyceum: "122572945",
+  Lydia: "550701",
+  Macedonia: "491656",
+  Magnesia: "599778",
+  Mantinea: "570459",
+  Marathon: "580021",
+  Megalopolis: "570467",
+  Memphis: "736963",
+  Messenia: "570480",
+  Munichia: "580029",
+  Myrrhinus: "580030",
+  Nemea: "570504",
+  Nicaea: "511268",
+  Nicomedia: "511337",
+  Nile: "727172",
+  Olympia: "570531",
+  Olynthus: "491678",
+  Oropus: "580044",
+  Paeania: "580046",
+  Paros: "599868",
+  Pergamum: "550812",
+  Perinthus: "511357",
+  Persia: "922698",
+  Pharsalus: "541042",
+  Phoenicia: "678334",
+  Phrygia: "907036116",
+  Piraeus: "580062",
+  Pontus: "857287",
+  Potidaea: "491701",
+  Proconnesus: "511379",
+  Propontis: "511381",
+  Rhegium: "452416",
+  Rhodes: "590031",
+  Rome: "423025",
+  Samothrace: "501597",
+  Sardis: "550867",
+  Scepsis: "550890",
+  Seleucia: "894084",
+  Selinus: "462489",
+  Sicyon: "570668",
+  Sidon: "678393",
+  Smyrna: "550893",
+  Stratonicea: "599947",
+  Susa: "912936",
+  Syria: "1306",
+  Tanagra: "580114",
+  Thasos: "501635",
+  "Thracian Chersonese": "501386",
+  Thria: "580120",
+  Thurii: "452457",
+  Tralles: "599987",
+  Troy: "550595",
+  Tyre: "678437",
+  Xypete: "580134",
+  Zacynthus: "531155",
+  Zancle: "462538",
+};
+
+/** Canonical Pleiades place page for a curated id. */
+export function pleiadesUri(id: string): string {
+  return `https://pleiades.stoa.org/places/${id}`;
+}

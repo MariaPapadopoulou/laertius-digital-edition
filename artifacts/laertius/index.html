@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Humanistica Digitalia and Philographia present Laertius: A Digital Scholarly Edition of Diogenes Laertius’ Lives of Eminent Philosophers
+
+    Curated and prepared by Dr. Maria Papadopoulou
+    Digital Humanities and Classics
+    Department of Philology
+    University of Crete
+
+    Licence: CC BY-NC 4.0
+    https://creativecommons.org/licenses/by-nc/4.0/
+-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laertius - Lives of Eminent Philosophers</title>
+    <meta name="description" content="Search and question the Lives of Eminent Philosophers by Diogenes Laertius - Greek text with Hicks' English translation, powered by hybrid retrieval." />
+    <meta name="robots" content="index, follow" />
+    <!-- Canonical URL: always the live edition. Updated per-route at
+         runtime by the useCanonical hook (src/lib/use-canonical.ts). -->
+    <link rel="canonical" href="https://laertius.humanisticadigitalia.eu/" />
+    <!-- Dublin Core metadata for scholarly aggregators. -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+    <meta name="DC.title" content="Laertius: A Digital Scholarly Edition of Diogenes Laertius' Lives of Eminent Philosophers" />
+    <meta name="DC.creator" content="Papadopoulou, Maria" />
+    <meta name="DC.publisher" content="Humanistica Digitalia" />
+    <meta name="DC.description" content="A digital scholarly edition of Diogenes Laertius' Lives of Eminent Philosophers: Greek text with Hicks' English translation, hybrid retrieval, and a source-cited knowledge graph published as Linked Open Data." />
+    <meta name="DC.subject" content="Diogenes Laertius; ancient Greek philosophy; doxography; digital scholarly edition; linked open data" />
+    <meta name="DC.type" content="Collection" />
+    <meta name="DC.format" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.language" content="grc" />
+    <meta name="DC.source" content="urn:cts:greekLit:tlg0004.tlg001" />
+    <meta name="DC.identifier" content="https://laertius.humanisticadigitalia.eu/" />
+    <meta name="DC.rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/" />
+    <meta name="DCTERMS.license" content="https://creativecommons.org/licenses/by-nc-sa/4.0/" />
+    <!-- Schema.org metadata: the edition as a CreativeWork about the
+         ancient text, plus the downloadable knowledge graph as a Dataset
+         (described in full by /api/lod/dcat.ttl and /api/lod/void.ttl). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CreativeWork",
+          "@id": "https://laertius.humanisticadigitalia.eu/",
+          "name": "Laertius: A Digital Scholarly Edition of Diogenes Laertius' Lives of Eminent Philosophers",
+          "url": "https://laertius.humanisticadigitalia.eu/",
+          "description": "A digital scholarly edition of Diogenes Laertius' Lives of Eminent Philosophers: Greek text with Hicks' English translation, hybrid retrieval, and a source-cited knowledge graph published as Linked Open Data.",
+          "inLanguage": ["en", "grc"],
+          "creator": { "@type": "Person", "name": "Maria Papadopoulou" },
+          "publisher": { "@type": "Organization", "name": "Humanistica Digitalia", "url": "https://humanisticadigitalia.eu" },
+          "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+          "about": {
+            "@type": "CreativeWork",
+            "name": "Lives of Eminent Philosophers",
+            "author": { "@type": "Person", "name": "Diogenes Laertius" },
+            "identifier": "urn:cts:greekLit:tlg0004.tlg001"
+          },
+          "hasPart": { "@id": "https://laertius.humanisticadigitalia.eu/dcat#graph" }
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://laertius.humanisticadigitalia.eu/dcat#graph",
+          "name": "Laertius knowledge graph",
+          "description": "The knowledge layer of the Lives: philosophers, schools, successions, places, works, doctrines, cited biographical claims, verses, sayings, anecdotes, letters, testaments and doxai, every fact cited to a passage of the text.",
+          "url": "https://laertius.humanisticadigitalia.eu/graph",
+          "creator": { "@type": "Person", "name": "Maria Papadopoulou" },
+          "publisher": { "@type": "Organization", "name": "Humanistica Digitalia", "url": "https://humanisticadigitalia.eu" },
+          "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+          "isBasedOn": "urn:cts:greekLit:tlg0004.tlg001",
+          "distribution": [
+            {
+              "@type": "DataDownload",
+              "name": "Knowledge graph (Turtle)",
+              "encodingFormat": "text/turtle",
+              "contentUrl": "https://laertius.humanisticadigitalia.eu/api/lod/graph.ttl"
+            },
+            {
+              "@type": "DataDownload",
+              "name": "Knowledge graph (JSON-LD)",
+              "encodingFormat": "application/ld+json",
+              "contentUrl": "https://laertius.humanisticadigitalia.eu/api/lod/graph.jsonld"
+            },
+            {
+              "@type": "DataDownload",
+              "name": "Knowledge graph (RDF/XML)",
+              "encodingFormat": "application/rdf+xml",
+              "contentUrl": "https://laertius.humanisticadigitalia.eu/api/lod/graph.rdf"
+            },
+            {
+              "@type": "DataDownload",
+              "name": "Full project source (zip)",
+              "encodingFormat": "application/zip",
+              "contentUrl": "https://laertius.humanisticadigitalia.eu/api/exports/laertius-full-source.zip"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <meta property="og:title" content="Laertius - Lives of Eminent Philosophers" />
+    <meta property="og:description" content="Search and question the Lives of Eminent Philosophers by Diogenes Laertius - Greek text with Hicks' English translation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%BASE_URL%opengraph.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="%BASE_URL%opengraph.jpg" />
+    <meta name="twitter:title" content="Laertius - Lives of Eminent Philosophers" />
+    <meta name="twitter:description" content="Search and question the Lives of Eminent Philosophers by Diogenes Laertius - Greek text with Hicks' English translation." />
+    <!-- Root-absolute hrefs below are base-path-safe: Vite rewrites them to
+         BASE_PATH at build time (verified: BASE_PATH=/Laertius/ emits
+         /Laertius/favicon.svg). Using %BASE_URL% here would double-prefix. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<!-- Fonts are self-hosted via @fontsource imports in src/index.css
+         (GDPR: no reader IPs sent to Google). -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("laertius-theme");
+          var dark =
+            stored === "dark" ||
+            (stored !== "light" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

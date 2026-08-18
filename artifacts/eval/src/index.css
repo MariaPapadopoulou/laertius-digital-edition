@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+  --font-grc: var(--app-font-grc);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+:root {
+  /* Laertius Eval Colors: Paper/Parchment and scholarly tones */
+  --background: 45 33% 97%; /* #FBFAF7 */
+  --foreground: 200 13% 9%; /* #14181A */
+  
+  --card: 45 33% 97%; 
+  --card-foreground: 200 13% 9%;
+  --card-border: 85 10% 78%; /* #C9CDC3 */
+
+  --popover: 45 33% 97%;
+  --popover-foreground: 200 13% 9%;
+  --popover-border: 85 10% 78%;
+
+  --primary: 203 30% 26%; /* #2F4858 */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 120 4% 92%; /* #E4E6E0 - Ground */
+  --secondary-foreground: 203 30% 26%;
+  
+  --muted: 120 4% 92%;
+  --muted-foreground: 130 3% 39%; /* #5F6560 */
+
+  --accent: 198 17% 88%; /* #DDE3E6 */
+  --accent-foreground: 203 30% 26%;
+
+  --destructive: 22 70% 39%; /* #A8501E */
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 85 10% 78%; /* #C9CDC3 */
+  --input: 85 10% 78%;
+  --ring: 203 30% 26%;
+
+  --app-font-sans: 'DM Sans', system-ui, sans-serif;
+  --app-font-serif: 'Playfair Display', Georgia, serif;
+  --app-font-mono: 'SFMono-Regular', Menlo, Consolas, monospace;
+  --app-font-grc: "New Athena Unicode", "Cardo", "GFS Didot", "Palatino Linotype", "Times New Roman", serif;
+
+  --radius: 0px; /* Sharp corners for scholarly feel */
+}
+
+.dark {
+  /* Force light mode per requirements ("never white-and-gray emptiness", default to light mode unless requested). No dark mode requested. */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+.grc {
+  font-family: var(--font-grc);
+  font-size: 1.15em;
+  line-height: 1.6;
+}

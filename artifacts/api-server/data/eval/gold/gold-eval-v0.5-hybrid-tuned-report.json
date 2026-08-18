@@ -1,0 +1,1491 @@
+{
+ "runId": "run-msiyunhu-5bb68b",
+ "systemId": "laertius-hybrid-tuned",
+ "topicSetId": "topics-msirqauf-a963a7",
+ "snapshotId": "snap-msirqatw-0f1d0a",
+ "k": 10,
+ "answerable": {
+  "nTopics": 150,
+  "nScored": 150,
+  "excludedByReason": {
+   "dataset_aggregate": 25
+  },
+  "mrr": 0.5061428571428572,
+  "recallAtK": 0.8177777777777778,
+  "ndcgAtK": 0.5782565465589637,
+  "hitAtK": 0.84,
+  "k": 10
+ },
+ "abstainBySubtype": [
+  {
+   "abstainType": "out_of_corpus",
+   "nTopics": 10,
+   "nWithEvidence": 0,
+   "evidenceHitAtK": 0
+  },
+  {
+   "abstainType": "false_premise",
+   "nTopics": 8,
+   "nWithEvidence": 8,
+   "evidenceHitAtK": 5
+  },
+  {
+   "abstainType": "underspecified_homonym",
+   "nTopics": 7,
+   "nWithEvidence": 5,
+   "evidenceHitAtK": 2
+  }
+ ],
+ "perTopic": [
+  {
+   "topic_id": "biography-001",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-002",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-003",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-004",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 6,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-005",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-006",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 7,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-007",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "biography-008",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-009",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-010",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-011",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-012",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-013",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-014",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-015",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 9,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-016",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-017",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-018",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "biography-019",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-001",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-002",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-003",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-004",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "chronology-005",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-006",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 7,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-007",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-008",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-009",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-010",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-011",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-012",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 9,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-013",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-014",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-015",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-016",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 7,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-017",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-018",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-019",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-020",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 10,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-021",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-022",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "chronology-023",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-001",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-002",
+   "must_abstain": false,
+   "nRelevant": 2,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 2
+  },
+  {
+   "topic_id": "comparative-003",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-004",
+   "must_abstain": false,
+   "nRelevant": 2,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 2
+  },
+  {
+   "topic_id": "comparative-005",
+   "must_abstain": false,
+   "nRelevant": 2,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 2
+  },
+  {
+   "topic_id": "comparative-006",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "comparative-007",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-008",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-009",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-010",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-011",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-012",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "comparative-013",
+   "must_abstain": false,
+   "nRelevant": 2,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 2
+  },
+  {
+   "topic_id": "comparative-014",
+   "must_abstain": false,
+   "nRelevant": 2,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 2
+  },
+  {
+   "topic_id": "doctrine-001",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-002",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 6,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-003",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 6,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-004",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-005",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-006",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-007",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-008",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-009",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-010",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-011",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-012",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-013",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-014",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-015",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-016",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 10,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-017",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-018",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-019",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-020",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-021",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-022",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-023",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "doctrine-024",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-001",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 9,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-002",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-003",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-004",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-005",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-006",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-007",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-008",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "quotation-009",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-010",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "quotation-011",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 7,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-012",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "quotation-013",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-014",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-015",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-016",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-017",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-018",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "quotation-019",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "source-001",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-002",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "source-003",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "source-004",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-005",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-006",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-007",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-008",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-009",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-010",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-011",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-012",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-013",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-014",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-015",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-016",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-017",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-018",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-019",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-020",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-021",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-022",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-023",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-024",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 10,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-025",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-026",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-027",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "source-028",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "statistics-001",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-002",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-003",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-004",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-005",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-006",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-007",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-008",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-009",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-010",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-011",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-012",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-013",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-014",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "statistics-015",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-001",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-002",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-003",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-004",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-005",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-006",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-007",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-008",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-009",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "synthesis-010",
+   "must_abstain": false,
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0,
+   "no_gold_passage_reason": "dataset_aggregate"
+  },
+  {
+   "topic_id": "teacher-student-001",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-002",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-003",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-004",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-005",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-006",
+   "must_abstain": false,
+   "nRelevant": 2,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-007",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 8,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-008",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-009",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-010",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-011",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-012",
+   "must_abstain": false,
+   "nRelevant": 2,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-013",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-014",
+   "must_abstain": false,
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-015",
+   "must_abstain": false,
+   "nRelevant": 6,
+   "firstRelevantRank": 3,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-016",
+   "must_abstain": false,
+   "nRelevant": 6,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "teacher-student-017",
+   "must_abstain": false,
+   "nRelevant": 5,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "teacher-student-018",
+   "must_abstain": false,
+   "nRelevant": 5,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "teacher-student-019",
+   "must_abstain": false,
+   "nRelevant": 4,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 3
+  },
+  {
+   "topic_id": "teacher-student-020",
+   "must_abstain": false,
+   "nRelevant": 4,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "teacher-student-021",
+   "must_abstain": false,
+   "nRelevant": 4,
+   "firstRelevantRank": 5,
+   "relevantInTopK": 2
+  },
+  {
+   "topic_id": "teacher-student-022",
+   "must_abstain": false,
+   "nRelevant": 4,
+   "firstRelevantRank": 10,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "teacher-student-023",
+   "must_abstain": false,
+   "nRelevant": 3,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "biography-abstain-01",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "chronology-abstain-01",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "chronology-abstain-03",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "comparative-abstain-01",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "doctrine-opinion-abstain-03",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "exact-quotation-abstain-02",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "source-attribution-abstain-01",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "source-attribution-abstain-02",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "statistics-abstain-01",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "teacher-student-abstain-01",
+   "must_abstain": true,
+   "abstain_type": "out_of_corpus",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "false-premise-01",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "false-premise-02",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "false-premise-03",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "false-premise-04",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": 7,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "false-premise-05",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": 1,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "false-premise-06",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "false-premise-07",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": 2,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "false-premise-12",
+   "must_abstain": true,
+   "abstain_type": "false_premise",
+   "nRelevant": 1,
+   "firstRelevantRank": 4,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "underspecified-homonym-01",
+   "must_abstain": true,
+   "abstain_type": "underspecified_homonym",
+   "nRelevant": 2,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "underspecified-homonym-02",
+   "must_abstain": true,
+   "abstain_type": "underspecified_homonym",
+   "nRelevant": 2,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "underspecified-homonym-03",
+   "must_abstain": true,
+   "abstain_type": "underspecified_homonym",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "underspecified-homonym-04",
+   "must_abstain": true,
+   "abstain_type": "underspecified_homonym",
+   "nRelevant": 0,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  },
+  {
+   "topic_id": "underspecified-homonym-05",
+   "must_abstain": true,
+   "abstain_type": "underspecified_homonym",
+   "nRelevant": 3,
+   "firstRelevantRank": 7,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "underspecified-homonym-06",
+   "must_abstain": true,
+   "abstain_type": "underspecified_homonym",
+   "nRelevant": 3,
+   "firstRelevantRank": 10,
+   "relevantInTopK": 1
+  },
+  {
+   "topic_id": "underspecified-homonym-07",
+   "must_abstain": true,
+   "abstain_type": "underspecified_homonym",
+   "nRelevant": 2,
+   "firstRelevantRank": null,
+   "relevantInTopK": 0
+  }
+ ]
+}
