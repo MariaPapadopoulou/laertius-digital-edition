@@ -366,3 +366,52 @@ footer.site-footer {
   footer.site-footer { grid-template-columns: 1fr; justify-items: center; gap: 24px; text-align: center; }
   .footer-affiliation-left, .footer-affiliation-right { justify-self: center; }
 }
+.data-section,
+.evaluation {
+  padding-left: max(48px, calc((100% - 1240px) / 2)) !important;
+  padding-right: max(48px, calc((100% - 1240px) / 2)) !important;
+}
+
+.evaluation-intro,
+.evaluation-grid {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .data-section,
+  .evaluation {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+/* Remove the old repository description */
+.open-section {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 22px 48px !important;
+}
+
+.open-section > div {
+  display: none !important;
+}
+
+.open-section .text-link {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+}
+
+.open-section .text-link::after {
+  content: "View repository";
+  font: 700 11px/1 var(--sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
