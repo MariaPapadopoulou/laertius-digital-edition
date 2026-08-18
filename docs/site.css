@@ -104,7 +104,9 @@ nav .external:hover, nav .external:focus-visible {
   min-height: 600px;
   padding: clamp(54px, 7vw, 92px);
   color: #fff;
-  background: var(--ink);
+  background:
+  linear-gradient(rgba(25, 20, 15, .22), rgba(25, 20, 15, .22)),
+  url("./assets/laertius-hero.png") center center / cover no-repeat;
   display: grid;
   grid-template-columns: minmax(0, 1.65fr) minmax(250px, .65fr);
   align-items: end;
