@@ -50,6 +50,9 @@ a:focus-visible { outline: 3px solid var(--bronze); outline-offset: 4px; }
 .header-link { justify-self: end; }
 
 .hero {
+  background:
+    linear-gradient(rgba(25, 20, 15, .22), rgba(25, 20, 15, .22)),
+    url("./assets/laertius-hero.png") center center / cover no-repeat;
   width: min(100% - 48px, 1400px);
   margin: 0 auto;
   display: grid;
