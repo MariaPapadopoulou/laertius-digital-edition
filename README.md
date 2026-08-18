@@ -1,6 +1,6 @@
 # Laertius Digital Scholarly Edition
 
-[Laertius](https://laertius.humanisticadigitalia.eu/) is a bilingual digital
+[Laertius](https://laertius.humanisticadigitalia.eu/) is a digital
 scholarly edition of Diogenes Laertius' *Lives of Eminent Philosophers*. It
 combines the Greek text and the public-domain R. D. Hicks translation with
 curated scholarly assertions, linked open data, knowledge-graph exploration,
