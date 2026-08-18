@@ -23,7 +23,13 @@
 
   <header class="site-header" id="top">
     <a class="wordmark" href="#top" aria-label="Laertius home">
-      <img src="assets/laertius-wordmark.png" width="611" height="120" alt="Laertius — Digital Scholarly Edition">
+      <span class="brand-dots" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i>
+      </span>
+      <span class="wordmark-copy">
+        <span class="wordmark-title">Laertius</span>
+        <span class="wordmark-subtitle">Digital Scholarly Edition</span>
+      </span>
     </a>
     <nav aria-label="Primary navigation">
       <a href="#edition">The edition</a>
@@ -35,24 +41,25 @@
 
   <main class="article">
     <header class="article-header">
-      <p class="kicker">Humanistica Digitalia · Digital Classics</p>
-      <h1>Diogenes Laertius: a digital scholarly edition</h1>
-      <p class="greek-title" lang="grc">Βίοι καὶ γνῶμαι τῶν ἐν φιλοσοφίᾳ εὐδοκιμησάντων</p>
-      <p class="byline">Maria Papadopoulou · University of Crete · Open scholarly infrastructure</p>
+      <div class="hero-copy">
+        <p class="kicker">Humanistica Digitalia · Digital Classics</p>
+        <h1>Diogenes Laertius: a digital scholarly edition</h1>
+        <p class="greek-title" lang="grc">Βίοι καὶ γνῶμαι τῶν ἐν φιλοσοφίᾳ εὐδοκιμησάντων</p>
+        <p class="byline">Maria Papadopoulou · University of Crete · Open scholarly infrastructure</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <div class="hero-dots"><i></i><i></i><i></i><i></i></div>
+        <span>Text · Data · Evidence</span>
+      </div>
     </header>
 
     <section id="edition" aria-labelledby="edition-heading">
-      <p class="section-number">1</p>
       <h2 id="edition-heading">Edition and research environment</h2>
       <div class="edition-overview">
         <div>
           <p class="lead">Laertius is a digital scholarly edition of Diogenes Laertius designed for philological reading, structured investigation, and the critical reuse of scholarly data.</p>
           <p>The environment brings together the Greek text, translation, passage-level navigation, prosopographical and geographical entities, philosophical traditions, and machine-readable assertions. Its interfaces support movement between close reading and computational enquiry while retaining the textual evidence on which interpretation depends.</p>
         </div>
-        <figure class="corpus-figure">
-          <img src="assets/lives-by-book.png" width="377" height="531" alt="Dot plot showing the distribution of 82 lives across the ten books of Diogenes Laertius">
-          <figcaption>Distribution of the 82 lives across the ten books.</figcaption>
-        </figure>
       </div>
 
       <div class="interface-list" aria-label="Research interfaces">
@@ -69,7 +76,6 @@
     </section>
 
     <section id="method" aria-labelledby="method-heading">
-      <p class="section-number">2</p>
       <h2 id="method-heading">Scholarly method</h2>
       <p>The edition treats digital representation as an explicit scholarly argument. Textual units, annotations, identifiers, relationships, and derived interfaces are documented so that readers may inspect both the evidence and the operations performed upon it.</p>
 
@@ -82,7 +88,6 @@
     </section>
 
     <section id="data" aria-labelledby="data-heading">
-      <p class="section-number">3</p>
       <h2 id="data-heading">Annotation data and evaluation</h2>
       <p>The annotation datasets form a citable scholarly layer rather than an invisible technical substrate. They document the identification of entities and relations, their textual anchors, and the assertions used to construct the linked-data environment.</p>
       <p>Evaluation materials include curated gold judgements, adjudications, and reproducible test resources for assessing retrieval and evidence-grounded answers. Their publication supports methodological scrutiny and makes distinctions between source text, scholarly annotation, derived data, and system output explicit.</p>
