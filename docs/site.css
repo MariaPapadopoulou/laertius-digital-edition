@@ -370,3 +370,32 @@ footer.site-footer {
   .footer-affiliations-row { grid-template-columns: 1fr; justify-items: center; gap: 24px; text-align: center; }
   .footer-affiliation-left, .footer-affiliation-right { justify-self: center; }
 }
+.section:not(.hero):not(.data-section):not(.evaluation) {
+  width: min(1160px, calc(100% - 144px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.data-section,
+.evaluation {
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.data-section > *,
+.evaluation-intro,
+.evaluation-grid {
+  width: min(1160px, calc(100% - 144px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 900px) {
+  .section:not(.hero):not(.data-section):not(.evaluation),
+  .data-section > *,
+  .evaluation-intro,
+  .evaluation-grid {
+    width: calc(100% - 48px) !important;
+  }
+}
