@@ -10,7 +10,9 @@ a { color:inherit; text-decoration:none; }
 nav { display:flex; gap:clamp(22px,4vw,54px); color:var(--muted); font-size:.76rem; letter-spacing:.13em; text-transform:uppercase; }
 nav a { padding:8px 0; border-bottom:1px solid transparent; }
 nav a:hover,nav a:focus-visible { color:var(--wine); border-color:var(--wine); }
-.hero { width:min(100% - 48px,1440px); margin:0 auto; padding:clamp(72px,10vw,154px) 0 clamp(80px,11vw,170px); display:grid; grid-template-columns:minmax(0,1.35fr) minmax(310px,.65fr); align-items:center; gap:clamp(64px,10vw,160px); }
+.hero { background:
+  linear-gradient(rgba(25, 20, 15, .22), rgba(25, 20, 15, .22)),
+  url("./assets/laertius-hero.png") center center / cover no-repeat; width:min(100% - 48px,1440px); margin:0 auto; padding:clamp(72px,10vw,154px) 0 clamp(80px,11vw,170px); display:grid; grid-template-columns:minmax(0,1.35fr) minmax(310px,.65fr); align-items:center; gap:clamp(64px,10vw,160px); }
 .eyebrow { margin:0 0 24px; color:var(--wine); font-size:.69rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
 h1,h2,h3,p { margin-top:0; }
 h1 { max-width:920px; margin-bottom:34px; font:400 clamp(3.4rem,7vw,7rem)/.96 var(--serif); letter-spacing:-.055em; }
