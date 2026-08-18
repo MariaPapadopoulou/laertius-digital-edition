@@ -310,9 +310,10 @@ a:focus-visible { outline-color: var(--ink); }
 .mini-label { color: var(--muted); }
 .benchmark-card a { color: var(--oxblood); }
 
-.open-section { gap: clamp(24px, 5vw, 70px); }
-.open-section h2 { font-size: clamp(30px, 3.5vw, 48px); }
-.open-section .text-link { justify-self: start; }
+.open-section { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(48px, 9vw, 140px); align-items: start; }
+.open-section h2 { max-width: 560px; font-size: clamp(36px, 4vw, 58px); line-height: 1.02; }
+.open-section-content { max-width: 680px; }
+.open-section .text-link { display: inline-block; margin-top: 22px; padding-bottom: 7px; border-bottom: 1px solid var(--ink); justify-self: start; }
 footer { padding-top: 28px; padding-bottom: 28px; background: var(--paper-deep); color: var(--ink); border-top: 1px solid var(--line); }
 .footer-mark span, footer > p, .footer-links a { color: var(--muted); }
 .footer-links a:hover { color: var(--oxblood); }
@@ -334,18 +335,20 @@ footer { padding-top: 28px; padding-bottom: 28px; background: var(--paper-deep);
 
 /* Minimal affiliation footer: partners at the edges, navigation and GitHub in the middle. */
 footer.site-footer {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  min-height: 188px;
-  gap: 32px;
-  padding: 32px clamp(24px, 5vw, 76px);
+  display: block;
+  padding: 44px clamp(24px, 5vw, 76px) 32px;
   background-color: var(--surface);
   background-image: radial-gradient(circle, rgba(104, 97, 91, .18) 1.2px, transparent 1.4px), radial-gradient(ellipse at 84% 100%, rgba(104, 97, 91, .16), transparent 58%);
   background-size: 32px 32px, 100% 100%;
   color: var(--ink);
   border-top: 1px solid var(--line);
 }
+.footer-open-materials, .footer-affiliations-row { width: min(100%, 1240px); margin: 0 auto; }
+.footer-open-materials { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(190px, .75fr); gap: clamp(40px, 8vw, 140px); align-items: end; padding-bottom: 38px; border-bottom: 1px solid var(--line); }
+.footer-open-copy h2 { max-width: 760px; margin: 0; font: 500 clamp(30px, 3.5vw, 52px)/1.02 var(--serif); letter-spacing: -.045em; }
+.footer-open-copy p { max-width: 680px; margin: 24px 0 0; color: var(--muted); font: 400 15px/1.6 var(--sans); }
+.footer-repository { align-self: end; justify-self: start; }
+.footer-affiliations-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 32px; padding-top: 30px; }
 .footer-affiliation-left { justify-self: start; }
 .footer-affiliation-right { justify-self: end; }
 .humanistica-link { display: block; }
@@ -363,55 +366,7 @@ footer.site-footer {
 .footer-l { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 5px; background: var(--oxblood); color: var(--surface); font: 700 19px/1 var(--serif); }
 
 @media (max-width: 900px) {
-  footer.site-footer { grid-template-columns: 1fr; justify-items: center; gap: 24px; text-align: center; }
+  .footer-open-materials { grid-template-columns: 1fr; gap: 24px; }
+  .footer-affiliations-row { grid-template-columns: 1fr; justify-items: center; gap: 24px; text-align: center; }
   .footer-affiliation-left, .footer-affiliation-right { justify-self: center; }
-}
-.data-section,
-.evaluation {
-  padding-left: max(48px, calc((100% - 1240px) / 2)) !important;
-  padding-right: max(48px, calc((100% - 1240px) / 2)) !important;
-}
-
-.evaluation-intro,
-.evaluation-grid {
-  width: 100%;
-  max-width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 900px) {
-  .data-section,
-  .evaluation {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-}
-/* Remove the old repository description */
-.open-section {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: none !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 22px 48px !important;
-}
-
-.open-section > div {
-  display: none !important;
-}
-
-.open-section .text-link {
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: 0 !important;
-}
-
-.open-section .text-link::after {
-  content: "View repository";
-  font: 700 11px/1 var(--sans);
-  letter-spacing: .08em;
-  text-transform: uppercase;
 }
