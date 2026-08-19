@@ -411,48 +411,21 @@ footer.site-footer {
   margin-left: 0;
   margin-right: 0;
 }
-/* TALOS logo in the upper centre of the header */
+/* TALOS logo â€” final small version */
 .site-header {
   position: relative;
-  min-height: 178px;
-  padding-top: 104px;
+  min-height: 142px !important;
+  padding-top: 76px !important;
 }
 
-.talos-logo {
-  position: absolute;
-  top: 18px;
-  left: 50%;
-  z-index: 5;
-  width: 86px;
-  transform: translateX(-50%);
-}
-
-.talos-logo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  background: transparent;
-}
-
-@media (max-width: 560px) {
-  .site-header {
-    min-height: 148px;
-    padding-top: 86px;
-  }
-
-  .talos-logo {
-    top: 12px;
-    width: 72px;
-  }
-}
 .site-header .talos-logo {
   position: absolute !important;
-  top: 18px !important;
+  top: 14px !important;
   left: 50% !important;
   z-index: 20 !important;
   display: block !important;
-  width: 86px !important;
-  height: 86px !important;
+  width: 52px !important;
+  height: 52px !important;
   transform: translateX(-50%) !important;
 }
 
@@ -465,9 +438,14 @@ footer.site-footer {
 }
 
 @media (max-width: 560px) {
+  .site-header {
+    min-height: 116px !important;
+    padding-top: 62px !important;
+  }
+
   .site-header .talos-logo {
-    width: 64px !important;
-    height: 64px !important;
-    top: 12px !important;
+    top: 10px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 }
