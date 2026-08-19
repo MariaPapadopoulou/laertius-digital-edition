@@ -411,3 +411,37 @@ footer.site-footer {
   margin-left: 0;
   margin-right: 0;
 }
+/* TALOS logo in the upper centre of the header */
+.site-header {
+  position: relative;
+  min-height: 178px;
+  padding-top: 104px;
+}
+
+.talos-logo {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  z-index: 5;
+  width: 86px;
+  transform: translateX(-50%);
+}
+
+.talos-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    min-height: 148px;
+    padding-top: 86px;
+  }
+
+  .talos-logo {
+    top: 12px;
+    width: 72px;
+  }
+}
