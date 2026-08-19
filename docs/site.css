@@ -445,3 +445,29 @@ footer.site-footer {
     width: 72px;
   }
 }
+.site-header .talos-logo {
+  position: absolute !important;
+  top: 18px !important;
+  left: 50% !important;
+  z-index: 20 !important;
+  display: block !important;
+  width: 86px !important;
+  height: 86px !important;
+  transform: translateX(-50%) !important;
+}
+
+.site-header .talos-logo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}
+
+@media (max-width: 560px) {
+  .site-header .talos-logo {
+    width: 64px !important;
+    height: 64px !important;
+    top: 12px !important;
+  }
+}
