@@ -78,7 +78,7 @@ export interface SnapshotMeta {
 }
 
 const INDEX_DEFINITION =
-  "Hybrid retrieval: BM25 (unicode-folded Greek/English tokens) + dense cosine (multilingual MiniLM embeddings), reciprocal-rank fusion, knowledge-graph entity boosts; passage unit = Perseus section (CTS urn:cts:greekLit:tlg0004.tlg001).";
+  "Hybrid retrieval: BM25 (unicode-folded Greek/English tokens) + dense cosine (Xenova/multilingual-e5-small embeddings, 384-dim), reciprocal-rank fusion, knowledge-graph entity boosts; passage unit = Perseus section (CTS urn:cts:greekLit:tlg0004.tlg001).";
 
 function canonicalPassageLine(s: CorpusSection): string {
   // Stable key order so the hash is a function of content, not object order.
