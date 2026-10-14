@@ -25,6 +25,19 @@ significance tests).
   which has its own validator (`validate-stats-answers`) but no
   retrieval-style metric.
 
+  ## Index description in snapshot metadata
+
+The `indexDefinition` field of the two frozen snapshots
+(`snap-msflk3v5-7936e0`, `snap-msirqatw-0f1d0a`) reads "multilingual
+MiniLM embeddings". This is a stale hard-coded label from
+`src/lib/eval/store.ts`, not a record of the model used: the field is
+not derived from the running model, and the snapshot hash covers passage
+text only. All Gold v0.5 runs used `Xenova/multilingual-e5-small`
+(384-dim), as recorded in `data/embedding-index.json` and in
+`gold-eval-v0.5-comparison.md`. The snapshot files are left unchanged
+because they are frozen evaluation artefacts; the label was corrected
+in `store.ts` for future snapshots.
+
 ## Metrics and significance
 
 - Metrics: MRR, recall@10, nDCG@10, hit@10 over the 150 scored answerable
